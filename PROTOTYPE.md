@@ -12,8 +12,8 @@ We want to incorporate a basic rendition of the game with waves of zombies with 
 ## Expanded Description
 
 ### MVP
-1.) The background will imported directly from the game.
-
+1.) The background will imported directly from the game. There should be at least one level, and a custom lawn will be generated.
+2.) We will have an abstract class called Plants. We need to have at least two Plant objects: PeaShooter and SunFlower. Each plant will have a health bar and damage. Methods include attack(), addSun(),
 
 A description of your technical design. This should include:
 
