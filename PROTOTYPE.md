@@ -1,21 +1,28 @@
 
 # Technical Details:
 
+Period 3
+Nowar Nizum, Angelo Chen, Jessie Chan
+Team Name:
+## Plants vs Crumbies (cause we ate 💅💅😋)
+
+## Project Description
+We want to incorporate a basic rendition of the game with waves of zombies with different defense abilities (newspaper, bucket head), different plants, and periodic sun production. The plants will have cooldowns as to when they are planted as well as special abilities for when they are fed plant food. The game ends after a specific amount of ticks has passed and the remaining zombies of the board are all killed, or when a zombie gets past all the plants and reaches the other side of the map. For the spawning of the waves, we plan to use two lists or a similar data structure to link spawnables and their spawn times. We also want to include a catalogue of descriptions for the different types of plants and zombies. We can make our own version of the PVZ music.
+
 (CHANGE THIS!!!!!)
 
-A description of your technical design. This should include: 
-   
+A description of your technical design. This should include:
+
 How you will be using the topics covered in class in the project.
-     
+
 # Project Design
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
 
 
-    
+
 # Intended pacing:
 
 How you are breaking down the project and who is responsible for which parts.
 
 A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
-
