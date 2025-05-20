@@ -42,7 +42,7 @@ How you are breaking down the project and who is responsible for which parts.
 A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
 
 ## Phase 1: one day
-Zombie and Plant classes
+- [ ] Zombie and Plant classes
 Pea Class
 Lists to store plants and zombies
 
