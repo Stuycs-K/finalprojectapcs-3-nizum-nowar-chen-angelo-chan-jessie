@@ -42,23 +42,24 @@ How you are breaking down the project and who is responsible for which parts.
 A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
 
 ## Phase 1: one day
-- [ ] Zombie and Plant classes
-Pea Class
-Lists to store plants and zombies
+- [ ] Zombie class
+- [ ] Abstract Plant class
+- [ ] Pea Class
+- [ ] Lists to store plants and zombies
 
 ## Phase 2: one day
-background + lawn placement for first level
-map is a 2D array
-position method that returns coordinates of Plants/Zombies given an objects
+- [ ] Import image background + lawn placement for first level
+- [ ] Create 2D array for plant positions
+- [ ] Position method that returns coordinates of Plants/Zombies given an object's place in the array
 
-## Phase 3: one or two days
-figure out tick and spawn methods
-learn about frame rates and movement/draw from past labs
+## Phase 3: two days
+- [ ] Figure out tick and spawn methods, create list of spawnables and spawn times
+- [ ] Learn about frame rates and movement/draw from past labs
 
 ## Phase 4: one or two days
-focus on interactions between Peas, PeaShooter and basic zombie
-AttackMethod() for both
+- [ ] Focus on interactions between Peas, PeaShooter and  BasicZombie
+- [ ] AttackMethod(), inflicting damage for both
 
 ## Phase 5: one day
-work on addSun() and connect it to frame rates
-they should spawn in regular intervals
+- [ ] work on addSun() and connect it to frame rates
+- [ ] they should spawn in regular intervals
