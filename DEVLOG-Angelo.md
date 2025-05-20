@@ -4,7 +4,5 @@ This document must be updated daily every time you finish a work session.
 
 ## Angelo Chen
 
-### 2024-01-02 - Brief description
-Expanded description including how much time was spent on task.
-
-### 2024-01-03 - Brief description
+### 2025-05-20 UML Diagram
+ I outlined a basic UML diagram with abstract class plant, with subclasses peashooter and sunflower. Also a class zombie, with subclasses buckethead and newspaper.
