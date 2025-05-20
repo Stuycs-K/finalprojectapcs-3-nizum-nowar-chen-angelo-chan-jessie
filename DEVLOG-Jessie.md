@@ -2,9 +2,11 @@
 
 This document must be updated daily every time you finish a work session.
 
-## Jesse Chan
+## Jessie Chan
 
-### 2024-01-02 - Brief description
-Expanded description including how much time was spent on task.
+### 2025-05-19 - Brief description
+Used the interactive website to learn about branching.
+Working on Prototype with others.
 
-### 2024-01-03 - Brief description
+### 2025-05-20
+Created new branch. 
