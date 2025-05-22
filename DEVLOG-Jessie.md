@@ -2,9 +2,10 @@
 
 This document must be updated daily every time you finish a work session.
 
-## Jesse Chan
+## Jessie Chan
 
-### 2024-01-02 - Brief description
-Expanded description including how much time was spent on task.
+### 2025-5-19 
+Worked with Nowar to develop prototype.
 
-### 2024-01-03 - Brief description
+### 2025-5-20
+Continued working on prototype.
