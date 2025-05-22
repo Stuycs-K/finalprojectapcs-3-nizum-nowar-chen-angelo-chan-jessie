@@ -29,7 +29,7 @@ We want to incorporate a basic rendition of the game with waves of zombies with 
 
 # Project Design
 
-UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
+The Plant class will be an abstract class. PeaShooter and Sunflower will extend this class. Sun will probably be a static variable in the game class (not yet reflected in the UML). Sun and Peas will likely be PVectors that change the variables of classes when they come into contact. The Zombie class will be used to instantiate a standard zombie, with subclasses of special types of zombies.
 
 ![Alt text](BasicUML.png?raw=true "Title" )
 
