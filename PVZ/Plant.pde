@@ -1,4 +1,4 @@
-public class Plant{
+public abstract class Plant{
   private int cost;
   private int hp;
   private int refreshRate;
