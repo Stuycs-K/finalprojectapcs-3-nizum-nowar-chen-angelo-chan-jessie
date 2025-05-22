@@ -1,9 +1,9 @@
 
 # Technical Details:
 
-Period 3
-Nowar Nizum, Angelo Chen, Jessie Chan
-Team Name:
+Period 3  
+Nowar Nizum, Angelo Chen, Jessie Chan  
+Team Name:  
 ## Plants vs Crumbies (cause we ate 💅💅😋)
 
 ## Project Description
@@ -12,27 +12,26 @@ We want to incorporate a basic rendition of the game with waves of zombies with 
 ## Expanded Description
 
 ### MVP
-1.) The background will imported directly from the game. There should be at least one level, and a custom lawn will be generated.
-2.) We will have an abstract class called Plants. We need to have at least two Plant objects: PeaShooter and SunFlower. Each plant will have a health bar, damage, a location, and Peas if its a PeaShooter as instance variables. Methods include attack() and addSun().
-3.) We will have a Pea class, which will be used as objects by the PeaShooter. Sun will probably be a static variable.
-3.) We will have a class called Zombies. Zombies will have a health bar, damage, and a location as instance variables. Their methods are attack.
-4.) Plant and Zombies will be stored in ArrayLists. When they spawn or are created, they are added, and once they are killed (after health bar runs out), they are removed from the list.
-5.) In Processing, we need a draw and tick function that would move the zombies accordingly and implement the feature of each plant.
+1. The background will imported directly from the game. There should be at least one level, and a custom lawn will be generated.  
+2. We will have an abstract class called Plants. We need to have at least two Plant objects: PeaShooter and SunFlower. Each plant will have a health bar, damage, a location, and Peas if its a PeaShooter as instance variables. Methods include attack() and addSun().  
+3. We will have a Pea class, which will be used as objects by the PeaShooter. Sun will probably be a static variable.  
+4. We will have a class called Zombies. Zombies will have a health bar, damage, and a location as instance variables. Their methods are attack.  
+5. Plant and Zombies will be stored in ArrayLists. When they spawn or are created, they are added, and once they are killed (after health bar runs out), they are removed from the list.  
+6. In Processing, we need a draw and tick function that would move the zombies accordingly and implement the feature of each plant.  
 
-How you will be using the topics covered in class in the project.
 
 ## Potential Features
-1.) zombies with different abilities
-2.) digging up plants with a shovel
-3.) behavioral change of zombies at specific health levels
-4.) multiple levels
-5.) GUI for unlocked plants/zombies
+- [ ] zombies with different abilities  
+- [ ] digging up plants with a shovel  
+- [ ] behavioral change of zombies at specific health levels  
+- [ ] multiple levels  
+- [ ] GUI for unlocked plants/zombies  
 
 # Project Design
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
 
-![Alt text](BasicUML.png?raw=true "Title" ) 
+![Alt text](BasicUML.png?raw=true "Title" )
 
 
 
@@ -44,25 +43,42 @@ How you are breaking down the project and who is responsible for which parts.
 
 A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
 
-## Phase 1: one day
+## Phase 1: one day (by May 23)
 - [ ] Zombie class
 - [ ] Abstract Plant class
 - [ ] Pea Class
 - [ ] Lists to store plants and zombies
 
-## Phase 2: one day
+- There are three team members and three main classes to make: PeaShooter, SunFlower, Zombie  
+- ideally each member will be in charge of one class  
+- The member in charge of PeaShooter is also responsible for the Pea Class
+- The abstract Plant class and should be made together, and the lists should be made by whoever finishes first
+
+## Phase 2: one day (by May 26)
 - [ ] Import image background + lawn placement for first level
 - [ ] Create 2D array for plant positions
 - [ ] Position method that returns coordinates of Plants/Zombies given an object's place in the array
 
-## Phase 3: two days
+- Three tasks split between three members (will decide who day of)
+
+## Phase 3: two days (by May 28)
 - [ ] Figure out tick and spawn methods, create list of spawnables and spawn times
 - [ ] Learn about frame rates and movement/draw from past labs
 
-## Phase 4: one or two days
-- [ ] Focus on interactions between Peas, PeaShooter and  BasicZombie
+- We will work as a group to understand how the frame rates and the methods work
+- One member in charge of tick method, one member in charge of spawn methods, one member in charge of spawnables list and spawn times
+
+## Phase 4: one or two days (by May 30)
+- [ ] Focus on interactions between Peas, PeaShooter and BasicZombie
 - [ ] AttackMethod(), inflicting damage for both
 
-## Phase 5: one day
+- one member in charge of adding Pea object to PeaShooter and creating the projectile motion
+- one member in charge of AttackMethod() for PeaShooter
+- one member in charge of AttackMethod() for Zombie
+
+## Phase 5: one day (by June 2)
 - [ ] work on addSun() and connect it to frame rates
 - [ ] they should spawn in regular intervals
+
+- one member in charge of addSun() and frame rate
+- all members responsible for ensuring all objects moving correctly with the frame rates
