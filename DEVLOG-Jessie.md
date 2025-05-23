@@ -10,3 +10,4 @@ Working on Prototype with Nowar.
 
 ### 2025-05-20
 Created new branch. Continued working on prototype.
+>>>>>>> Jessie
