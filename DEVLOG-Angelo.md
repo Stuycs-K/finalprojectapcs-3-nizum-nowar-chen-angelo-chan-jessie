@@ -9,4 +9,5 @@ This document must be updated daily every time you finish a work session.
 
 ### 2025-05-21 AP + Sick at home :(
 
-### 2025-5-21 (In class)
+### 2025-5-21 (In class) Updated UML
+ I updated the UML to reflect the game/main class

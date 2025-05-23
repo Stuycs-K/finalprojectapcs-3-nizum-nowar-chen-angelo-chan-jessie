@@ -31,7 +31,7 @@ We want to incorporate a basic rendition of the game with waves of zombies with 
 
 The Plant class will be an abstract class. PeaShooter and Sunflower will extend this class. Sun will probably be a static variable in the game class (not yet reflected in the UML). Sun and Peas will likely be PVectors that change the variables of classes when they come into contact. The Zombie class will be used to instantiate a standard zombie, with subclasses of special types of zombies.
 
-![Alt text](BasicUML.png?raw=true "Title" )
+![Alt text](Updated_UML.png?raw=true "Title" )
 
 
 
@@ -44,16 +44,13 @@ How you are breaking down the project and who is responsible for which parts.
 A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
 
 ## Phase 1: one day (by May 23)
-- [X] Zombie class
+- [ ] Zombie class
 - [ ] Abstract Plant class
 - [ ] Pea Class
-- [X] Lists to store plants and zombies
+- [ ] Lists to store plants and zombies
 
 - There are three team members and three main classes to make: PeaShooter, SunFlower, Zombie  
 - ideally each member will be in charge of one class  
-- - Jessie: Sunflower
-- - Angelo: PeaShooter
-- - Nowar: Zombie 
 - The member in charge of PeaShooter is also responsible for the Pea Class
 - The abstract Plant class and should be made together, and the lists should be made by whoever finishes first
 
