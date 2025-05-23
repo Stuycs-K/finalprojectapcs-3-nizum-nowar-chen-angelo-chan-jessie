@@ -1,8 +1,10 @@
 ArrayList<Zombie>Zombies;
+ArrayList<Plant>Plants;
 
 void setup(){
   size(1000,620);
   Zombies = new ArrayList<Zombie>();
+  Plants = new ArrayList<Plant>();
   Zombies.add(new Zombie(920, 310));
 }
 

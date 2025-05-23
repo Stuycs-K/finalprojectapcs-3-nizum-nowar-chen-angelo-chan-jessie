@@ -12,6 +12,10 @@ public class Zombie{
         damage = 5;
     }
     
+    public int getHP(){
+      return HP;
+    }
+    
     void display(){
        fill(c);
        stroke(c);
