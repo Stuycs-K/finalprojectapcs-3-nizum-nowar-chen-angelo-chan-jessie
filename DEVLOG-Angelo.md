@@ -13,4 +13,4 @@ This document must be updated daily every time you finish a work session.
  I updated the UML to reflect the game/main class.
 
 ### 2025-5-21 (At Home) Further updated Updated UML
- Added more to the UML structure, including a Pea and Sun class, as well as associated arrays. 
+ Added more to the UML structure, including a Pea and Sun class, as well as associated arrays. I also updated the plant class and made a barebones peashooter class. 
