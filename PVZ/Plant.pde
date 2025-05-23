@@ -2,12 +2,12 @@ public abstract class Plant{
   private int cost;
   private int hp;
   private int rechargeTime;
-  private PVector row;
-  private PVector col;
+  private PVector y;
+  private PVector x;
 
-  public Plant(PVector rows, PVector cols, int HPs, int rechargeTimes, int costs){
-    row = rows;
-    col = cols;
+  public Plant(PVector x, PVector y, int HPs, int rechargeTimes, int costs){
+    x = x;
+    y = y;
     hp = HPs;
     rechargeTime = rechargeTimes;
     cost = costs; 
