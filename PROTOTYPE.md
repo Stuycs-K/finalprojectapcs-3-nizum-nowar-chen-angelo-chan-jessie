@@ -44,13 +44,16 @@ How you are breaking down the project and who is responsible for which parts.
 A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
 
 ## Phase 1: one day (by May 23)
-- [ ] Zombie class
+- [X] Zombie class
 - [ ] Abstract Plant class
 - [ ] Pea Class
-- [ ] Lists to store plants and zombies
+- [X] Lists to store plants and zombies
 
 - There are three team members and three main classes to make: PeaShooter, SunFlower, Zombie  
 - ideally each member will be in charge of one class  
+- - Jessie: Sunflower
+- - Angelo: PeaShooter
+- - Nowar: Zombie 
 - The member in charge of PeaShooter is also responsible for the Pea Class
 - The abstract Plant class and should be made together, and the lists should be made by whoever finishes first
 
