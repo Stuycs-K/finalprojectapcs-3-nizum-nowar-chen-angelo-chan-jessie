@@ -1,5 +1,6 @@
 public class PeaShooter extends Plant{
   private int damage;
+  private ArrayList<Pea> Peas; 
   
   
   public PeaShooter(PVector coordinate, int HPs, int rechargeTimes, int costs, int damages){
@@ -16,9 +17,12 @@ public class PeaShooter extends Plant{
   
   
   }
+
   
   
-  void shoot(){
+  void shoot(Pea p){
+    Peas.add(p);
+    
   }
 
 
