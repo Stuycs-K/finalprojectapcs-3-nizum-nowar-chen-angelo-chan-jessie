@@ -22,6 +22,10 @@ public class PeaShooter extends Plant{
   
   void shoot(Pea p){
     Peas.add(p);
+    for(Pea each: Peas){
+      each.moveX();
+    
+    }
     
   }
 

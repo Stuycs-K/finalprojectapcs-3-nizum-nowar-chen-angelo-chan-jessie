@@ -1,4 +1,4 @@
-public abstract class Plant{
+public abstract class Plant extends Displayables{
   private int cost;
   private int hp;
   private int rechargeTime;
