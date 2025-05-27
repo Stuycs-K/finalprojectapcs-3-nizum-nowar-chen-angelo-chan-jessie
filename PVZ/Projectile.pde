@@ -1,4 +1,4 @@
-public abstract class Projectile{
+public abstract class Projectile extends Displayables{
   private PVector coordinate;
   private float dx; 
   private float dy; 
