@@ -30,12 +30,16 @@ We want to incorporate a basic rendition of the game with waves of zombies with 
 # Project Design
 
 (Old Diagrams)
-![Alt text](BasicUML.png?raw=true "Title" )
+<!-- ![Alt text](BasicUML.png?raw=true "Title" )
 ![Alt text](Updated_UML.png?raw=true "Title" )
+![Alt text](Updated_UML(1).png?raw=true "Title" )
+-->
 
 The Plant class will be an abstract class. PeaShooter and Sunflower will extend this class. Sun and Pea will be objects with only PVector fields. What they do will be determined based on if their locations are the same as a zombie (for peas) or if their positions are the same as where the mouse is clicked (for sun). Sun will be added/removed to the same array, but sunflower sun and naturally spawning sun will be differentiated with the different spawn sun functions. The only way they differ is in their movement (Sunflower sun will not have movement) The Zombie class will be used to instantiate a standard zombie, with subclasses of special types of zombies.
 
-![Alt text](Updated_UML(1).png?raw=true "Title" )
+![Alt text](Updated_UML(2).png?raw=true "Title" )
+
+Map should hold interactions between objects, while the game should be the one holding user interactions. Diagram will be updated at home. Superclass for displayables.
 
 
 
@@ -48,18 +52,21 @@ How you are breaking down the project and who is responsible for which parts.
 A timeline with expected completion dates of parts of the project. (CHANGE THIS!!!!!)
 
 ## Phase 1: one day (by May 23)
-- [ ] Zombie class
+- [X] Zombie class
 - [ ] Abstract Plant class
 - [ ] Pea Class
-- [ ] Lists to store plants and zombies
+- [X] Lists to store plants and zombies
 
 - There are three team members and three main classes to make: PeaShooter, SunFlower, Zombie  
 - ideally each member will be in charge of one class  
+- - Nowar: Zombie
+- - Angelo: PeaShooter
+- - Jessie: SunFlower
 - The member in charge of PeaShooter is also responsible for the Pea Class
 - The abstract Plant class and should be made together, and the lists should be made by whoever finishes first
 
 ## Phase 2: one day (by May 26)
-- [ ] Import image background + lawn placement for first level
+- [X] Import image background + lawn placement for first level
 - [ ] Create 2D array for plant positions
 - [ ] Position method that returns coordinates of Plants/Zombies given an object's place in the array
 
