@@ -1,17 +1,16 @@
 public class Displayables{
-  int x, y;
+  PVector coordinate;
   
-  public Displayables(int x, int y){
-    this.x = x;
-    this.y = y;
+  public Displayables(PVector coordinate){
+    this.coordinate = coordinate;
   }
   
-  public int getX(){
-    return x;
+  public float getX(){
+    return coordinate.x;
   }
   
-  public int getY(){
-    return y;
+  public float getY(){
+    return coordinate.y;
   }
   
 }
