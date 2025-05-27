@@ -1,12 +1,11 @@
 public abstract class Projectile{
-  private PVector x;
-  private PVector y;
+  private PVector coordinate;
   
-  public PVector getX(){
-    return x;
+  public float getX(){
+    return coordinate.x;
   }
   
-  public PVector getY(){
-    return y;
+  public float getY(){
+    return coordinate.x;
   }
 }

@@ -2,13 +2,13 @@ public class PeaShooter extends Plant{
   private int damage;
   
   
-  public PeaShooter(PVector x, PVector y, int HPs, int rechargeTimes, int costs, int damages){
-    super(x, y, HPs, rechargeTimes, costs);
+  public PeaShooter(PVector coordinate, int HPs, int rechargeTimes, int costs, int damages){
+    super(coordinate, HPs, rechargeTimes, costs);
     damage = damages; 
   }
   
-  public PeaShooter(PVector x, PVector y, int damages){
-    super(x, y, 20, 10, 100);
+  public PeaShooter(PVector coordinate, int damages){
+    super(coordinate, 20, 10, 100);
     damage = damages; 
   }
   
@@ -16,6 +16,7 @@ public class PeaShooter extends Plant{
   
   
   }
+  
   
   void shoot(){
   }

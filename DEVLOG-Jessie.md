@@ -16,4 +16,7 @@ Plant abstract class.
 
 ### 2025-05-23
 Discussed UML with Mr. K. Worked on UML diagram with Angelo. 
+
+### 2025-05-27
+Projectile class 
 >>>>>>> Jessie
