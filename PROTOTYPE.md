@@ -29,17 +29,22 @@ We want to incorporate a basic rendition of the game with waves of zombies with 
 
 # Project Design
 
-(Old Diagrams)
-<!-- ![Alt text](BasicUML.png?raw=true "Title" )
+
+<!--(Old Diagrams)
+![Alt text](BasicUML.png?raw=true "Title" )
 ![Alt text](Updated_UML.png?raw=true "Title" )
 ![Alt text](Updated_UML(1).png?raw=true "Title" )
+![Alt text](Updated_UML(2).png?raw=true "Title" )
+
 -->
 
 The Plant class will be an abstract class. PeaShooter and Sunflower will extend this class. Sun and Pea will be objects with only PVector fields. What they do will be determined based on if their locations are the same as a zombie (for peas) or if their positions are the same as where the mouse is clicked (for sun). Sun will be added/removed to the same array, but sunflower sun and naturally spawning sun will be differentiated with the different spawn sun functions. The only way they differ is in their movement (Sunflower sun will not have movement) The Zombie class will be used to instantiate a standard zombie, with subclasses of special types of zombies.
 
-![Alt text](Updated_UML(2).png?raw=true "Title" )
+The Map class will account for interactions between displayable objects, such as peas and zombies. The Clickable interface will have a function isClicked. The Game class will handle user input, such as adding and removing a plant to the board.
 
-Map should hold interactions between objects, while the game should be the one holding user interactions. Diagram will be updated at home. Superclass for displayables.
+![Alt text](Updated_UML(2)(1).png?raw=true "Title" )
+
+
 
 
 
