@@ -6,7 +6,7 @@ void setup(){
   size(1347,720);
   Zombies = new ArrayList<Zombie>();
   Plants = new ArrayList<Plant>();
-  Zombies.add(new Zombie(920, 310));
+  Zombies.add(new Zombie(new PVector(920, 310)));
   Plants.add(new PeaShooter(new PVector(620, 310), 20));
   
   bg = loadImage("PVZBackground.jpg");

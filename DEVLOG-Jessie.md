@@ -18,5 +18,6 @@ Plant abstract class.
 Discussed UML with Mr. K. Worked on UML diagram with Angelo. 
 
 ### 2025-05-27
-Projectile class 
+Projectile class. Changed PVector coordinate system. Got plant to display
+ 
 >>>>>>> Jessie
