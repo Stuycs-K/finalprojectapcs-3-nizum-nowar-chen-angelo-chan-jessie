@@ -1,12 +1,11 @@
-public class Zombie{
+public class Zombie extends Displayables{
     int HP;
     int damage;
     float x, y;
     color c;
     
-    public Zombie(int xCoord, int yCoord){
-        x = xCoord;
-        y = yCoord;
+    public Zombie(PVector coord){
+        super(coord);
         c = color (50,78,90);
         HP = 10;
         damage = 5;
