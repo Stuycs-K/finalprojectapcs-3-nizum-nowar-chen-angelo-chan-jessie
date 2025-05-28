@@ -4,7 +4,9 @@ public class Pea extends Projectile{
     super(position, 5, 0); 
  
   }
-  
+   void moveX(){
+    coordinate.x+=3;
+  }
   
   
   

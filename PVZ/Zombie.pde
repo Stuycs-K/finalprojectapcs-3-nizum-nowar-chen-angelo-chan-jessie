@@ -21,11 +21,9 @@ public class Zombie extends Displayables{
     }
     
     void move(){
-<<<<<<< HEAD
+
       coordinate.x -= 3;
-=======
-      x -= 0.3;
->>>>>>> Angelo
+
     }
     
     
