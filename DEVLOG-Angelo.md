@@ -23,4 +23,5 @@ This document must be updated daily every time you finish a work session.
  Added to UML, updated Map and Displayable classes. Also added clickable interface. No more UML stuff hopefully that thing hurts my head.
 
  (At Home)
- Added the Pea class and updated displayable and projectile. Tried to test the pea class, but resulted in a null pointer exception, will address with group mates. 
+ Added the Pea class and updated displayable and projectile. Tried to test the pea class, but resulted in a null pointer exception, will address with group mates.
+ Update: Fixed null pointer, but the pea will not move. 
