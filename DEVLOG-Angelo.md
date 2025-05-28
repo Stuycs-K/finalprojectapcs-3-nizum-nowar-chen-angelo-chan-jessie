@@ -24,4 +24,10 @@ This document must be updated daily every time you finish a work session.
 
  (At Home)
  Added the Pea class and updated displayable and projectile. Tried to test the pea class, but resulted in a null pointer exception, will address with group mates.
- Update: Fixed null pointer, but the pea will not move. 
+ Update: Fixed null pointer, but the pea will not move.
+
+### 2025-5-28 Updated Pea Class
+ With Nowar, made the pea class move, but the plant also moves along with it.
+
+ (At Home)
+ Made displayable an interface, however, the pea is moving along with the peashooter. The moving plant was because the plant had the same vector as the pea, when they should be independent. The sun class is moving, and sunbank updates when it is clicked, but the sun does not go away, concurrent modification error. 
