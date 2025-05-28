@@ -2,6 +2,7 @@ ArrayList<Zombie>Zombies;
 ArrayList<PeaShooter>Plants;
 ArrayList<Sun> Suns;
 Pea pea;
+Sun sun;
 PImage bg;
 int sunBank = 0;
 
@@ -15,10 +16,17 @@ void setup(){
   bg = loadImage("PVZBackground.jpg");
   
   pea = new Pea(new PVector(420,310));
+  sun = new Sun(new PVector(100,100), false);
+  Suns = new ArrayList<Sun>();
+  Suns.add(sun);
 }
 
 void draw(){
    background(bg);
+   fill(225);
+   rect(0,0,50,30);
+   fill(0);
+   text(sunBank,20,20);
 
 
 
@@ -31,4 +39,17 @@ void draw(){
        p.display();
        p.shoot(pea);
    }
+    for (Sun s : Suns){
+       s.display();
+       s.moveY();
+      
+    }
+}
+
+void mouseClicked(){
+  for (Sun s : Suns){
+       if(mouseX == s.
+      
+    }
+  sunBank+=50;
 }

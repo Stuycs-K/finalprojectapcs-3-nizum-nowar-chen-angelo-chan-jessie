@@ -16,6 +16,9 @@ public class Sun implements Displayables{
     }
   
   }
+    public PVector getCoordinate(){
+    return coordinate;
+  }
     void display(){
     fill(200);
     stroke(0);
@@ -24,4 +27,6 @@ public class Sun implements Displayables{
   void moveY(){
     coordinate.y += dy;
   }
+  
+
 }
