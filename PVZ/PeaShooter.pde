@@ -1,4 +1,4 @@
-public class PeaShooter extends Plant{
+public class PeaShooter extends Plant implements Displayables{
   private int damage;
   private ArrayList<Pea> peas; 
   
@@ -22,6 +22,7 @@ public class PeaShooter extends Plant{
   
   
   }
+  
 
   
   

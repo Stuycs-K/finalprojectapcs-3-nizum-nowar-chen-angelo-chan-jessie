@@ -1,10 +1,13 @@
-public class Zombie extends Displayables{
+public class Zombie implements Displayables{
     int HP;
     int damage;
     color c;
+    private PVector coordinate;
+
     
     public Zombie(PVector coord){
-        super(coord, 0 , -3);
+        coordinate = coord;
+        
         c = color (50,78,90);
         HP = 10;
         damage = 5;
