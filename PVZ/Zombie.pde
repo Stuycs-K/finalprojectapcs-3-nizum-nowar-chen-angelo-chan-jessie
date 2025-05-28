@@ -1,11 +1,10 @@
 public class Zombie extends Displayables{
     int HP;
     int damage;
-    float x, y;
     color c;
     
     public Zombie(PVector coord){
-        super(coord);
+        super(coord, 0 , -3);
         c = color (50,78,90);
         HP = 10;
         damage = 5;
@@ -22,7 +21,9 @@ public class Zombie extends Displayables{
     }
     
     void move(){
-      x -= 3;
+
+      coordinate.x -= 3;
+
     }
     
     

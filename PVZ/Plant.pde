@@ -1,4 +1,4 @@
-public abstract class Plant{
+public abstract class Plant extends Displayables{
   private int cost;
   private int hp;
   private int rechargeTime;
@@ -25,6 +25,6 @@ public abstract class Plant{
   void display(){
        fill(c);
        stroke(c);
-       circle(coordinate.x,coordinate.y,100);
+       circle(coordinate.x,coordinate.y,75);
     }
 }
