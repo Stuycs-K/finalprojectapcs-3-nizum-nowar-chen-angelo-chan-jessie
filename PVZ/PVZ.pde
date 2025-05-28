@@ -16,7 +16,7 @@ void draw(){
    background(bg);
 
    for (Zombie zomb : Zombies){
-       zomb.move();
+       //zomb.move();
        zomb.display();
    }
    

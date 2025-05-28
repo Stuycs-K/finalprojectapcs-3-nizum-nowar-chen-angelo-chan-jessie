@@ -18,7 +18,7 @@ public class Zombie extends Displayables{
     void display(){
        fill(c);
        stroke(c);
-       circle(x,y,100);
+       circle(coordinate.x,coordinate.y,100);
     }
     
     void move(){
