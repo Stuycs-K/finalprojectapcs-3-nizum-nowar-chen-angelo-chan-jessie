@@ -14,6 +14,12 @@ void setup(){
 
 void draw(){
    background(bg);
+   if(frameCount % 10 == 0){
+     Pea v = new Pea(new PVector(620,310));
+     PeaShooter x = new PeaShooter(new PVector(620, 310), 20);
+     x.shoot(v);
+     
+   }
 
    for (Zombie zomb : Zombies){
        zomb.move();
