@@ -1,12 +1,8 @@
-public abstract class Projectile{
-  private PVector x;
-  private PVector y;
+public abstract class Projectile extends Displayables{
+
   
-  public PVector getX(){
-    return x;
+  public Projectile(PVector coord, float dx, float dy){
+    super(coord, dx, dy);
   }
-  
-  public PVector getY(){
-    return y;
-  }
+
 }

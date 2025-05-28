@@ -1,13 +1,12 @@
-public abstract class Plant{
+public abstract class Plant extends Displayables{
   private int cost;
   private int hp;
   private int rechargeTime;
-  private PVector y;
-  private PVector x;
+  private PVector coordinate;
+  color c = color(#68EA32);
 
-  public Plant(PVector x, PVector y, int HPs, int rechargeTimes, int costs){
-    x = x;
-    y = y;
+  public Plant(PVector coord, int HPs, int rechargeTimes, int costs){
+    coordinate = coord;
     hp = HPs;
     rechargeTime = rechargeTimes;
     cost = costs; 
@@ -23,4 +22,9 @@ public abstract class Plant{
     return cost;
   }
 
+  void display(){
+       fill(c);
+       stroke(c);
+       circle(coordinate.x,coordinate.y,75);
+    }
 }
