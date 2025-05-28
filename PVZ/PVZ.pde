@@ -1,15 +1,18 @@
 ArrayList<Zombie>Zombies;
-ArrayList<Plant>Plants;
+ArrayList<PeaShooter>Plants;
+Pea pea;
 PImage bg;
 
 void setup(){
-  size(1347,720);
+  size(1078,720);
   Zombies = new ArrayList<Zombie>();
-  Plants = new ArrayList<Plant>();
+  Plants = new ArrayList<PeaShooter>();
   Zombies.add(new Zombie(new PVector(920, 310)));
   Plants.add(new PeaShooter(new PVector(420, 310), 20));
   
   bg = loadImage("PVZBackground.jpg");
+  
+  pea = new Pea(Plants.get(0).getCoordinate());
 }
 
 void draw(){
@@ -29,7 +32,8 @@ void draw(){
        zomb.display();
    }
    
-   for (Plant p : Plants){
+   for (PeaShooter p : Plants){
        p.display();
+       p.shoot(pea);
    }
 }
