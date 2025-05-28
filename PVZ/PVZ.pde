@@ -48,8 +48,13 @@ void draw(){
 
 void mouseClicked(){
   for (Sun s : Suns){
-       if(mouseX == s.
+       if(Math.abs(mouseX - (s.getCoordinate()).x) <= 25 && Math.abs(mouseY - (s.getCoordinate()).y) <= 25){
+          sunBank+=50;
+          
+          //Suns.remove(s);
+       }
+       
       
     }
-  sunBank+=50;
+ 
 }
