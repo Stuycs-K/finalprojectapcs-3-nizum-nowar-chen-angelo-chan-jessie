@@ -1,12 +1,12 @@
 public class PeaShooter extends Plant{
   private int damage;
-  private ArrayList<Pea> Peas; 
+  private ArrayList<Pea> peas; 
   
   
   public PeaShooter(PVector coordinate, int HPs, int rechargeTimes, int costs, int damages){
     super(coordinate, HPs, rechargeTimes, costs);
     damage = damages; 
-    Peas = new ArrayList<Pea>();
+    peas = new ArrayList<Pea>();
   }
   
   public PeaShooter(PVector coordinate, int damages){
@@ -15,6 +15,7 @@ public class PeaShooter extends Plant{
     //Costs: 100
     super(coordinate, 20, 10, 100);
     damage = damages; 
+    peas = new ArrayList<Pea>();
   }
   
   void special(){
@@ -25,8 +26,8 @@ public class PeaShooter extends Plant{
   
   
   void shoot(Pea p){
-    Peas.add(p);
-    for(Pea each: Peas){
+    peas.add(p);
+    for(Pea each: peas){
       each.display();
       each.moveX();
     

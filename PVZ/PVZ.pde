@@ -14,12 +14,15 @@ void setup(){
 
 void draw(){
    background(bg);
-   if(frameCount % 10 == 0){
-     Pea v = new Pea(new PVector(620,310));
-     PeaShooter x = new PeaShooter(new PVector(620, 310), 20);
-     x.shoot(v);
+   //if(frameCount % 10 == 0){
+     Pea v = new Pea(new PVector(300,310));
+     //PeaShooter x = new PeaShooter(new PVector(620, 310), 20);
+     //x.shoot(v);'
+     v.moveX();
+     v.display();
      
-   }
+     
+   //}
 
    for (Zombie zomb : Zombies){
        zomb.move();
