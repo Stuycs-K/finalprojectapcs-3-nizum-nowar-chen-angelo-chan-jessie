@@ -21,6 +21,10 @@ public abstract class Plant extends Displayables{
   public int getCost(){
     return cost;
   }
+  
+  public PVector getCoordinate(){
+    return coordinate;
+  }
 
   void display(){
        fill(c);
