@@ -25,7 +25,7 @@ void draw(){
    //}
 
    for (Zombie zomb : Zombies){
-       zomb.move();
+       //zomb.move();
        zomb.display();
    }
    
