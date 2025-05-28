@@ -25,6 +25,6 @@ public abstract class Plant{
   void display(){
        fill(c);
        stroke(c);
-       circle(coordinate.x,coordinate.y,100);
+       circle(coordinate.x,coordinate.y,75);
     }
 }
