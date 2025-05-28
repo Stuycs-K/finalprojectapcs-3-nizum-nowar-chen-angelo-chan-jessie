@@ -27,4 +27,7 @@ This document must be updated daily every time you finish a work session.
  Update: Fixed null pointer, but the pea will not move.
 
 ### 2025-5-28 Updated Pea Class
- With Nowar, made the pea class move, but the plant also moves along with it. 
+ With Nowar, made the pea class move, but the plant also moves along with it.
+
+ (At Home)
+ Made displayable an interface, however, the pea is moving along with the peashooter. The moving plant was because the plant had the same vector as the pea, when they should be independent.
