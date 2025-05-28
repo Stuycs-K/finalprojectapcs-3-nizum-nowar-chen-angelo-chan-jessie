@@ -1,7 +1,6 @@
 public class Zombie extends Displayables{
     int HP;
     int damage;
-    float x, y;
     color c;
     
     public Zombie(PVector coord){
@@ -18,11 +17,15 @@ public class Zombie extends Displayables{
     void display(){
        fill(c);
        stroke(c);
-       circle(x,y,100);
+       circle(coordinate.x,coordinate.y,100);
     }
     
     void move(){
+<<<<<<< HEAD
+      coordinate.x -= 3;
+=======
       x -= 0.3;
+>>>>>>> Angelo
     }
     
     
