@@ -23,7 +23,7 @@ public class Displayables{
   }
   
     void moveX(){
-    coordinate.x+=3;
+    coordinate.x+=dx;
   }
   
   void moveY(){
@@ -31,6 +31,6 @@ public class Displayables{
   }
   void display(){
     fill(0,0,0);
-    circle(coordinate.x, coordinate.y, 100); 
+    circle(coordinate.x, coordinate.y, 50); 
   }
 }
