@@ -12,7 +12,7 @@ void setup(){
   
   bg = loadImage("PVZBackground.jpg");
   
-  pea = new Pea(Plants.get(0).getCoordinate());
+  pea = new Pea(new PVector(420,310));
 }
 
 void draw(){

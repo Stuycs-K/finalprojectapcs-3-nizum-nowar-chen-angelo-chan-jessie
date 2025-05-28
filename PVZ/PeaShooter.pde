@@ -27,6 +27,7 @@ public class PeaShooter extends Plant implements Displayables{
   
   
   void shoot(Pea p){
+    
     peas.add(p);
     for(Pea each: peas){
       each.display();
