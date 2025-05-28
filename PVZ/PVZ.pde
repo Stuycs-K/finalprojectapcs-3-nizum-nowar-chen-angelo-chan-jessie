@@ -1,7 +1,9 @@
 ArrayList<Zombie>Zombies;
 ArrayList<PeaShooter>Plants;
+ArrayList<Sun> Suns;
 Pea pea;
 PImage bg;
+int sunBank = 0;
 
 void setup(){
   size(1078,720);
