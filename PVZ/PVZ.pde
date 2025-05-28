@@ -27,6 +27,11 @@ void draw(){
    rect(0,0,50,30);
    fill(0);
    text(sunBank,20,20);
+   
+   if(frameCount % 100 == 0){
+     sun = new Sun(new PVector((int)(Math.random()* 1078) + 100, 0), false);
+     Suns.add(sun);
+   }
 
 
 
@@ -47,11 +52,12 @@ void draw(){
 }
 
 void mouseClicked(){
-  for (Sun s : Suns){
-       if(Math.abs(mouseX - (s.getCoordinate()).x) <= 25 && Math.abs(mouseY - (s.getCoordinate()).y) <= 25){
+  for (int i = 0; i < Suns.size(); i++){
+       if(Math.abs(mouseX - ((Suns.get(i)).getCoordinate()).x) <= 25 && Math.abs(mouseY - ((Suns.get(i)).getCoordinate()).y) <= 25){
           sunBank+=50;
           
-          //Suns.remove(s);
+         Suns.remove(i);
+         i--;
        }
        
       
