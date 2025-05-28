@@ -1,4 +1,4 @@
-public class PeaShooter extends Plant{
+public class PeaShooter extends Plant implements Displayables{
   private int damage;
   private ArrayList<Pea> peas; 
   
@@ -22,10 +22,12 @@ public class PeaShooter extends Plant{
   
   
   }
+  
 
   
   
   void shoot(Pea p){
+    
     peas.add(p);
     for(Pea each: peas){
       each.display();

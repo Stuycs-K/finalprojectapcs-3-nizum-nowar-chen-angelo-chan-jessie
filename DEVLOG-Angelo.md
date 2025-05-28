@@ -24,4 +24,10 @@ This document must be updated daily every time you finish a work session.
 
  (At Home)
  Added the Pea class and updated displayable and projectile. Tried to test the pea class, but resulted in a null pointer exception, will address with group mates.
- Update: Fixed null pointer, but the pea will not move. 
+ Update: Fixed null pointer, but the pea will not move.
+
+### 2025-5-28 Updated Pea Class
+ With Nowar, made the pea class move, but the plant also moves along with it.
+
+ (At Home)
+ Made displayable an interface. Made a preliminary sun class, and also a frame ticking to spawn a sun randomly at the top of the screen that updates the sunbank when clicked. It also disappears.
