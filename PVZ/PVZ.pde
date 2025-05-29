@@ -23,7 +23,7 @@ void setup(){
   sun = new Sun(new PVector(100,100), false);
   Suns = new ArrayList<Sun>();
   Suns.add(sun);
-  map.spawnZombies(5);
+  
 }
 
 void draw(){
@@ -32,6 +32,7 @@ void draw(){
    rect(0,0,50,30);
    fill(0);
    text(sunBank,20,20);
+   map.spawnZombies(5);
    
    if(frameCount % 200 == 0){
      sun = new Sun(new PVector((int)(Math.random()* 1078) + 100, 0), false);
