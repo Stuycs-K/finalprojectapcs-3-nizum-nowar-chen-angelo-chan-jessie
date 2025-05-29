@@ -18,6 +18,8 @@ Plant abstract class.
 Discussed UML with Mr. K. Worked on UML diagram with Angelo. 
 
 ### 2025-05-27
-Projectile class. Changed PVector coordinate system. Got plant to display
- 
->>>>>>> Jessie
+Projectile class. Changed PVector coordinate system. Got plant to display and zombie to move again. 
+
+### 2025-05-28
+<img src="IMG_0723.png" alt="isolated" />
+
