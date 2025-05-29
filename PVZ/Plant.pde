@@ -7,7 +7,7 @@ public abstract class Plant implements Displayables{
 
   public Plant(PVector coord, int HPs, int rechargeTimes, int costs, Map map){
     coordinate = coord;
-    hp = HPs;
+    HP = HPs;
     rechargeTime = rechargeTimes;
     cost = costs; 
     map.isThere(this, (int)coordinate.x, (int)coordinate.y);
