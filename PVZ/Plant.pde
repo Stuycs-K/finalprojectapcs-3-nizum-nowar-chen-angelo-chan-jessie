@@ -5,11 +5,12 @@ public abstract class Plant implements Displayables{
   private PVector coordinate;
   color c = color(#68EA32);
 
-  public Plant(PVector coord, int HPs, int rechargeTimes, int costs){
+  public Plant(PVector coord, int HPs, int rechargeTimes, int costs, Map map){
     coordinate = coord;
     hp = HPs;
     rechargeTime = rechargeTimes;
     cost = costs; 
+    map.isThere(this, (int)coordinate.x, (int)coordinate.y);
   }
 
   abstract void special();

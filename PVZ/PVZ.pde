@@ -1,3 +1,5 @@
+Map map;
+
 ArrayList<Zombie>Zombies;
 ArrayList<PeaShooter>Plants;
 ArrayList<Sun> Suns;
@@ -8,10 +10,13 @@ int sunBank = 0;
 
 void setup(){
   size(1078,720);
+  
+  map = new Map();
+  
   Zombies = new ArrayList<Zombie>();
   Plants = new ArrayList<PeaShooter>();
-  Zombies.add(new Zombie(new PVector(920, 310)));
-  Plants.add(new PeaShooter(new PVector(420, 310), 20));
+  Zombies.add(new Zombie(new PVector(920, 310), map));
+  Plants.add(new PeaShooter(new PVector(420, 310), 20, map));
   
   bg = loadImage("PVZBackground.jpg");
   
