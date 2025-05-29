@@ -5,10 +5,11 @@ public abstract class Projectile implements Displayables{
   float dx;
   float dy; 
   
-  public Projectile(){
+  public Projectile(Map map){
     coordinate = new PVector(3,3);
     dx = 0;
     dy = 0;
+    map.isThere(this, (int)coordinate.x, (int)coordinate.y);
   }
   public Projectile(PVector coordinate, float dx, float dy){
     this.coordinate = coordinate;
