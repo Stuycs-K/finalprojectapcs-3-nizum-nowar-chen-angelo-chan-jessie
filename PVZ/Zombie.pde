@@ -12,7 +12,7 @@ public class Zombie implements Displayables{
         HP = 10;
         damage = 5;
         
-        map.isThere(this, (int)coordinate.x, (int)coordinate.y); 
+        map.addZombie(this); 
     }
     
     public int getHP(){
