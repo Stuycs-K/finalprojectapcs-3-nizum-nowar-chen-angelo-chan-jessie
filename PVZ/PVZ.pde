@@ -11,7 +11,8 @@ int sunBank = 0;
 void setup(){
   size(1078,720);
   
-  map = new Map();
+  pea = new Pea(new PVector(420,310));
+  map = new Map(pea);
   
   Zombies = new ArrayList<Zombie>();
   Plants = new ArrayList<PeaShooter>();
@@ -20,7 +21,6 @@ void setup(){
   
   bg = loadImage("PVZBackground.jpg");
   
-  pea = new Pea(new PVector(420,310));
   sun = new Sun(new PVector(100,100), false);
   Suns = new ArrayList<Sun>();
   Suns.add(sun);
@@ -39,16 +39,7 @@ void draw(){
    }
 
 
-
-   for (Zombie zomb : Zombies){
-       //zomb.move();
-       zomb.display();
-   }
-   
-   for (PeaShooter p : Plants){
-       p.display();
-       p.shoot(pea);
-   }
+    map.display(); 
     for (Sun s : Suns){
        s.display();
        s.moveY();
