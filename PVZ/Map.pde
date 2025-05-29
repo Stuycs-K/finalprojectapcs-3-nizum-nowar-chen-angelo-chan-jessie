@@ -1,26 +1,35 @@
 public class Map{
-  Displayables [][] map;
+  Plant [][] lawn;
+  ArrayList<Zombie>Zombies;
   Pea pea;
   
   public Map(Pea pea){
-    map = new Displayables [1078][720];
+    lawn = new Plant [5][10];
     this.pea = pea;
   }
  
-  public void isThere(Displayables obj, int x, int y){
-    map[x][y] = obj;
+  public void isThere(Plant obj, int x, int y){
+    lawn[x][y] = obj;
+  }
+ 
+  public void spawnZombies(int total){
+   Zombies = new ArrayList<Zombie>(); 
+   for (int i = 0; i < total; i++){
+     Zombies.add(new Zombie(new PVector(400,200+100*(int)(Math.random()*5))));
+     print("zombie added");
+   }
+   for (Zombie z : Zombies){
+     z.display();
+   }
   }
  
   public void display(){
-    for (int i = 0; i < map.length; i++){
-      for (int j = 0; j < map[0].length; j++){
-        if (map[i][j] != null){
-          map[i][j].display();
-          if (map[i][j] instanceof Zombie){
-            ((Zombie)map[i][j]).move();
-          }
-          if (map[i][j] instanceof PeaShooter){
-            ((PeaShooter)map[i][j]).shoot(pea);
+    for (int i = 0; i < lawn.length; i++){
+      for (int j = 0; j < lawn[0].length; j++){
+        if (lawn[i][j] != null){
+          lawn[i][j].display();
+          if (lawn[i][j] instanceof PeaShooter){
+            ((PeaShooter)lawn[i][j]).shoot(pea);
           }
         }
       }
