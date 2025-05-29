@@ -1,6 +1,6 @@
 public abstract class Plant implements Displayables{
   private int cost;
-  private int hp;
+  private int HP;
   private int rechargeTime;
   private PVector coordinate;
   color c = color(#68EA32);
@@ -16,7 +16,7 @@ public abstract class Plant implements Displayables{
   abstract void special();
 
   public int getHP(){
-    return hp;
+    return HP;
   }
 
   public int getCost(){
@@ -32,4 +32,9 @@ public abstract class Plant implements Displayables{
        stroke(c);
        circle(coordinate.x,coordinate.y,75);
     }
+    
+   public void loseHP(int x){
+     HP-= x;
+   
+   }
 }

@@ -33,7 +33,7 @@ void draw(){
    fill(0);
    text(sunBank,20,20);
    
-   if(frameCount % 100 == 0){
+   if(frameCount % 200 == 0){
      sun = new Sun(new PVector((int)(Math.random()* 1078) + 100, 0), false);
      Suns.add(sun);
    }
