@@ -5,12 +5,14 @@ public class Zombie implements Displayables{
     private PVector coordinate;
 
     
-    public Zombie(PVector coord){
+    public Zombie(PVector coord, Map map){
         coordinate = coord;
         
         c = color (50,78,90);
         HP = 10;
         damage = 5;
+        
+        map.isThere(this, (int)coordinate.x, (int)coordinate.y); 
     }
     
     public int getHP(){
