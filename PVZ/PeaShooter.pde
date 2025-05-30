@@ -7,6 +7,7 @@ public class PeaShooter extends Plant implements Displayables{
     super(coordinate, HPs, rechargeTimes, costs, map);
     damage = damages; 
     peas = new ArrayList<Pea>();
+    map.isThere(this, (int)coordinate.x, (int)coordinate.y);
   }
   
   public PeaShooter(PVector coordinate, int damages, Map map){

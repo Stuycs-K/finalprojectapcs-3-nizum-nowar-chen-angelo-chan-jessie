@@ -6,6 +6,7 @@ public class Sun implements Displayables{
 
   public Sun(PVector position, boolean Sunflower){
     coordinate = position;
+    //map.isThere(this, (int)coordinate.x, (int)coordinate.y);
     if(Sunflower){
       dy=0;
       

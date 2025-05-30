@@ -32,6 +32,7 @@ void draw(){
    rect(0,0,50,30);
    fill(0);
    text(sunBank,20,20);
+   text(mouseX + " " + mouseY, 200, 200);
    
    if(frameCount % 100 == 0){
      sun = new Sun(new PVector((int)(Math.random()* 1078) + 100, 0), false);
@@ -40,11 +41,11 @@ void draw(){
 
 
     map.display(); 
-    for (Sun s : Suns){
+    /*for (Sun s : Suns){
        s.display();
        s.moveY();
       
-    }
+    }*/
 }
 
 void mouseClicked(){

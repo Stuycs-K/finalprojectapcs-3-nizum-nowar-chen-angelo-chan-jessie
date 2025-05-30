@@ -9,7 +9,7 @@ public abstract class Projectile implements Displayables{
     coordinate = new PVector(3,3);
     dx = 0;
     dy = 0;
-    map.isThere(this, (int)coordinate.x, (int)coordinate.y);
+    map.addProjectile(this);
   }
   public Projectile(PVector coordinate, float dx, float dy){
     this.coordinate = coordinate;
