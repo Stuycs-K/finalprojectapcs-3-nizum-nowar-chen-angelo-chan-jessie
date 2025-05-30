@@ -4,12 +4,18 @@ public abstract class Projectile implements Displayables{
   PVector coordinate;
   float dx;
   float dy; 
+  int damage;
   
-  public Projectile(Map map){
+  public Projectile(Map map, int dmg){
     coordinate = new PVector(3,3);
     dx = 0;
     dy = 0;
+<<<<<<< HEAD
+    damage = dmg;
+    map.isThere(this, (int)coordinate.x, (int)coordinate.y);
+=======
     
+>>>>>>> Jessie
   }
   public Projectile(PVector coordinate, float dx, float dy){
     this.coordinate = coordinate;
@@ -37,6 +43,10 @@ public abstract class Projectile implements Displayables{
     fill(0);
     stroke(0);
     circle(coordinate.x,coordinate.y,50);
+  }
+  
+  void applyDamage(Zombie z){
+    z.loseHP(damage);
   }
 
 }
