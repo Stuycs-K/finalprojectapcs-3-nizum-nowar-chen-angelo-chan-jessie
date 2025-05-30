@@ -18,12 +18,8 @@ public abstract class Projectile implements Displayables{
     this.dy = dy; 
   }
   
-  public float getX(){
-    return coordinate.x;
-  }
-  
-  public float getY(){
-    return coordinate.y;
+  public PVector getCoordinate(){
+    return coordinate;
   }
   
     void moveX(){
