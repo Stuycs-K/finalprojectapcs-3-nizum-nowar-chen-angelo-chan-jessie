@@ -14,7 +14,7 @@ public class Sun implements Displayables{
       
     }
     else{
-       dy = 0.03;
+       dy = 1;
  
     }
   
