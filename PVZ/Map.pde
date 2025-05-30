@@ -23,11 +23,13 @@ public class Map{
   }
   
   public void displayZombies(){
-    for (Zombie z : Zombies){
-     z.display();
-     
-     z.move();
-   }
+    for (int i = 0; i < Zombies.size(); i++){
+      Zombies.get(i).display();
+    
+     if (frameCount > spawnTimes.get(i)){
+      Zombies.get(i).move();
+     }
+    }
   }
  
   public void display(){
