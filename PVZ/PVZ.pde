@@ -39,13 +39,16 @@ void draw(){
     int stop = (int)Math.random()*500 + 200;
 
     map.display(); 
-    for (Sun s : Suns){
+    for (int i = 0; i < Suns.size(); i++){
        stop = (int)Math.random()*500 + 200;
        
-       s.display();
-       if(s.getCoordinate().y < stop)
-         s.moveY();
-       
+       Suns.get(i).display();
+       if(Suns.get(i).getCoordinate().y < stop)
+         Suns.get(i).moveY();
+       if(Suns.get(i).getExpiration() > 5){
+         Suns.remove(i);
+         i--;
+       }
      
     }
     
