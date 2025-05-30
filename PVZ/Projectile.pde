@@ -11,7 +11,6 @@ public abstract class Projectile implements Displayables{
     dx = 0;
     dy = 0;
     damage = dmg;
-    map.isThere(this, (int)coordinate.x, (int)coordinate.y);
   }
   public Projectile(PVector coordinate, float dx, float dy){
     this.coordinate = coordinate;

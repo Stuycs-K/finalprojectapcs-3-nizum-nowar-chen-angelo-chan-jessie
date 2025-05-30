@@ -5,9 +5,9 @@ public abstract class Plant implements Displayables{
   private PVector coordinate;
   color c = color(#68EA32);
 
-  public Plant(PVector coord, int HPs, int rechargeTimes, int costs, Map map){
-    coordinate = coord;
+  public Plant(PVector mapPos, int HPs, int rechargeTimes, int costs, Map map){
     HP = HPs;
+    coordinate = mapPos;
     rechargeTime = rechargeTimes;
     cost = costs; 
     map.isThere(this, (int)coordinate.x, (int)coordinate.y);
@@ -30,7 +30,7 @@ public abstract class Plant implements Displayables{
   void display(){
        fill(c);
        stroke(c);
-       circle(coordinate.x,coordinate.y,75);
+       circle(200+ 100*coordinate.x,200+ 100*coordinate.y,75);
     }
     
    public void loseHP(int x){

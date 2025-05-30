@@ -5,14 +5,13 @@ public class Zombie implements Displayables{
     private PVector coordinate;
 
     
-    public Zombie(PVector coord, Map map){
+    public Zombie(PVector coord){
         coordinate = coord;
         
         c = color (50,78,90);
         HP = 10;
         damage = 5;
         
-        map.isThere(this, (int)coordinate.x, (int)coordinate.y); 
     }
     
     public int getHP(){
@@ -23,6 +22,7 @@ public class Zombie implements Displayables{
        fill(c);
        stroke(c);
        circle(coordinate.x,coordinate.y,100);
+       print("im displaying");
     }
     
     void move(){
@@ -34,6 +34,7 @@ public class Zombie implements Displayables{
     public void eat(Plant p){
       p.loseHP(damage);
     }
+    
      public void loseHP(int x){
      HP-= x;
    

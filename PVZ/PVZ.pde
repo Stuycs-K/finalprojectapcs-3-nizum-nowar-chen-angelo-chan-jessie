@@ -1,6 +1,6 @@
 Map map;
 
-ArrayList<Zombie>Zombies;
+
 ArrayList<PeaShooter>Plants;
 ArrayList<Sun> Suns;
 Pea pea;
@@ -14,16 +14,17 @@ void setup(){
   pea = new Pea(new PVector(420,310));
   map = new Map(pea);
   
-  Zombies = new ArrayList<Zombie>();
+  
   Plants = new ArrayList<PeaShooter>();
-  Zombies.add(new Zombie(new PVector(920, 310), map));
-  Plants.add(new PeaShooter(new PVector(420, 310), 20, map));
+  Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
+  Plants.add(new PeaShooter(new PVector(1, 1), 20, map));
   
   bg = loadImage("PVZBackground.jpg");
   
   sun = new Sun(new PVector(100,100), false);
   Suns = new ArrayList<Sun>();
   Suns.add(sun);
+  map.spawnZombies(5);
 }
 
 void draw(){
@@ -43,8 +44,8 @@ void draw(){
     for (Sun s : Suns){
        s.display();
        s.moveY();
-      
     }
+    map.displayZombies();
 }
 
 void mouseClicked(){
