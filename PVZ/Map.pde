@@ -41,4 +41,21 @@ public class Map{
     }
   }
   
+  public boolean hasCollided(Plant a, Zombie b){
+    return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
+  
+  }
+    public boolean hasCollided(Pea a, Zombie b){
+    return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
+  
+  }
+  public void collidePlant(Plant a, Zombie b){
+    if(frameCount % 20 == 0){
+      b.eat(a);    
+    }
+  }
+  public void collideProj(Projectile a, Zombie b){
+    a.applyDamage(b);
+  }
+  
 }
