@@ -16,7 +16,8 @@ void setup(){
   
   
   Plants = new ArrayList<PeaShooter>();
-  Plants.add(new PeaShooter(new PVector(3, 4), 20, map));
+  Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
+  Plants.add(new PeaShooter(new PVector(1, 1), 20, map));
   
   bg = loadImage("PVZBackground.jpg");
   
@@ -33,10 +34,6 @@ void draw(){
    fill(0);
    text(sunBank,20,20);
    
-<<<<<<< HEAD
-=======
-   
->>>>>>> Jessie
    if(frameCount % 200 == 0){
      sun = new Sun(new PVector((int)(Math.random()* 1078) + 100, 0), false);
      Suns.add(sun);
@@ -47,8 +44,8 @@ void draw(){
     for (Sun s : Suns){
        s.display();
        s.moveY();
-      
     }
+    map.displayZombies();
 }
 
 void mouseClicked(){

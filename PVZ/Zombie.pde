@@ -34,6 +34,7 @@ public class Zombie implements Displayables{
     public void eat(Plant p){
       p.loseHP(damage);
     }
+    
      public void loseHP(int x){
      HP-= x;
    
