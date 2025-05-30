@@ -18,7 +18,11 @@ public class Map{
      Zombies.add(new Zombie(new PVector(400,200+100*(int)(Math.random()*5))));
      print("zombie added");
    }
-   for (Zombie z : Zombies){
+   
+  }
+  
+  public void displayZombies(){
+    for (Zombie z : Zombies){
      z.display();
    }
   }
