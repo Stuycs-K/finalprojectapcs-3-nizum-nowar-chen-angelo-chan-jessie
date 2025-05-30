@@ -1,6 +1,7 @@
 public class Map{
   Plant [][] lawn;
-  ArrayList<Zombie>Zombies;
+  ArrayList<Zombie>Zombies = new ArrayList<Zombie>();
+  ArrayList<Integer>spawnTimes = new ArrayList<>();
   Pea pea;
   
   public Map(Pea pea){
@@ -13,10 +14,10 @@ public class Map{
   }
  
   public void spawnZombies(int total){
-   Zombies = new ArrayList<Zombie>(); 
    for (int i = 0; i < total; i++){
      Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
      print("zombie added");
+     spawnTimes.add(100 * (int)(Math.random() * 10 + 1));
    }
    
   }
@@ -24,6 +25,7 @@ public class Map{
   public void displayZombies(){
     for (Zombie z : Zombies){
      z.display();
+     
      z.move();
    }
   }
