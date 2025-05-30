@@ -6,6 +6,8 @@ public class Sun implements Displayables{
   
 
   public Sun(PVector position, boolean Sunflower){
+    img = loadImage("Sun.png");
+    img.resize(70,70);
     coordinate = position;
     if(Sunflower){
       dy=0;
@@ -23,9 +25,9 @@ public class Sun implements Displayables{
     void display(){
     fill(200);
     stroke(0);
-    circle(coordinate.x,coordinate.y,50);
-    //img = loadImage("Sun.png");
-    //image(img, coordinate.x, coordinate.y);
+
+    
+    image(img, coordinate.x - 35, coordinate.y - 35);
   }
   void moveY(){
     coordinate.y += dy;
