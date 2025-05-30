@@ -23,3 +23,5 @@ Projectile class. Changed PVector coordinate system. Got plant to display and zo
 ### 2025-05-28
 <img src="IMG_0723.png" alt="isolated" />
 
+### 2025-05-29
+Made transition from row/col position into x/y coordinate system better. Spawned zombies in random rows and made them move. 
