@@ -22,7 +22,7 @@ public class Zombie implements Displayables{
        fill(c);
        stroke(c);
        circle(coordinate.x,coordinate.y,100);
-       print("im displaying");
+       //print("im displaying");
     }
     
     void move(){
