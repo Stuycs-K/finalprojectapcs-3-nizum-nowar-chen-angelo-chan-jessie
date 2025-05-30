@@ -39,6 +39,9 @@ public class Zombie implements Displayables{
      HP-= x;
    
    }
+   public PVector getCoordinate(){
+     return coordinate;
+   }
     
 
 }
