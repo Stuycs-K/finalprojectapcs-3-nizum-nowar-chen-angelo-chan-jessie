@@ -10,12 +10,7 @@ public abstract class Projectile implements Displayables{
     coordinate = new PVector(3,3);
     dx = 0;
     dy = 0;
-<<<<<<< HEAD
     damage = dmg;
-    map.isThere(this, (int)coordinate.x, (int)coordinate.y);
-=======
-    
->>>>>>> Jessie
   }
   public Projectile(PVector coordinate, float dx, float dy){
     this.coordinate = coordinate;
