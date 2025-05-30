@@ -21,9 +21,7 @@ void setup(){
   
   bg = loadImage("PVZBackground.jpg");
   
-  sun = new Sun(new PVector(100,100), false);
   Suns = new ArrayList<Sun>();
-  Suns.add(sun);
   map.spawnZombies(5);
 }
 
@@ -35,16 +33,25 @@ void draw(){
    text(sunBank,20,20);
    
    if(frameCount % 200 == 0){
-     sun = new Sun(new PVector((int)(Math.random()* 1078) + 100, 0), false);
+     sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
      Suns.add(sun);
    }
-
+    int stop = (int)Math.random()*500 + 200;
 
     map.display(); 
-    for (Sun s : Suns){
-       s.display();
-       s.moveY();
+    for (int i = 0; i < Suns.size(); i++){
+       stop = (int)Math.random()*500 + 200;
+       
+       Suns.get(i).display();
+       if(Suns.get(i).getCoordinate().y < stop)
+         Suns.get(i).moveY();
+       if(Suns.get(i).getExpiration() > 5){
+         Suns.remove(i);
+         i--;
+       }
+     
     }
+    
     map.displayZombies();
 }
 

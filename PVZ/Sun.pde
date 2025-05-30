@@ -1,21 +1,28 @@
 public class Sun implements Displayables{
     
-  PVector coordinate;
+  private PVector coordinate;
   float dy; 
   PImage img;
+  private int expiration;
   
 
   public Sun(PVector position, boolean Sunflower){
+    expiration = 0;
+    img = loadImage("Sun.png");
+    img.resize(70,70);
     coordinate = position;
     if(Sunflower){
       dy=0;
       
     }
     else{
-       dy = 0.03;
+       dy = 1;
  
     }
   
+  }
+  public int getExpiration(){
+    return expiration;
   }
     public PVector getCoordinate(){
     return coordinate;
@@ -23,9 +30,11 @@ public class Sun implements Displayables{
     void display(){
     fill(200);
     stroke(0);
-    circle(coordinate.x,coordinate.y,50);
-    //img = loadImage("Sun.png");
-    //image(img, coordinate.x, coordinate.y);
+    if(frameCount % 60 == 0){
+      expiration++;
+    }
+    
+    image(img, coordinate.x - 35, coordinate.y - 35);
   }
   void moveY(){
     coordinate.y += dy;
