@@ -9,13 +9,13 @@ public class Map{
   }
  
   public void isThere(Plant obj, int x, int y){
-    lawn[x][y] = obj;
+    lawn[y][x] = obj;
   }
  
   public void spawnZombies(int total){
    Zombies = new ArrayList<Zombie>(); 
    for (int i = 0; i < total; i++){
-     Zombies.add(new Zombie(new PVector(400,200+100*(int)(Math.random()*5))));
+     Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
      print("zombie added");
    }
    
@@ -24,6 +24,7 @@ public class Map{
   public void displayZombies(){
     for (Zombie z : Zombies){
      z.display();
+     z.move();
    }
   }
  
