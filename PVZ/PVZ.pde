@@ -1,35 +1,62 @@
+Map map;
+
 ArrayList<Zombie>Zombies;
-ArrayList<Plant>Plants;
+ArrayList<PeaShooter>Plants;
+ArrayList<Sun> Suns;
+Pea pea;
+Sun sun;
 PImage bg;
+int sunBank = 0;
 
 void setup(){
-  size(1347,720);
+  size(1078,720);
+  
+  pea = new Pea(new PVector(420,310));
+  map = new Map(pea);
+  
   Zombies = new ArrayList<Zombie>();
-  Plants = new ArrayList<Plant>();
-  Zombies.add(new Zombie(new PVector(920, 310)));
-  Plants.add(new PeaShooter(new PVector(420, 310), 20));
+  Plants = new ArrayList<PeaShooter>();
+  Zombies.add(new Zombie(new PVector(920, 310), map));
+  Plants.add(new PeaShooter(new PVector(420, 310), 20, map));
   
   bg = loadImage("PVZBackground.jpg");
+  
+  sun = new Sun(new PVector(100,100), false);
+  Suns = new ArrayList<Sun>();
+  Suns.add(sun);
 }
 
 void draw(){
    background(bg);
-   //if(frameCount % 10 == 0){
-     Pea v = new Pea(new PVector(300,310));
-     //PeaShooter x = new PeaShooter(new PVector(620, 310), 20);
-     //x.shoot(v);'
-     v.moveX();
-     v.display();
-     
-     
-   //}
-
-   for (Zombie zomb : Zombies){
-       zomb.move();
-       zomb.display();
-   }
+   fill(225);
+   rect(0,0,50,30);
+   fill(0);
+   text(sunBank,20,20);
    
-   for (Plant p : Plants){
-       p.display();
+   if(frameCount % 200 == 0){
+     sun = new Sun(new PVector((int)(Math.random()* 1078) + 100, 0), false);
+     Suns.add(sun);
    }
+
+
+    map.display(); 
+    for (Sun s : Suns){
+       s.display();
+       s.moveY();
+      
+    }
+}
+
+void mouseClicked(){
+  for (int i = 0; i < Suns.size(); i++){
+       if(Math.abs(mouseX - ((Suns.get(i)).getCoordinate()).x) <= 25 && Math.abs(mouseY - ((Suns.get(i)).getCoordinate()).y) <= 25){
+          sunBank+=50;
+          
+         Suns.remove(i);
+         i--;
+       }
+       
+      
+    }
+ 
 }

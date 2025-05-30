@@ -1,13 +1,18 @@
-public class Zombie extends Displayables{
+public class Zombie implements Displayables{
     int HP;
     int damage;
     color c;
+    private PVector coordinate;
+
     
-    public Zombie(PVector coord){
-        super(coord, 0 , -3);
+    public Zombie(PVector coord, Map map){
+        coordinate = coord;
+        
         c = color (50,78,90);
         HP = 10;
         damage = 5;
+        
+        map.isThere(this, (int)coordinate.x, (int)coordinate.y); 
     }
     
     public int getHP(){
@@ -26,6 +31,13 @@ public class Zombie extends Displayables{
 
     }
     
+    public void eat(Plant p){
+      p.loseHP(damage);
+    }
+     public void loseHP(int x){
+     HP-= x;
+   
+   }
     
 
 }
