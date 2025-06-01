@@ -1,11 +1,15 @@
 public class Zombie implements Displayables{
-    int HP;
-    int damage;
-    color c;
-    private PVector coordinate;
+  int HP;
+  int damage;
+  color c;
+  PImage img;
+  private PVector coordinate;
 
 
     public Zombie(PVector coord){
+      img = loadImage("Zombie.png");
+      img.resize(80,125);
+
         coordinate = coord;
 
         c = color (50,78,90);
@@ -21,7 +25,8 @@ public class Zombie implements Displayables{
     void display(){
        fill(c);
        stroke(c);
-       circle(coordinate.x,coordinate.y,100);
+      image(img, coordinate.x-25, coordinate.y-60);
+       //circle(coordinate.x,coordinate.y,100);
        //print("im displaying");
     }
 

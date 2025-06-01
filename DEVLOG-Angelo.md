@@ -37,3 +37,6 @@ This document must be updated daily every time you finish a work session.
 
   (At Home)
   Added colliding functions to map
+
+### 2025 5-30 Updated Images
+  Added images to Sun and Zombie. Sun adds to SunBank when it is clicked, and disappears. It also falls and expires after a few seconds of landing at a certain point.
