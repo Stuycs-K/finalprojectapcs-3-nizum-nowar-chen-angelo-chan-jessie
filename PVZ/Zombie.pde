@@ -3,6 +3,7 @@ public class Zombie implements Displayables{
   int damage;
   color c;
   PImage img;
+  boolean atStart = false;
   private PVector coordinate;
 
 
@@ -31,9 +32,16 @@ public class Zombie implements Displayables{
     }
 
     void move(){
-
+  
       coordinate.x -= 3;
+      if(coordinate.x < 200){
+        atStart = true;
+      }
 
+    }
+    
+    boolean gameOver(){
+      return atStart;
     }
 
     public void eat(Plant p){
