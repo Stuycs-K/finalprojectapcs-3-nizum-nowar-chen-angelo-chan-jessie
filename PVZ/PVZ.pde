@@ -19,6 +19,9 @@ void setup(){
   Plants = new ArrayList<PeaShooter>();
   Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
   Plants.add(new PeaShooter(new PVector(1, 1), 20, map));
+  Plants.add(new PeaShooter(new PVector(1, 4), 20, map));
+  Plants.add(new PeaShooter(new PVector(3, 5), 20, map));
+  Plants.add(new PeaShooter(new PVector(2, 2), 20, map));
   
   bg = loadImage("PVZBackground.jpg");
   over = loadImage("gameOver.jpg");
@@ -33,7 +36,7 @@ void draw(){
    background(bg);
    ArrayList<Zombie> Zombs = map.getZombies();
 
-      
+      //tesetese
      fill(225);
      rect(0,0,50,30);
      fill(0);
@@ -60,6 +63,12 @@ void draw(){
       }
       
       map.displayZombies();
+      
+      //for (Plant p : Plants){
+      //  if (p.HP <= 0){
+      //    Plants.remove(p);
+      //  }
+      //} 
          for(Zombie z: Zombs){
      if(z.gameOver()){
        background(over);
