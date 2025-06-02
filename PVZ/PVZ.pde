@@ -1,7 +1,7 @@
 Map map;
 
 
-ArrayList<PeaShooter>Plants;
+ArrayList<Plant>Plants;
 ArrayList<Sun> Suns;
 Pea pea;
 Sun sun;
