@@ -4,6 +4,7 @@ public class Zombie implements Displayables{
   color c;
   PImage img;
   boolean atStart = false;
+  boolean collidePlant = false;
   private PVector coordinate;
 
 
@@ -32,8 +33,8 @@ public class Zombie implements Displayables{
     }
 
     void move(){
-  
-      coordinate.x -= 3;
+      
+      coordinate.x -= 2;
       if(coordinate.x < 200){
         atStart = true;
       }
@@ -56,5 +57,12 @@ public class Zombie implements Displayables{
      return coordinate;
    }
 
+  public float getX(){
+     return coordinate.x;
+   }
+   
+   public float getY(){
+     return coordinate.y;
+   }
 
 }
