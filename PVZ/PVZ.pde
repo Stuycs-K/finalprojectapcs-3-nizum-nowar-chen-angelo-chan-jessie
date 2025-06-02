@@ -26,16 +26,14 @@ void setup(){
   
   Suns = new ArrayList<Sun>();
   map.spawnZombies(5);
+  
 }
 
 void draw(){
+   background(bg);
    ArrayList<Zombie> Zombs = map.getZombies();
-   for(Zombie z: Zombs){
-     if(z.gameOver()){
-       background(over);
-     }
-     else{
-       background(bg);
+
+      
      fill(225);
      rect(0,0,50,30);
      fill(0);
@@ -62,10 +60,16 @@ void draw(){
       }
       
       map.displayZombies();
+         for(Zombie z: Zombs){
+     if(z.gameOver()){
+       background(over);
+       noLoop();
      }
    }
+     }
+   
      
-}
+
 
 void mouseClicked(){
   for (int i = 0; i < Suns.size(); i++){
