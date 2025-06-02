@@ -57,12 +57,12 @@ public class Zombie implements Displayables{
      return coordinate;
    }
 
-  public float getX(){
-     return coordinate.x;
+  public int getX(){
+     return (int) coordinate.x;
    }
    
-   public float getY(){
-     return coordinate.y;
+   public int getY(){
+     return (int) coordinate.y;
    }
 
 }

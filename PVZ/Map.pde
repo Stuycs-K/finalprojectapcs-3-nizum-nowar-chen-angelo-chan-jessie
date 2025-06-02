@@ -5,7 +5,7 @@ public class Map{
   Pea pea;
   
   public Map(Pea pea){
-    lawn = new Plant [5][10];
+    lawn = new Plant [6][10];
     this.pea = pea;
   }
   
@@ -22,7 +22,7 @@ public class Map{
   }
   
    public int yIntoRow(int x){
-     return (x - 200) / 100 + 1;
+     return (x - 180) / 100 + 1;
   }
   
   public void spawnZombies(int total){
@@ -38,16 +38,17 @@ public class Map{
     for (int i = 0; i < Zombies.size(); i++){
       Zombies.get(i).display();
       
-      if (lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())] != null){
-        Zombies.get(i).collidePlant = true;
-        if(frameCount % 20 == 0){
-          Zombies.get(i).eat(lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())]);    
+      if (Zombies.get(i).getX() < 800){
+        if (lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())] != null){
+          Zombies.get(i).collidePlant = true;
+          if(frameCount % 20 == 0){
+            Zombies.get(i).eat(lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())]);    
+          }
+        }
+        else{
+          Zombies.get(i).collidePlant = false;
         }
       }
-      else{
-        Zombies.get(i).collidePlant = false;
-      }
-      
       
      if (frameCount > spawnTimes.get(i) && !Zombies.get(i).collidePlant){
       Zombies.get(i).move();
@@ -59,6 +60,9 @@ public class Map{
   public void display(){
     for (int i = 0; i < lawn.length; i++){
       for (int j = 0; j < lawn[0].length; j++){
+        if (lawn[i][j] != null && lawn[i][j].HP <=0){
+          lawn[i][j] = null;
+        }
         if (lawn[i][j] != null){
           lawn[i][j].display();
           if (lawn[i][j] instanceof PeaShooter){
