@@ -17,7 +17,12 @@ public class Zombie implements Displayables{
         c = color (50,78,90);
         HP = 10;
         damage = 5;
+<<<<<<< HEAD
+        
+        map.addZombie(this); 
+=======
 
+>>>>>>> main
     }
 
     public int getHP(){
