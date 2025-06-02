@@ -64,5 +64,4 @@ public class Zombie implements Displayables{
    public int getY(){
      return (int) coordinate.y;
    }
-
 }

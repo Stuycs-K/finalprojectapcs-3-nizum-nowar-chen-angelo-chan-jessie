@@ -31,7 +31,8 @@ public abstract class Projectile implements Displayables{
   }
   
   void display(){
-    fill(0);
+    color c = color(#68EA32);
+    fill(c);
     stroke(0);
     circle(coordinate.x,coordinate.y,50);
   }
