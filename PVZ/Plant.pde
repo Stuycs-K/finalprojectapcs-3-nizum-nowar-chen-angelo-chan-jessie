@@ -30,7 +30,7 @@ public abstract class Plant implements Displayables{
   void display(){
        fill(c);
        stroke(c);
-       circle(200+ 100*coordinate.x,200+ 100*coordinate.y,75);
+       circle(200+ 80*(coordinate.x-1),200+ 100*(coordinate.y-1),75);
     }
     
    public void loseHP(int x){

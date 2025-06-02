@@ -17,6 +17,14 @@ public class Map{
     lawn[y][x] = obj;
   }
  
+  public int xIntoCol(int x){
+     return (x - 200) / 80 + 1;
+  }
+  
+   public int yIntoRow(int x){
+     return (x - 200) / 100 + 1;
+  }
+  
   public void spawnZombies(int total){
    for (int i = 0; i < total; i++){
      Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
@@ -29,9 +37,21 @@ public class Map{
   public void displayZombies(){
     for (int i = 0; i < Zombies.size(); i++){
       Zombies.get(i).display();
-    
-     if (frameCount > spawnTimes.get(i)){
+      
+      if (lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())] != null){
+        Zombies.get(i).collidePlant = true;
+        if(frameCount % 20 == 0){
+          Zombies.get(i).eat(lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())]);    
+        }
+      }
+      else{
+        Zombies.get(i).collidePlant = false;
+      }
+      
+      
+     if (frameCount > spawnTimes.get(i) && !Zombies.get(i).collidePlant){
       Zombies.get(i).move();
+      
      }
     }
   }
@@ -57,11 +77,7 @@ public class Map{
     return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
   
   }
-  public void collidePlant(Plant a, Zombie b){
-    if(frameCount % 20 == 0){
-      b.eat(a);    
-    }
-  }
+  
   public void collideProj(Projectile a, Zombie b){
     a.applyDamage(b);
   }
