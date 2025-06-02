@@ -74,11 +74,11 @@ public class Map{
   }
   
   public boolean hasCollided(Plant a, Zombie b){
-    return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
+    return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 50 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 30;
   
   }
     public boolean hasCollided(Pea a, Zombie b){
-    return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
+    return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 150 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 130;
   
   }
   

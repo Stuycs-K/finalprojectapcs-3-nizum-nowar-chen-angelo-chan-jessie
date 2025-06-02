@@ -64,6 +64,7 @@ public class PeaShooter extends Plant implements Displayables{
         
         if(pea.getCoordinate().x > width){
           peas.remove(i);
+          i--;
         }
         
         for (int j = zombies.size() - 1; j >= 0; j--){
@@ -71,8 +72,10 @@ public class PeaShooter extends Plant implements Displayables{
           if (hasCollided(pea, zomb)){
             zomb.loseHP(getDamage());
             peas.remove(i);//////////
+            i--;
             if(zomb.getHP() <= 0){
               zombies.remove(j);
+              j--;
             }
             break;
           }
