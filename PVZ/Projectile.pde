@@ -6,7 +6,6 @@ public abstract class Projectile implements Displayables{
   float dy; 
   int damage;
   
-  
   public Projectile(Map map, int dmg){
     coordinate = new PVector(3,3);
     dx = 0;

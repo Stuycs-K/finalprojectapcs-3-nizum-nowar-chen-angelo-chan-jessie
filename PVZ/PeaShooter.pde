@@ -23,7 +23,8 @@ public class PeaShooter extends Plant implements Displayables{
   
   }
   
-  public int getDamage(){
+
+ public int getDamage(){
     return damage;
   }
   
@@ -63,7 +64,7 @@ public class PeaShooter extends Plant implements Displayables{
         }
       }
   }
-    
-    
-    
-  }
+
+
+
+}
