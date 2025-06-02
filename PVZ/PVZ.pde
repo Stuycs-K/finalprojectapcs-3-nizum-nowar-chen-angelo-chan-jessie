@@ -8,6 +8,7 @@ Sun sun;
 PImage bg;
 int sunBank = 0;
 PImage over;
+boolean addPlant = false;
 
 void setup(){
   size(1078,720);
@@ -18,10 +19,10 @@ void setup(){
   
   Plants = new ArrayList<PeaShooter>();
   Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
-  Plants.add(new PeaShooter(new PVector(1, 1), 20, map));
-  Plants.add(new PeaShooter(new PVector(1, 4), 20, map));
-  Plants.add(new PeaShooter(new PVector(3, 5), 20, map));
-  Plants.add(new PeaShooter(new PVector(2, 2), 20, map));
+  //Plants.add(new PeaShooter(new PVector(1, 1), 20, map));
+  //Plants.add(new PeaShooter(new PVector(1, 4), 20, map));
+  //Plants.add(new PeaShooter(new PVector(3, 5), 20, map));
+  //Plants.add(new PeaShooter(new PVector(2, 2), 20, map));
   
   bg = loadImage("PVZBackground.jpg");
   over = loadImage("gameOver.jpg");
@@ -41,6 +42,19 @@ void draw(){
      rect(0,0,50,30);
      fill(0);
      text(sunBank,20,20);
+     
+     if (addPlant){
+       fill(242, 100, 100);
+       stroke(242, 100, 100);
+     }else{
+       fill(82, 240, 109);
+       stroke(82, 240, 109);
+     }
+     rect(50, 0, 100, 100);
+     fill(0);
+     text("addPlant: " + addPlant, 100, 50);
+     
+     text(mouseX + " " + mouseY, 200, 50);
      
      if(frameCount % 200 == 0){
        sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
@@ -75,7 +89,8 @@ void draw(){
        noLoop();
      }
    }
-     }
+    
+}
    
      
 
@@ -91,5 +106,23 @@ void mouseClicked(){
        
       
     }
+    
+   if (mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 150){
+      addPlant = true;
+    }
+    if (addPlant & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+      /*fill(242, 100, 100);
+     stroke(242, 100, 100);
+     rect(50, 0, 100, 100);*/
+      /*Plants.add(new PeaShooter(new PVector(mouseX, mouseY), 20, map));
+      addPlant = false;*/
+      int x =  ((mouseX - 200) / 80) + 1;
+      int y = ((mouseY - 150) / 100) + 1;
+      //rect(x, y, 70, 70);
+      Plants.add(new PeaShooter(new PVector(x, y), 20, map));
+      addPlant = false;
+    }
+    
+      
  
 }
