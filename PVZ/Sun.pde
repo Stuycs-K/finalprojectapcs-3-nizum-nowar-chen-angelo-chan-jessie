@@ -11,6 +11,7 @@ public class Sun implements Displayables{
     img = loadImage("Sun.png");
     img.resize(70,70);
     coordinate = position;
+    //map.isThere(this, (int)coordinate.x, (int)coordinate.y);
     if(Sunflower){
       dy=0;
       
