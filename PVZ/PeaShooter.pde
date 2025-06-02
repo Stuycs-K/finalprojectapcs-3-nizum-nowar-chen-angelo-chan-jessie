@@ -1,12 +1,15 @@
 public class PeaShooter extends Plant implements Displayables{
   private int damage;
   private ArrayList<Pea> peas; 
+  PImage image;
   
   
   public PeaShooter(PVector coordinate, int HPs, int rechargeTimes, int costs, int damages, Map map){
     super(coordinate, HPs, rechargeTimes, costs, map);
     damage = damages; 
     peas = new ArrayList<Pea>();
+    image = loadImage("Peashooter.png");
+    image.resize(75, 75);
   }
   
   public PeaShooter(PVector coordinate, int damages, Map map){
@@ -15,6 +18,8 @@ public class PeaShooter extends Plant implements Displayables{
     //Costs: 100
     super(coordinate, 20, 10, 100, map);
     damage = damages; 
+    image = loadImage("Peashooter.png");
+    image.resize(75, 75);
     peas = new ArrayList<Pea>();
   }
   
@@ -23,6 +28,13 @@ public class PeaShooter extends Plant implements Displayables{
   
   }
   
+    void display(){
+
+      image(image, (float)170+ 80*(this.getCoordinate().x-1), (float)150+ 100*(this.getCoordinate().y-1));
+       //circle(coordinate.x,coordinate.y,100);
+       //print("im displaying");
+    }
+
 
  public int getDamage(){
     return damage;
