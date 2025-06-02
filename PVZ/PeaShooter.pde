@@ -47,6 +47,7 @@ public class PeaShooter extends Plant implements Displayables{
   }
   
   void shoot(Pea p){
+      ArrayList<Zombie>zombies = map.getZombies();
       if (frameCount % 100 == 0){
         float x = 200 + 80 * (getCoordinate().x - 1);
         float y = 180 + 100 * (getCoordinate().y - 1);
@@ -54,6 +55,9 @@ public class PeaShooter extends Plant implements Displayables{
       }
       
       for (int i = peas.size() - 1; i >= 0; i--){
+        if (zombies.size() <= 0){
+          break;
+        }
         Pea pea = peas.get(i);
         pea.moveX();
         pea.display();
@@ -62,7 +66,6 @@ public class PeaShooter extends Plant implements Displayables{
           peas.remove(i);
         }
         
-        ArrayList<Zombie>zombies = map.getZombies();
         for (int j = zombies.size() - 1; j >= 0; j--){
           Zombie zomb = zombies.get(j);
           if (hasCollided(pea, zomb)){

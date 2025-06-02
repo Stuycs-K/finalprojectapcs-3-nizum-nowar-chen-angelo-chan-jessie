@@ -58,8 +58,8 @@ A timeline with expected completion dates of parts of the project. (CHANGE THIS!
 
 ## Phase 1: one day (by May 23)
 - [X] Zombie class
-- [ ] Abstract Plant class
-- [ ] Pea Class
+- [X] Abstract Plant class
+- [X] Pea Class
 - [X] Lists to store plants and zombies
 
 - There are three team members and three main classes to make: PeaShooter, SunFlower, Zombie  
@@ -72,29 +72,29 @@ A timeline with expected completion dates of parts of the project. (CHANGE THIS!
 
 ## Phase 2: one day (by May 26)
 - [X] Import image background + lawn placement for first level
-- [ ] Create 2D array for plant positions
-- [ ] Position method that returns coordinates of Plants/Zombies given an object's place in the array
+- [X] Create 2D array for plant positions
+- [X] Position method that returns coordinates of Plants/Zombies given an object's place in the array
 
 - Three tasks split between three members (will decide who day of)
 
 ## Phase 3: two days (by May 28)
-- [ ] Figure out tick and spawn methods, create list of spawnables and spawn times
-- [ ] Learn about frame rates and movement/draw from past labs
+- [X] Figure out tick and spawn methods, create list of spawnables and spawn times
+- [X] Learn about frame rates and movement/draw from past labs
 
 - We will work as a group to understand how the frame rates and the methods work
 - One member in charge of tick method, one member in charge of spawn methods, one member in charge of spawnables list and spawn times
 
 ## Phase 4: one or two days (by May 30)
-- [ ] Focus on interactions between Peas, PeaShooter and BasicZombie
-- [ ] AttackMethod(), inflicting damage for both
+- [X] Focus on interactions between Peas, PeaShooter and BasicZombie
+- [X] AttackMethod(), inflicting damage for both
 
 - one member in charge of adding Pea object to PeaShooter and creating the projectile motion
 - one member in charge of AttackMethod() for PeaShooter
 - one member in charge of AttackMethod() for Zombie
 
 ## Phase 5: one day (by June 2)
-- [ ] work on addSun() and connect it to frame rates
-- [ ] they should spawn in regular intervals
+- [X] work on addSun() and connect it to frame rates
+- [X] they should spawn in regular intervals
 
 - one member in charge of addSun() and frame rate
 - all members responsible for ensuring all objects moving correctly with the frame rates
