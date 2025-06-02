@@ -1,12 +1,13 @@
 Map map;
 
-ArrayList<Zombie>Zombies;
+
 ArrayList<PeaShooter>Plants;
 ArrayList<Sun> Suns;
 Pea pea;
 Sun sun;
 PImage bg;
 int sunBank = 0;
+PImage over;
 
 void setup(){
   size(1078,720);
@@ -14,20 +15,26 @@ void setup(){
   pea = new Pea(new PVector(420,310));
   map = new Map(pea);
   
-  Zombies = new ArrayList<Zombie>();
+  
   Plants = new ArrayList<PeaShooter>();
-  Zombies.add(new Zombie(new PVector(920, 310), map));
-  Plants.add(new PeaShooter(new PVector(420, 310), 20, map));
+  Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
+  Plants.add(new PeaShooter(new PVector(1, 1), 20, map));
+  Plants.add(new PeaShooter(new PVector(1, 4), 20, map));
+  Plants.add(new PeaShooter(new PVector(3, 5), 20, map));
+  Plants.add(new PeaShooter(new PVector(2, 2), 20, map));
   
   bg = loadImage("PVZBackground.jpg");
+  over = loadImage("gameOver.jpg");
+  over.resize(1078,720);
   
-  sun = new Sun(new PVector(100,100), false);
   Suns = new ArrayList<Sun>();
-  Suns.add(sun);
+  map.spawnZombies(5);
+  
 }
 
 void draw(){
    background(bg);
+<<<<<<< HEAD
    fill(225);
    rect(0,0,50,30);
    fill(0);
@@ -47,6 +54,53 @@ void draw(){
       
     }*/
 }
+=======
+   ArrayList<Zombie> Zombs = map.getZombies();
+
+      //tesetese
+     fill(225);
+     rect(0,0,50,30);
+     fill(0);
+     text(sunBank,20,20);
+     
+     if(frameCount % 200 == 0){
+       sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
+       Suns.add(sun);
+     }
+      int stop = (int)Math.random()*500 + 200;
+  
+      map.display(); 
+      for (int i = 0; i < Suns.size(); i++){
+         stop = (int)Math.random()*500 + 200;
+         
+         Suns.get(i).display();
+         if(Suns.get(i).getCoordinate().y < stop)
+           Suns.get(i).moveY();
+         if(Suns.get(i).getExpiration() > 5){
+           Suns.remove(i);
+           i--;
+         }
+       
+      }
+      
+      map.displayZombies();
+      
+      //for (Plant p : Plants){
+      //  if (p.HP <= 0){
+      //    Plants.remove(p);
+      //  }
+      //} 
+         for(Zombie z: Zombs){
+     if(z.gameOver()){
+       background(over);
+       noLoop();
+     }
+   }
+     }
+   
+     
+
+>>>>>>> main
 
 void mouseClicked(){
   for (int i = 0; i < Suns.size(); i++){

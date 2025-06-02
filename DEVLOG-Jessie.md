@@ -18,6 +18,16 @@ Plant abstract class.
 Discussed UML with Mr. K. Worked on UML diagram with Angelo. 
 
 ### 2025-05-27
-Projectile class. Changed PVector coordinate system. Got plant to display
- 
->>>>>>> Jessie
+Projectile class. Changed PVector coordinate system. Got plant to display and zombie to move again. 
+
+### 2025-05-28
+<img src="IMG_0723.png" alt="isolated" />
+
+### 2025-05-29
+Made transition from row/col position into x/y coordinate system better. Spawned zombies in random rows and made them move.
+
+### 2025-05-30
+Made zombies start moving at random times. 
+
+### 2025-05-31 && 06-01
+Fixed merge conflicts. Made functions to tell where Zombies are relative to 2DArray lawn. Zombies will collide now with plants and begin eating them. Plants will disppear after their HP drops to 0. 

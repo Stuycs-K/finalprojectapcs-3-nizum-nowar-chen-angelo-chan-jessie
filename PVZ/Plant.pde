@@ -1,13 +1,13 @@
 public abstract class Plant implements Displayables{
   private int cost;
-  private int hp;
+  private int HP;
   private int rechargeTime;
   private PVector coordinate;
   color c = color(#68EA32);
 
-  public Plant(PVector coord, int HPs, int rechargeTimes, int costs, Map map){
-    coordinate = coord;
-    hp = HPs;
+  public Plant(PVector mapPos, int HPs, int rechargeTimes, int costs, Map map){
+    HP = HPs;
+    coordinate = mapPos;
     rechargeTime = rechargeTimes;
     cost = costs; 
     map.isThere(this, (int)coordinate.x, (int)coordinate.y);
@@ -16,7 +16,7 @@ public abstract class Plant implements Displayables{
   abstract void special();
 
   public int getHP(){
-    return hp;
+    return HP;
   }
 
   public int getCost(){
@@ -30,6 +30,11 @@ public abstract class Plant implements Displayables{
   void display(){
        fill(c);
        stroke(c);
-       circle(coordinate.x,coordinate.y,75);
+       circle(200+ 80*(coordinate.x-1),180+ 100*(coordinate.y-1),75);
     }
+    
+   public void loseHP(int x){
+     HP-= x;
+     print("HP is " + HP);
+   }
 }

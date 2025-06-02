@@ -9,7 +9,7 @@ This document must be updated daily every time you finish a work session.
 
 ### 2025-05-21 AP + Sick at home :(
 
-### 2025-5-21
+### 2025-5-21 Updated UML
  Updated UML
  I updated the UML to reflect the game/main class.
 
@@ -31,3 +31,16 @@ This document must be updated daily every time you finish a work session.
 
  (At Home)
  Made displayable an interface. Made a preliminary sun class, and also a frame ticking to spawn a sun randomly at the top of the screen that updates the sunbank when clicked. It also disappears.
+
+ ### 2025 5-29 Added Damaging
+  Added damaging options to plants and zombies.
+
+  (At Home)
+  Added colliding functions to map
+
+### 2025 5-30 Updated Images
+  Added images to Sun and Zombie. Sun adds to SunBank when it is clicked, and disappears. It also falls and expires after a few seconds of landing at a certain point.
+
+### 2025 6-1
+  (At Home)
+  Updated game so that a lose screen appears after the zombies make it past a certain point. tried givign peashooters images, but not going well.
