@@ -16,12 +16,13 @@ void setup(){
   map = new Map(pea);
   
   
-  Plants = new ArrayList<PeaShooter>();
+  Plants = new ArrayList<Plant>();
   Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
   Plants.add(new PeaShooter(new PVector(1, 1), 20, map));
   Plants.add(new PeaShooter(new PVector(1, 4), 20, map));
   Plants.add(new PeaShooter(new PVector(3, 5), 20, map));
   Plants.add(new PeaShooter(new PVector(2, 2), 20, map));
+  Plants.add(new SunFlower(new PVector(1, 2), map));
   
   bg = loadImage("PVZBackground.jpg");
   over = loadImage("gameOver.jpg");
