@@ -1,9 +1,9 @@
 public class Pea extends Projectile{
 
   public Pea(PVector position){
-   super(position, 0.03, 0);
- 
+   super(position, 4, 0);
   }
+
   
 
 }
