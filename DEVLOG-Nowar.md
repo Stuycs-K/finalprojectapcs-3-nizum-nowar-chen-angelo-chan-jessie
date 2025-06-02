@@ -26,3 +26,10 @@ This document must be updated daily every time you finish a work session.
 ### 2025-05-28
 - Class Period (40 min): PVZ file updated to display pea and shoot it across the screen
 - Home (50 min): Map class created and implemented to display all objects
+
+## 2025-05-29
+- Class Period (40 min): arrays to sort pixels into Map class grid
+- Home (60 min): Map class grid finished
+
+## 2025-06-0
+- Home (80 min): PeaShooters shoot an infinite number of peas that collide with the zombies and inflict damage; zombies disappear once they die; peas disappear once they move off the screen; peas are now green orbs
