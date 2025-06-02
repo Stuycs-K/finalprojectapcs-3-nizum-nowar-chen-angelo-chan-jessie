@@ -15,7 +15,7 @@ public class Zombie implements Displayables{
         coordinate = coord;
 
         c = color (50,78,90);
-        HP = 10;
+        HP = 25;
         damage = 5;
 
     }
