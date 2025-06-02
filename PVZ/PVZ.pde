@@ -10,6 +10,9 @@ int sunBank = 0;
 PImage over;
 boolean addPlant = false;
 
+boolean sunWarning;
+int sunWarningTimer;
+
 void setup(){
   size(1078,720);
   
@@ -52,7 +55,6 @@ void draw(){
      }
      rect(50, 0, 100, 100);
      fill(0);
-     text("addPlant: " + addPlant, 100, 50);
      
      text(mouseX + " " + mouseY, 200, 50);
      
@@ -89,6 +91,14 @@ void draw(){
        noLoop();
      }
    }
+   
+   if(sunWarning){
+     text("NOT ENOUGH SUN", 52, 50);
+     sunWarningTimer--;
+     if (sunWarningTimer <= 0){
+       sunWarning = false;
+     }
+   }
     
 }
    
@@ -111,16 +121,18 @@ void mouseClicked(){
       addPlant = true;
     }
     if (addPlant & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
-      /*fill(242, 100, 100);
-     stroke(242, 100, 100);
-     rect(50, 0, 100, 100);*/
-      /*Plants.add(new PeaShooter(new PVector(mouseX, mouseY), 20, map));
-      addPlant = false;*/
-      int x =  ((mouseX - 200) / 80) + 1;
-      int y = ((mouseY - 150) / 100) + 1;
-      //rect(x, y, 70, 70);
-      Plants.add(new PeaShooter(new PVector(x, y), 20, map));
-      addPlant = false;
+      if (sunBank >= 100){
+        int x =  ((mouseX - 200) / 80) + 1;
+        int y = ((mouseY - 150) / 100) + 1;
+        Plants.add(new PeaShooter(new PVector(x, y), 20, map));
+        addPlant = false;
+        sunBank -= 100;
+      }
+      else{
+        sunWarning = true;
+        sunWarningTimer = 120;
+        addPlant = false;
+      }
     }
     
       
