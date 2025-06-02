@@ -6,15 +6,12 @@ public abstract class Projectile implements Displayables{
   float dy; 
   int damage;
   
+  
   public Projectile(Map map, int dmg){
     coordinate = new PVector(3,3);
     dx = 0;
     dy = 0;
-<<<<<<< HEAD
-    map.addProjectile(this);
-=======
     damage = dmg;
->>>>>>> main
   }
   public Projectile(PVector coordinate, float dx, float dy){
     this.coordinate = coordinate;
@@ -35,7 +32,8 @@ public abstract class Projectile implements Displayables{
   }
   
   void display(){
-    fill(0);
+    color c = color(#68EA32);
+    fill(c);
     stroke(0);
     circle(coordinate.x,coordinate.y,50);
   }

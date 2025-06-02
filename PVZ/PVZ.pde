@@ -34,27 +34,6 @@ void setup(){
 
 void draw(){
    background(bg);
-<<<<<<< HEAD
-   fill(225);
-   rect(0,0,50,30);
-   fill(0);
-   text(sunBank,20,20);
-   text(mouseX + " " + mouseY, 200, 200);
-   
-   if(frameCount % 100 == 0){
-     sun = new Sun(new PVector((int)(Math.random()* 1078) + 100, 0), false);
-     Suns.add(sun);
-   }
-
-
-    map.display(); 
-    /*for (Sun s : Suns){
-       s.display();
-       s.moveY();
-      
-    }*/
-}
-=======
    ArrayList<Zombie> Zombs = map.getZombies();
 
       //tesetese
@@ -100,7 +79,6 @@ void draw(){
    
      
 
->>>>>>> main
 
 void mouseClicked(){
   for (int i = 0; i < Suns.size(); i++){
