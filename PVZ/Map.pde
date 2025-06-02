@@ -8,6 +8,10 @@ public class Map{
     lawn = new Plant [5][10];
     this.pea = pea;
   }
+  
+  public ArrayList<Zombie> getZombies(){
+    return Zombies;
+   }
  
   public void isThere(Plant obj, int x, int y){
     lawn[y][x] = obj;

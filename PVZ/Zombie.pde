@@ -1,47 +1,60 @@
 public class Zombie implements Displayables{
-    int HP;
-    int damage;
-    color c;
-    private PVector coordinate;
+  int HP;
+  int damage;
+  color c;
+  PImage img;
+  boolean atStart = false;
+  private PVector coordinate;
 
-    
+
     public Zombie(PVector coord){
+      img = loadImage("Zombie.png");
+      img.resize(80,125);
+
         coordinate = coord;
-        
+
         c = color (50,78,90);
         HP = 10;
         damage = 5;
-        
+
     }
-    
+
     public int getHP(){
       return HP;
     }
-    
+
     void display(){
        fill(c);
        stroke(c);
-       circle(coordinate.x,coordinate.y,100);
+      image(img, coordinate.x-25, coordinate.y-60);
+       //circle(coordinate.x,coordinate.y,100);
        //print("im displaying");
     }
-    
-    void move(){
 
+    void move(){
+  
       coordinate.x -= 3;
+      if(coordinate.x < 200){
+        atStart = true;
+      }
 
     }
     
+    boolean gameOver(){
+      return atStart;
+    }
+
     public void eat(Plant p){
       p.loseHP(damage);
     }
-    
+
      public void loseHP(int x){
      HP-= x;
-   
+
    }
    public PVector getCoordinate(){
      return coordinate;
    }
-    
+
 
 }
