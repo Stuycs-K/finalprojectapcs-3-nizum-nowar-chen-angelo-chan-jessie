@@ -14,13 +14,13 @@ public class SunFlower extends Plant{
   void special(){}
   
   public int getX(){
-     return (int) 200+ 80*(mapPos.x-1);
+     return (int) (200+ 80*(this.getCoordinate().x-1));
    }
    
    public int getY(){
-     return (int) 180+ 100*(mapPos.y-1);
+     return (int) (180+ 100*(this.getCoordinate().y-1));
    }
-   
+   //hi can you please save
   void addSun(ArrayList<Sun> Suns){
     sun = new Sun(new PVector(this.getX(), this.getY()), true);
     Suns.add(sun);
