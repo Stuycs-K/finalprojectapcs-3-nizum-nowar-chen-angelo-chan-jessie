@@ -14,5 +14,9 @@ public class LawnMower implements Displayables{
        //circle(coordinate.x,coordinate.y,100);
        //print("im displaying");
     }
+    
+    public PVector getCoordinate(){
+     return coordinate;
+   }
   
 }
