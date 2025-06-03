@@ -39,8 +39,9 @@ void setup(){
   over.resize(1078,720);
  
   Suns = new ArrayList<Sun>();
-  map.spawnZombies(3);
+  //map.spawnZombies(3);
   Zombies = map.getZombies();
+  map.placeLawnMowers();
  
 }
 
@@ -115,6 +116,7 @@ void draw(){
       }
      
       map.displayZombies();
+      map.displayLawnMowers();
      
       //for (Plant p : Plants){
       //  if (p.HP <= 0){

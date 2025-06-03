@@ -3,6 +3,7 @@ public class Map{
   ArrayList<Zombie>Zombies = new ArrayList<Zombie>();
   ArrayList<Integer>spawnTimes = new ArrayList<>();
   Pea pea;
+  ArrayList<LawnMower>lawnMowers = new ArrayList<LawnMower>();
   
   public Map(Pea pea){
     lawn = new Plant [6][10];
@@ -48,6 +49,7 @@ public class Map{
    
   }
   
+  
   public void displayZombies(){
     for (int i = 0; i < Zombies.size(); i++){
       if(Zombies.get(i).getHP() > 0){
@@ -71,6 +73,20 @@ public class Map{
      }
    }
 
+    }
+  }
+  
+  public void placeLawnMowers(){
+      int [][] coords = new int [][] { {140, 190}, {135, 280}, {140, 385}, {130, 475}, {122, 575}};
+      for (int i = 0; i < 5; i++){
+        lawnMowers.add(new LawnMower(new PVector(coords[i][0], coords[i][1])));
+        println("new lawn mower");
+      }
+  }
+  
+  public void displayLawnMowers(){
+    for (int i = 0; i < lawnMowers.size(); i++){
+      lawnMowers.get(i).display();
     }
   }
  
