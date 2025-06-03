@@ -6,18 +6,14 @@ public abstract class Projectile implements Displayables{
   float dy; 
   int damage;
   
-  public Projectile(Map map, int dmg){
-    coordinate = new PVector(3,3);
-    dx = 0;
-    dy = 0;
-    damage = dmg;
-  }
-  public Projectile(PVector coordinate, float dx, float dy){
+  public Projectile(int dmg, PVector coordinate, float dx, float dy){
     this.coordinate = coordinate;
     this.dx = dx;
-    this.dy = dy; 
+    this.dy = dy;
+    damage = dmg;
   }
-  
+
+ 
   public PVector getCoordinate(){
     return coordinate;
   }
