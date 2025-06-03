@@ -43,7 +43,19 @@ This document must be updated daily every time you finish a work session.
 
 ### 2025 6-1 Updated lose screen
   (At Home)
+<<<<<<< HEAD
   Updated game so that a lose screen appears after the zombies make it past a certain point. tried giving peashooters images, but not going well.
 
 ### 2025 6-2 Added peashooter Image tried to debug PeaShooter
   Peashooters now display rather than circles. Tried to make it so when peas collide with zombies, they go away, but only some of them go away.
+=======
+  Updated game so that a lose screen appears after the zombies make it past a certain point. tried givign peashooters images, but not going well.
+
+  
+### 2025 6-2 Added peashooter Image tried to debug PeaShooter
+  Peashooters now display rather than circles. Tried to make it so when peas collide with zombies, they go away, but only some of them go away.
+
+  (At home) 
+  Tried to fix some stuff but faced a bunch of merge conflicts. Peas don't work anymore, not sure why. Will fix in class tomorrow. 
+
+>>>>>>> main

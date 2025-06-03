@@ -4,6 +4,7 @@ public abstract class Plant implements Displayables{
   private int rechargeTime;
   private PVector coordinate;
   color c = color(#68EA32);
+  int coolDown;
 
   public Plant(PVector mapPos, int HPs, int rechargeTimes, int costs, Map map){
     HP = HPs;
@@ -26,7 +27,11 @@ public abstract class Plant implements Displayables{
   public PVector getCoordinate(){
     return coordinate;
   }
-
+  
+  void addSun(ArrayList<PVZ.Sun> Suns){
+    //dummy function so that addSun doesnt act up in PVZ
+  }
+  
   void display(){
        fill(c);
        stroke(c);
