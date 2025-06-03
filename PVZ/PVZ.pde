@@ -23,6 +23,7 @@ void setup(){
   Plants.add(new PeaShooter(new PVector(3, 5), 20, map));
   Plants.add(new PeaShooter(new PVector(2, 2), 20, map));
   Plants.add(new SunFlower(new PVector(1, 2), map));
+  Plants.add(new SunFlower(new PVector(3, 4), map));
   
   bg = loadImage("PVZBackground.jpg");
   over = loadImage("gameOver.jpg");
@@ -46,7 +47,23 @@ void draw(){
      if(frameCount % 200 == 0){
        sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
        Suns.add(sun);
+       
      }
+     
+     for (Plant p : Plants){
+       //int coolDown = 300;
+       //boolean alternate = true;
+       if (p instanceof SunFlower){
+           if(frameCount % p.coolDown == 0){
+            p.addSun(Suns);
+           }
+          //if (alternate){
+          //  coolDown = 300 + (int) (Math.random() * 200 - 100);
+          //  alternate = false;
+          //}
+       }
+     }
+     
       int stop = (int)Math.random()*500 + 200;
   
       map.display(); 

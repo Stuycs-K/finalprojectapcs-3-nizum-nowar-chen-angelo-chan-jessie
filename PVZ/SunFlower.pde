@@ -2,6 +2,7 @@ public class SunFlower extends Plant{
   PImage image;
   
   
+  
   public SunFlower(PVector mapPos, Map map){
     //HP: 30
     //Recharge: 10
@@ -9,7 +10,7 @@ public class SunFlower extends Plant{
     super(mapPos,30,10,50, map);
     image = loadImage("Sunflower.png");
     image.resize(75, 75);
-  
+    coolDown = 500 + (int) (Math.random() * 500 - 200);
   }
   void special(){}
   
@@ -21,8 +22,8 @@ public class SunFlower extends Plant{
      return (int) (180+ 100*(this.getCoordinate().y-1));
    }
    //hi can you please save
-  void addSun(ArrayList<Sun> Suns){
-    sun = new Sun(new PVector(this.getX(), this.getY()), true);
+  void addSun(ArrayList<PVZ.Sun> Suns){
+    sun = new Sun(new PVector(this.getX() + (int)(Math.random() * 10 - 20), this.getY() + (int)(Math.random() * 10 - 20)), true);
     Suns.add(sun);
   }
   
