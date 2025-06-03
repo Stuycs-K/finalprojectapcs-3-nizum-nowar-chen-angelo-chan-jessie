@@ -86,6 +86,19 @@ public class Map{
   
   public void displayLawnMowers(){
     for (int i = 0; i < lawnMowers.size(); i++){
+      
+      for (int j = 0; j < Zombies.size(); j++){
+        Zombie z = Zombies.get(j);
+        println("i: " + i);
+        LawnMower L = lawnMowers.get(i);
+        
+        if (hitLawnMower(z, L)){
+          Zombies.remove(j);
+          lawnMowers.remove(i);
+        }
+        
+      }
+      
       lawnMowers.get(i).display();
     }
   }
@@ -117,6 +130,10 @@ public class Map{
   
   public void collideProj(Projectile a, Zombie b){
     a.applyDamage(b);
+  }
+  
+  public boolean hitLawnMower(Zombie z, LawnMower L){
+    return Math.abs((z.getCoordinate()).x - (L.getCoordinate()).x) <= 80 && Math.abs((z.getCoordinate()).y - (L.getCoordinate()).y) <= 80;
   }
   
 }
