@@ -13,11 +13,17 @@ public class SunFlower extends Plant{
   }
   void special(){}
   
+  public int getX(){
+     return (int) 200+ 80*(mapPos.x-1);
+   }
+   
+   public int getY(){
+     return (int) 180+ 100*(mapPos.y-1);
+   }
+   
   void addSun(ArrayList<Sun> Suns){
-    if(frameCount % 200 == 0){
-       sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
-       Suns.add(sun);
-     }
+    sun = new Sun(new PVector(this.getX(), this.getY()), true);
+    Suns.add(sun);
   }
   
   void display(){
