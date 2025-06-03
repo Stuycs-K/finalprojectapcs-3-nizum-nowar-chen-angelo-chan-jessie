@@ -42,8 +42,7 @@ public class PeaShooter extends Plant implements Displayables{
   
   
   public boolean hasCollided(Pea a, Zombie b){
-    return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
-  
+    return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 50 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 50;
   }
   
   void shoot(Pea p){
@@ -71,6 +70,7 @@ public class PeaShooter extends Plant implements Displayables{
           Zombie zomb = zombies.get(j);
           if (hasCollided(pea, zomb)){
             zomb.loseHP(getDamage());
+            print("contact");
             peas.remove(i);//////////
             i--;
             if(zomb.getHP() <= 0){
