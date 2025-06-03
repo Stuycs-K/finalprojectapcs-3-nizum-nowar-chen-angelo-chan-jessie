@@ -16,6 +16,10 @@ public class Map{
   public void isThere(Plant obj, int x, int y){
     lawn[y][x] = obj;
   }
+  
+  public boolean isPlant(int x, int y){
+    return lawn[y][x] != null;
+  }
  
   public int xIntoCol(int x){
      return (x - 200) / 80 + 1;
