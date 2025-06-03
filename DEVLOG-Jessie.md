@@ -31,3 +31,6 @@ Made zombies start moving at random times.
 
 ### 2025-05-31 && 06-01
 Fixed merge conflicts. Made functions to tell where Zombies are relative to 2DArray lawn. Zombies will collide now with plants and begin eating them. Plants will disppear after their HP drops to 0. 
+
+### 2025-06-02
+Add Sunflowers to board and display them as images. Got sunflowers to spawn suns. Then adjusted them to spawn them at different times rather all at once. 
