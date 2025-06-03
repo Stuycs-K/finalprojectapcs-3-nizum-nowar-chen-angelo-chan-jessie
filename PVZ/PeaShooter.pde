@@ -42,18 +42,17 @@ public class PeaShooter extends Plant implements Displayables{
   
   
   public boolean hasCollided(Pea a, Zombie b){
-    return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
-  
+    return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 50 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 50;
   }
   
   void shoot(Pea p){
       ArrayList<Zombie>zombies = map.getZombies();
-      if (frameCount % 100 == 0){
-        float x = 200 + 80 * (getCoordinate().x - 1);
-        float y = 180 + 100 * (getCoordinate().y - 1);
-        peas.add(new Pea(new PVector(x + 30, y)));
-      }
-      
+        if (frameCount % 100 == 0){
+          float x = 200 + 80 * (getCoordinate().x - 1);
+          float y = 180 + 100 * (getCoordinate().y - 1);
+          peas.add(new Pea(new PVector(x + 30, y)));
+        }
+        
       for (int i = peas.size() - 1; i >= 0; i--){
         if (zombies.size() <= 0){
           break;
@@ -64,15 +63,19 @@ public class PeaShooter extends Plant implements Displayables{
         
         if(pea.getCoordinate().x > width){
           peas.remove(i);
+          i--;
         }
         
         for (int j = zombies.size() - 1; j >= 0; j--){
           Zombie zomb = zombies.get(j);
           if (hasCollided(pea, zomb)){
             zomb.loseHP(getDamage());
+            print("contact");
             peas.remove(i);//////////
+            i--;
             if(zomb.getHP() <= 0){
               zombies.remove(j);
+              j--;
             }
             break;
           }

@@ -29,6 +29,16 @@ public class Map{
      return (x - 180) / 100 + 1;
   }
   
+  public boolean hayZombies(int row){
+    for(Zombie z: Zombies){
+        if(Math.abs(z.getY() - ((row - 1) * 100)+180)<= 100){
+          return true;
+        }
+      }
+     return false;
+    }
+
+  
   public void spawnZombies(int total){
    for (int i = 0; i < total; i++){
      Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
@@ -40,7 +50,8 @@ public class Map{
   
   public void displayZombies(){
     for (int i = 0; i < Zombies.size(); i++){
-      Zombies.get(i).display();
+      if(Zombies.get(i).getHP() > 0){
+            Zombies.get(i).display();
       
       if (Zombies.get(i).getX() < 800){
         if (lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())] != null){
@@ -58,6 +69,8 @@ public class Map{
       Zombies.get(i).move();
       
      }
+   }
+
     }
   }
  
@@ -69,7 +82,7 @@ public class Map{
         }
         if (lawn[i][j] != null){
           lawn[i][j].display();
-          if (lawn[i][j] instanceof PeaShooter){
+          if (lawn[i][j] instanceof PeaShooter && hayZombies(i)){
             ((PeaShooter)lawn[i][j]).shoot(pea);
           }
         }
@@ -78,11 +91,11 @@ public class Map{
   }
   
   public boolean hasCollided(Plant a, Zombie b){
-    return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
+    return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 50 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 30;
   
   }
     public boolean hasCollided(Pea a, Zombie b){
-    return (a.getCoordinate()).x == (b.getCoordinate()).x && (a.getCoordinate()).y == (b.getCoordinate()).y;
+    return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 150 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 130;
   
   }
   
