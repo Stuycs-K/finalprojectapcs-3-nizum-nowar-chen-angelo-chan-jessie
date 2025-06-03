@@ -27,9 +27,18 @@ This document must be updated daily every time you finish a work session.
 - Class Period (40 min): PVZ file updated to display pea and shoot it across the screen
 - Home (50 min): Map class created and implemented to display all objects
 
+<<<<<<< HEAD
+## 2025-05-29
+- Class Period (40 min): arrays to sort pixels into Map class grid
+- Home (60 min): Map class grid finished
+
+## 2025-06-0
+- Home (80 min): PeaShooters shoot an infinite number of peas that collide with the zombies and inflict damage; zombies disappear once they die; peas disappear once they move off the screen; peas are now green orbs
+=======
 ### 2025-06-01
 - Home (80 min): PeaShooters shoot peas at regular intervals that inflict damage on zombies once they collide and disappear afterwards; zombies disappear once they run out of HP
 
 ### 2025-06-02
 - Class Period (40 min): PeaShooter updated to stop shooting peas once zombies are all dead; difficulty of game adjusted; started button to add plants
 - Home (80 min): working button to add PeaShooters to the lawn-- there will be a message if there are not enough suns to buy the plant or if the PeaShooter is added to a spot where there is already a plant; difficulty of game adjusted; suns stop spawning once all the zombies are dead(victory)
+>>>>>>> main
