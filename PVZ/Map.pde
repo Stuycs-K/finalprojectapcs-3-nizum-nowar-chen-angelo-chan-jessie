@@ -40,7 +40,8 @@ public class Map{
   
   public void displayZombies(){
     for (int i = 0; i < Zombies.size(); i++){
-      Zombies.get(i).display();
+      if(Zombies.get(i).getHP() > 0){
+            Zombies.get(i).display();
       
       if (Zombies.get(i).getX() < 800){
         if (lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())] != null){
@@ -58,6 +59,8 @@ public class Map{
       Zombies.get(i).move();
       
      }
+   }
+
     }
   }
  
