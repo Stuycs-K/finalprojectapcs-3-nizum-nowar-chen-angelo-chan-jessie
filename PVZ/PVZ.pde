@@ -3,11 +3,19 @@ Map map;
 
 ArrayList<Plant>Plants;
 ArrayList<Sun> Suns;
+ArrayList<Zombie> Zombies;
 Pea pea;
 Sun sun;
 PImage bg;
 int sunBank = 0;
 PImage over;
+boolean addPlant = false;
+
+boolean sunWarning;
+int sunWarningTimer;
+
+boolean cannotAddPlant;
+int cannotAddPlantTimer;
 
 void setup(){
   size(1078,720);
@@ -18,19 +26,17 @@ void setup(){
   
   Plants = new ArrayList<Plant>();
   Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
-  Plants.add(new PeaShooter(new PVector(1, 1), 20, map));
-  Plants.add(new PeaShooter(new PVector(1, 4), 20, map));
-  Plants.add(new PeaShooter(new PVector(3, 5), 20, map));
-  Plants.add(new PeaShooter(new PVector(2, 2), 20, map));
   Plants.add(new SunFlower(new PVector(1, 2), map));
   Plants.add(new SunFlower(new PVector(3, 4), map));
+
   
   bg = loadImage("PVZBackground.jpg");
   over = loadImage("gameOver.jpg");
   over.resize(1078,720);
   
   Suns = new ArrayList<Sun>();
-  map.spawnZombies(5);
+  map.spawnZombies(3);
+  Zombies = map.getZombies(); 
   
 }
 
@@ -44,10 +50,23 @@ void draw(){
      fill(0);
      text(sunBank,20,20);
      
-     if(frameCount % 200 == 0){
-       sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
-       Suns.add(sun);
-       
+     if (addPlant){
+       fill(242, 100, 100);
+       stroke(242, 100, 100);
+     }else{
+       fill(82, 240, 109);
+       stroke(82, 240, 109);
+     }
+     rect(50, 0, 100, 100);
+     fill(0);
+     
+     text(mouseX + " " + mouseY, 200, 50);
+     
+     if(frameCount % 100 == 0){
+       if (Zombies.size() > 0){
+         sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
+         Suns.add(sun);
+       }
      }
      
      for (Plant p : Plants){
@@ -93,7 +112,16 @@ void draw(){
        noLoop();
      }
    }
+   
+   if(sunWarning){
+     text("NOT ENOUGH SUN", 52, 50);
+     sunWarningTimer--;
+     if (sunWarningTimer <= 0){
+       sunWarning = false;
      }
+   }
+    
+}
    
      
 
@@ -109,5 +137,25 @@ void mouseClicked(){
        
       
     }
+    
+   if (mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 150){
+      addPlant = true;
+    }
+    if (addPlant & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+      int x =  ((mouseX - 200) / 80) + 1;
+      int y = ((mouseY - 150) / 100) + 1;
+      if (sunBank >= 100){
+        Plants.add(new PeaShooter(new PVector(x, y), 20, map));
+        addPlant = false;
+        sunBank -= 100;
+      }
+      else{
+        sunWarning = true;
+        sunWarningTimer = 120;
+        addPlant = false;
+      }
+    }
+    
+      
  
 }
