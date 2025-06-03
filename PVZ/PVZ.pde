@@ -9,6 +9,8 @@ Sun sun;
 PImage bg;
 int sunBank = 0;
 PImage over;
+PImage img1;
+PImage img2;
 boolean addPeaShooter = false;
 boolean addSunFlower = false;
 
@@ -54,20 +56,21 @@ void draw(){
      if (addPeaShooter){
        fill(242, 100, 100);
        stroke(242, 100, 100);
+       rect(50, 0, 100, 100);
+
      }else{
-       fill(82, 240, 109);
-       stroke(82, 240, 109);
+       img1 = loadImage("PeaShooterimg.jpg");
+       image(img1, 50, 0);
      }
-     rect(50, 0, 100, 100);
      
      if (addSunFlower){
        fill(242, 100, 100);
        stroke(242, 100, 100);
+       rect(150, 0, 100, 100);
      }else{
-       fill(255, 235, 77);
-       stroke(255, 235, 77);
+       img1 = loadImage("SunFlowerimg.png");
+       image(img1, 150, 0);
      }
-     rect(150, 0, 100, 100);
      
      text(mouseX + " " + mouseY, 300, 50);
      
