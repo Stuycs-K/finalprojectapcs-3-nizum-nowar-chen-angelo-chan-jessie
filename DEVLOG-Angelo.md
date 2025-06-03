@@ -53,4 +53,4 @@ This document must be updated daily every time you finish a work session.
   Tried to fix some stuff but faced a bunch of merge conflicts. Peas don't work anymore, not sure why. Will fix in class tomorrow.
 
 ### 2025 6-3 Fixed peas
-  Peas now disappear on contact. Fixed zombies not dying
+  Peas now disappear on contact. Fixed zombies not dying. Tried to make it so the peashooters only shoot when there is a zombie.
