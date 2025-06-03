@@ -3,6 +3,7 @@ public class Map{
   ArrayList<Zombie>Zombies = new ArrayList<Zombie>();
   ArrayList<Integer>spawnTimes = new ArrayList<>();
   Pea pea;
+  ArrayList<LawnMower>lawnMowers = new ArrayList<LawnMower>();
   
   public Map(Pea pea){
     lawn = new Plant [6][10];
@@ -48,6 +49,7 @@ public class Map{
    
   }
   
+  
   public void displayZombies(){
     for (int i = 0; i < Zombies.size(); i++){
       if(Zombies.get(i).getHP() > 0){
@@ -71,6 +73,39 @@ public class Map{
      }
    }
 
+    }
+  }
+  
+  public void placeLawnMowers(){
+      int [][] coords = new int [][] { {140, 190}, {135, 280}, {140, 385}, {130, 475}, {122, 575}};
+      for (int i = 0; i < 5; i++){
+        lawnMowers.add(new LawnMower(new PVector(coords[i][0], coords[i][1])));
+        println("new lawn mower");
+      }
+  }
+  
+  public void displayLawnMowers(){
+    for (int i = 0; i < lawnMowers.size(); i++){
+      
+      for (int j = 0; j < Zombies.size(); j++){
+        Zombie z = Zombies.get(j);
+        println("i: " + i);
+        LawnMower L = lawnMowers.get(i);
+        
+        if (hitLawnMower(z, L)){
+          Zombies.remove(j);
+          if (j != 0){
+            j--;
+          }
+          lawnMowers.remove(i);
+          if (i != 0){
+            i--;
+          }
+        }
+        
+      }
+      
+      lawnMowers.get(i).display();
     }
   }
  
@@ -101,6 +136,10 @@ public class Map{
   
   public void collideProj(Projectile a, Zombie b){
     a.applyDamage(b);
+  }
+  
+  public boolean hitLawnMower(Zombie z, LawnMower L){
+    return Math.abs((z.getCoordinate()).x - (L.getCoordinate()).x) <= 80 && Math.abs((z.getCoordinate()).y - (L.getCoordinate()).y) <= 80;
   }
   
 }
