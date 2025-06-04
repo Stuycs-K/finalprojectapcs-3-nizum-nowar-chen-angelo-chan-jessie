@@ -1,10 +1,10 @@
 public class Zombie implements Displayables{
-  int HP;
-  int damage;
-  color c;
+  private int HP;
+  private int damage;
+  private color c;
   PImage img;
-  boolean atStart = false;
-  boolean collidePlant = false;
+  private boolean atStart = false;
+  private boolean collidePlant = false;
   private PVector coordinate;
 
 
@@ -34,7 +34,7 @@ public class Zombie implements Displayables{
 
     void move(){
       
-      coordinate.x -= 1;
+      coordinate.x -= 2;
       if(coordinate.x < 200){
         atStart = true;
       }

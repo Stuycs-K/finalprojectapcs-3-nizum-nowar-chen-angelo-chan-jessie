@@ -1,7 +1,8 @@
 public class LawnMower implements Displayables{
-  int row, col;
-  PImage img;
-  PVector coordinate;
+  private int row, col;
+  private PImage img;
+  private PVector coordinate;
+  private boolean moveForward;
   
   public LawnMower(PVector position){
     coordinate = position;
@@ -17,6 +18,19 @@ public class LawnMower implements Displayables{
     
     public PVector getCoordinate(){
      return coordinate;
+   }
+   
+   
+   public boolean getMoveForward(){
+     return moveForward;
+   }
+   
+   public void setMoveForward(boolean go){
+     moveForward = go;
+   }
+   
+   public void move(){
+     coordinate.x += 5;
    }
   
 }
