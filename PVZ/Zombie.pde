@@ -34,7 +34,7 @@ public class Zombie implements Displayables{
 
     void move(){
       
-      coordinate.x -= 2;
+      coordinate.x -= 1;
       if(coordinate.x < 200){
         atStart = true;
       }

@@ -39,7 +39,7 @@ void setup(){
   over.resize(1078,720);
  
   Suns = new ArrayList<Sun>();
-  map.spawnZombies(3);
+  map.spawnZombies(30);
   Zombies = map.getZombies();
   map.placeLawnMowers();
  
