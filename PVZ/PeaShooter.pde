@@ -44,10 +44,20 @@ public class PeaShooter extends Plant implements Displayables{
   public boolean hasCollided(Pea a, Zombie b){
     return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 50 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 50;
   }
+
+  public int rowIntoY(int x){
+    return (100*(x - 1))+180;
+  }
   
   void shoot(Pea p){
       ArrayList<Zombie>zombies = map.getZombies();
-        if (frameCount % 100 == 0){
+       boolean zombieInRow = false;
+      for(Zombie z: zombies){
+        if(Math.abs(z.getCoordinate().y - rowIntoY((int)this.getCoordinate().y)) <= 50 && z.getCoordinate().x < 890){
+          zombieInRow = true;
+        }
+      }
+        if (zombieInRow && frameCount % 100 == 0){
           float x = 200 + 80 * (getCoordinate().x - 1);
           float y = 180 + 100 * (getCoordinate().y - 1);
           peas.add(new Pea(new PVector(x + 30, y)));
