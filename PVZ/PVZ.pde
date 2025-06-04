@@ -9,7 +9,10 @@ Sun sun;
 PImage bg;
 int sunBank = 0;
 PImage over;
-boolean addPlant = false;
+PImage img1;
+PImage img2;
+boolean addPeaShooter = false;
+boolean addSunFlower = false;
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -17,34 +20,46 @@ int sunWarningTimer;
 boolean cannotAddPlant;
 int cannotAddPlantTimer;
 
+<<<<<<< HEAD
 int wave = 1;
+=======
+>>>>>>> main
 
 void setup(){
   size(1078,720);
-  
+ 
   pea = new Pea(new PVector(420,310));
   map = new Map(pea);
-  
-  
+ 
+ 
   Plants = new ArrayList<Plant>();
   Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
   Plants.add(new SunFlower(new PVector(1, 2), map));
   Plants.add(new SunFlower(new PVector(3, 4), map));
 
-  
+ 
   bg = loadImage("PVZBackground.jpg");
   over = loadImage("gameOver.jpg");
   over.resize(1078,720);
-  
+ 
   Suns = new ArrayList<Sun>();
+<<<<<<< HEAD
   map.spawnZombies(3, wave);
   Zombies = map.getZombies(); 
   
+=======
+  map.spawnZombies(3);
+  Zombies = map.getZombies();
+  map.placeLawnMowers();
+ 
+>>>>>>> main
 }
 
 void draw(){
    background(bg);
    ArrayList<Zombie> Zombs = map.getZombies();
+
+   textSize(24);
 
       //tesetese
      fill(225);
@@ -52,17 +67,26 @@ void draw(){
      fill(0);
      text(sunBank,20,20);
      
-     if (addPlant){
+     if (addPeaShooter){
        fill(242, 100, 100);
        stroke(242, 100, 100);
+       rect(50, 0, 100, 100);
+
      }else{
-       fill(82, 240, 109);
-       stroke(82, 240, 109);
+       img1 = loadImage("PeaShooterimg.jpg");
+       image(img1, 50, 0);
      }
-     rect(50, 0, 100, 100);
-     fill(0);
      
-     text(mouseX + " " + mouseY, 200, 50);
+     if (addSunFlower){
+       fill(242, 100, 100);
+       stroke(242, 100, 100);
+       rect(150, 0, 100, 100);
+     }else{
+       img1 = loadImage("SunFlowerimg.png");
+       image(img1, 150, 0);
+     }
+     
+     text(mouseX + " " + mouseY, 300, 50);
      
      if(frameCount % 100 == 0){
        if (Zombies.size() > 0){
@@ -86,8 +110,8 @@ void draw(){
      }
      
       int stop = (int)Math.random()*500 + 200;
-  
-      map.display(); 
+ 
+      map.display();
       for (int i = 0; i < Suns.size(); i++){
          stop = (int)Math.random()*500 + 200;
          
@@ -100,14 +124,15 @@ void draw(){
          }
        
       }
-      
+     
       map.displayZombies();
-      
+      map.displayLawnMowers();
+     
       //for (Plant p : Plants){
       //  if (p.HP <= 0){
       //    Plants.remove(p);
       //  }
-      //} 
+      //}
          for(Zombie z: Zombs){
      if(z.gameOver()){
        background(over);
@@ -116,13 +141,23 @@ void draw(){
    }
    
    if(sunWarning){
-     text("NOT ENOUGH SUN", 52, 50);
+     fill(255);
+     text("NOT ENOUGH SUN", 400, 340);
      sunWarningTimer--;
      if (sunWarningTimer <= 0){
        sunWarning = false;
      }
    }
-    
+   
+   if(cannotAddPlant){
+     fill(255);
+     text("Cannot add plant there", 400, 340);
+     cannotAddPlantTimer--;
+     if (cannotAddPlantTimer <= 0){
+       cannotAddPlant = false;
+     }
+   }
+   
 }
    
      
@@ -132,32 +167,60 @@ void mouseClicked(){
   for (int i = 0; i < Suns.size(); i++){
        if(Math.abs(mouseX - ((Suns.get(i)).getCoordinate()).x) <= 25 && Math.abs(mouseY - ((Suns.get(i)).getCoordinate()).y) <= 25){
           sunBank+=50;
-          
+         
          Suns.remove(i);
          i--;
        }
        
-      
+     
     }
-    
-   if (mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 150){
-      addPlant = true;
+   
+   if (!addSunFlower && mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 ){
+     if (sunBank < 100){
+       sunWarning = true;
+        sunWarningTimer = 120;
+     }
+     else{
+      addPeaShooter = true;
+     }
     }
-    if (addPlant & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+    if (addPeaShooter & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
       int x =  ((mouseX - 200) / 80) + 1;
       int y = ((mouseY - 150) / 100) + 1;
-      if (sunBank >= 100){
+      if (!map.isPlant(x,y)){
         Plants.add(new PeaShooter(new PVector(x, y), 20, map));
-        addPlant = false;
+        addPeaShooter = false;
         sunBank -= 100;
       }
       else{
-        sunWarning = true;
-        sunWarningTimer = 120;
-        addPlant = false;
+        cannotAddPlant = true;
+        cannotAddPlantTimer = 120;
       }
     }
-    
-      
+   
+   
+    if (!addPeaShooter && mouseX > 150 && mouseX <= 250 && mouseY > 0 && mouseY <= 100){
+      if (sunBank < 50){
+        sunWarning = true;
+        sunWarningTimer = 120;
+      }
+      else{
+        addSunFlower = true;
+      }
+    }
+   if (addSunFlower & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+      int x =  ((mouseX - 200) / 80) + 1;
+      int y = ((mouseY - 150) / 100) + 1;
+      if (!map.isPlant(x,y)){
+        Plants.add(new SunFlower(new PVector(x, y), map));
+        addSunFlower = false;
+        sunBank -= 50;
+      }
+      else{
+        cannotAddPlant = true;
+        cannotAddPlantTimer = 120;
+      }
+    }
+     
  
 }
