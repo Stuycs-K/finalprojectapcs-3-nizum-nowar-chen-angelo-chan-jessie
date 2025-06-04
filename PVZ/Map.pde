@@ -33,7 +33,14 @@ public class Map{
   
   public void spawnZombies(int total){
    for (int i = 0; i < total; i++){
-     Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
+     //if(i < total - 3){
+     //  Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
+     //}
+     //else{
+       Zombies.add(new BucketHead(new PVector(1000,180+100*(int)(Math.random()*5))));
+     
+     //}
+       
      //print("zombie added");
      spawnTimes.add(100 * (int)(Math.random() * 10 + 1));
    }

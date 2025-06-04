@@ -9,7 +9,7 @@ public class Zombie implements Displayables{
 
 
     public Zombie(PVector coord){
-      img = loadImage("Zombie.png");
+      img = loadImage("zombiecat.png");
       img.resize(80,125);
 
         coordinate = coord;
