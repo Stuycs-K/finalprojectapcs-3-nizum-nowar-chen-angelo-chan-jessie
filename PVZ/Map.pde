@@ -1,3 +1,4 @@
+
 public class Map{
   Plant [][] lawn;
   ArrayList<Zombie>Zombies = new ArrayList<Zombie>();
@@ -34,10 +35,10 @@ public class Map{
   public void spawnZombies(int total,int wave){
    for (int i = 0; i < total; i++){
      Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
-     //print("zombie added");
-     spawnTimes.add(100 * (int)(Math.random() * 10 + 1));
+     print(wave + " " + spawnTimes.toString());
+     spawnTimes.add((int) Math.pow(wave,2) * 1000 + 100 * (int)(Math.random() * 10 + 1));
    }
-   
+  
   }
   
   

@@ -20,10 +20,7 @@ int sunWarningTimer;
 boolean cannotAddPlant;
 int cannotAddPlantTimer;
 
-<<<<<<< HEAD
 int wave = 1;
-=======
->>>>>>> main
 
 void setup(){
   size(1078,720);
@@ -43,16 +40,11 @@ void setup(){
   over.resize(1078,720);
  
   Suns = new ArrayList<Sun>();
-<<<<<<< HEAD
   map.spawnZombies(3, wave);
   Zombies = map.getZombies(); 
-  
-=======
-  map.spawnZombies(3);
-  Zombies = map.getZombies();
+
   map.placeLawnMowers();
  
->>>>>>> main
 }
 
 void draw(){
@@ -110,7 +102,13 @@ void draw(){
      }
      
       int stop = (int)Math.random()*500 + 200;
- 
+      
+      if (Zombies.size() == 0){
+        wave++;
+        map.spawnZombies(3,wave);
+      }
+       
+     
       map.display();
       for (int i = 0; i < Suns.size(); i++){
          stop = (int)Math.random()*500 + 200;
