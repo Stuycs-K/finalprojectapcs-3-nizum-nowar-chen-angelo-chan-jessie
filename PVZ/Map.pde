@@ -44,7 +44,7 @@ public class Map{
   public void spawnZombies(int total){
    for (int i = 0; i < total; i++){
      Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
-     print("zombie added");
+     //print("zombie added");
      spawnTimes.add(100 * (int)(Math.random() * 10 + 1));
    }
    
@@ -81,7 +81,7 @@ public class Map{
       int [][] coords = new int [][] { {140, 190}, {135, 280}, {140, 385}, {130, 475}, {122, 575}};
       for (int i = 0; i < 5; i++){
         lawnMowers.add(new LawnMower(new PVector(coords[i][0], coords[i][1])));
-        println("new lawn mower");
+        //println("new lawn mower");
       }
   }
  
@@ -91,7 +91,7 @@ public class Map{
       int rowWipedOut = -1;
       for (int j = 0; j < Zombies.size(); j++){
         Zombie z = Zombies.get(j);
-        println("i: " + i);
+        //println("i: " + i);
         LawnMower L = lawnMowers.get(i);
        
         if (hitLawnMower(z, L)){

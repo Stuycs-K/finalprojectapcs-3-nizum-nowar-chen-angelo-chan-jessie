@@ -49,7 +49,8 @@ public class PeaShooter extends Plant implements Displayables{
       ArrayList<Zombie>zombies = map.getZombies();
        boolean zombieInRow = false;
       for(Zombie z: zombies){
-        if(Math.abs(z.getCoordinate().y - getCoordinate().y) <= 100){
+        if(Math.abs(z.getCoordinate().y - this.getCoordinate().y) <= 100){
+          print("indeed in my row");
           zombieInRow = true;
           break;
         }

@@ -54,3 +54,6 @@ This document must be updated daily every time you finish a work session.
 
 ### 2025 6-3 Fixed peas
   Peas now disappear on contact. Fixed zombies not dying. Tried to make it so the peashooters only shoot when there is a zombie.
+
+  (at home)
+  Unsuccessful at trying to get the peas to shoot, but added some things that may be helpful for discussion
