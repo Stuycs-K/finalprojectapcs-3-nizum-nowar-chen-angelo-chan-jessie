@@ -29,21 +29,12 @@ public class Map{
    public int yIntoRow(int x){
      return (x - 180) / 100 + 1;
   }
-  
-  public boolean hayZombies(int row){
-    for(Zombie z: Zombies){
-        if(Math.abs(z.getY() - ((row - 1) * 100)+180)<= 100){
-          return true;
-        }
-      }
-     return false;
-    }
 
   
   public void spawnZombies(int total){
    for (int i = 0; i < total; i++){
      Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
-     print("zombie added");
+     //print("zombie added");
      spawnTimes.add(100 * (int)(Math.random() * 10 + 1));
    }
    
@@ -80,13 +71,21 @@ public class Map{
       int [][] coords = new int [][] { {140, 190}, {135, 280}, {140, 385}, {130, 475}, {122, 575}};
       for (int i = 0; i < 5; i++){
         lawnMowers.add(new LawnMower(new PVector(coords[i][0], coords[i][1])));
-        println("new lawn mower");
+        //println("new lawn mower");
       }
   }
   
   public void displayLawnMowers(){
     for (int i = 0; i < lawnMowers.size(); i++){
+<<<<<<< HEAD
       
+=======
+     
+      int rowWipedOut = -1;
+      for (int j = 0; j < Zombies.size(); j++){
+        Zombie z = Zombies.get(j);
+        //println("i: " + i);
+>>>>>>> Angelo
         LawnMower L = lawnMowers.get(i);
         if (L.getMoveForward()){
           L.move();
@@ -131,7 +130,7 @@ public class Map{
         }
         if (lawn[i][j] != null){
           lawn[i][j].display();
-          if (lawn[i][j] instanceof PeaShooter && hayZombies(i)){
+          if (lawn[i][j] instanceof PeaShooter){
             ((PeaShooter)lawn[i][j]).shoot(pea);
           }
         }
