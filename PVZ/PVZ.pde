@@ -183,8 +183,9 @@ void mouseClicked(){
      }
     }
     if (addPeaShooter & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
-      int x =  ((mouseX - 200) / 80) + 1;
+      int x =  ((mouseX - 200) / 80) + 11;
       int y = ((mouseY - 150) / 100) + 1;
+      //rect(x, y, 80, 100);
       if (!map.isPlant(x,y)){
         Plants.add(new PeaShooter(new PVector(x, y), 20, map));
         addPeaShooter = false;
