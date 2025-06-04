@@ -31,14 +31,14 @@ public class Map{
      return (x - 180) / 100 + 1;
   }
  
-  public boolean hayZombies(int row){
-    for(Zombie z: Zombies){
-        if(Math.abs(z.getY() - ((row - 1) * 100)+180)<= 100){
-          return true;
-        }
-      }
-     return false;
-    }
+  //public boolean hayZombies(int row){
+  //  for(Zombie z: Zombies){
+  //      if(Math.abs(z.getY() - ((row - 1) * 100)+180)<= 100){
+  //        return true;
+  //      }
+  //    }
+  //   return false;
+  //  }
 
  
   public void spawnZombies(int total){
@@ -124,7 +124,7 @@ public class Map{
         }
         if (lawn[i][j] != null){
           lawn[i][j].display();
-          if (lawn[i][j] instanceof PeaShooter && hayZombies(i)){
+          if (lawn[i][j] instanceof PeaShooter){
             ((PeaShooter)lawn[i][j]).shoot(pea);
           }
         }

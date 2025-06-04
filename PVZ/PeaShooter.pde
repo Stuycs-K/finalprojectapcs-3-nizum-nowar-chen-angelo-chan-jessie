@@ -47,7 +47,14 @@ public class PeaShooter extends Plant implements Displayables{
   
   void shoot(Pea p){
       ArrayList<Zombie>zombies = map.getZombies();
-        if (frameCount % 100 == 0){
+       boolean zombieInRow = false;
+      for(Zombie z: zombies){
+        if(Math.abs(z.getCoordinate().y - getCoordinate().y) <= 100){
+          zombieInRow = true;
+          break;
+        }
+      }
+        if (zombieInRow && frameCount % 100 == 0){
           float x = 200 + 80 * (getCoordinate().x - 1);
           float y = 180 + 100 * (getCoordinate().y - 1);
           peas.add(new Pea(new PVector(x + 30, y)));
