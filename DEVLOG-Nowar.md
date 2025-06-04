@@ -37,3 +37,7 @@ This document must be updated daily every time you finish a work session.
 ### 2025-06-02
 - Class Period (40 min): PeaShooter updated to stop shooting peas once zombies are all dead; difficulty of game adjusted; started button to add plants
 - Home (80 min): working button to add PeaShooters to the lawn-- there will be a message if there are not enough suns to buy the plant or if the PeaShooter is added to a spot where there is already a plant; difficulty of game adjusted; suns stop spawning once all the zombies are dead(victory)
+
+### 2025-06-03
+- Class Period (40 min): created a new button to buy SunFlowers- checks sunBank for enough sun; added images of plants to purchase-buttons
+- Home (120 min): updated purchase buttons so plants can't be added to occupied spots on the lawn, LawnMower class created, displayLawnMowers adds 5 lawnmowers to the end of the screen, lawnmower kills zombie that reaches the end of the lawn and then disappears itself, still need to work on wiping out entire row of zombies + possible animation
