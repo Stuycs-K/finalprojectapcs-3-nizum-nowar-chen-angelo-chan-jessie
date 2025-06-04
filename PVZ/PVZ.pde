@@ -17,6 +17,9 @@ boolean addSunFlower = false;
 boolean sunWarning;
 int sunWarningTimer;
 
+boolean cannotAddPlant;
+int cannotAddPlantTimer;
+
 
 void setup(){
   size(1078,720);
@@ -38,6 +41,7 @@ void setup(){
   Suns = new ArrayList<Sun>();
   map.spawnZombies(3);
   Zombies = map.getZombies();
+  map.placeLawnMowers();
  
 }
 
@@ -112,6 +116,7 @@ void draw(){
       }
      
       map.displayZombies();
+      map.displayLawnMowers();
      
       //for (Plant p : Plants){
       //  if (p.HP <= 0){
@@ -134,6 +139,15 @@ void draw(){
      }
    }
    
+   if(cannotAddPlant){
+     fill(255);
+     text("Cannot add plant there", 400, 340);
+     cannotAddPlantTimer--;
+     if (cannotAddPlantTimer <= 0){
+       cannotAddPlant = false;
+     }
+   }
+   
 }
    
      
@@ -151,40 +165,50 @@ void mouseClicked(){
      
     }
    
-   if (mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100){
+   if (!addSunFlower && mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 ){
+     if (sunBank < 100){
+       sunWarning = true;
+        sunWarningTimer = 120;
+     }
+     else{
       addPeaShooter = true;
+     }
     }
     if (addPeaShooter & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
       int x =  ((mouseX - 200) / 80) + 1;
       int y = ((mouseY - 150) / 100) + 1;
-      if (sunBank >= 100){
+      if (!map.isPlant(x,y)){
         Plants.add(new PeaShooter(new PVector(x, y), 20, map));
         addPeaShooter = false;
         sunBank -= 100;
       }
       else{
-        sunWarning = true;
-        sunWarningTimer = 120;
-        addPeaShooter = false;
+        cannotAddPlant = true;
+        cannotAddPlantTimer = 120;
       }
     }
    
    
-    if (mouseX > 150 && mouseX <= 250 && mouseY > 0 && mouseY <= 100){
-      addSunFlower = true;
+    if (!addPeaShooter && mouseX > 150 && mouseX <= 250 && mouseY > 0 && mouseY <= 100){
+      if (sunBank < 50){
+        sunWarning = true;
+        sunWarningTimer = 120;
+      }
+      else{
+        addSunFlower = true;
+      }
     }
    if (addSunFlower & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
       int x =  ((mouseX - 200) / 80) + 1;
       int y = ((mouseY - 150) / 100) + 1;
-      if (sunBank >= 50){
+      if (!map.isPlant(x,y)){
         Plants.add(new SunFlower(new PVector(x, y), map));
         addSunFlower = false;
         sunBank -= 50;
       }
       else{
-        sunWarning = true;
-        sunWarningTimer = 120;
-        addSunFlower = false;
+        cannotAddPlant = true;
+        cannotAddPlantTimer = 120;
       }
     }
      
