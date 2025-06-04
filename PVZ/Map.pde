@@ -29,7 +29,7 @@ public class Map{
      return (x - 180) / 100 + 1;
   }
   
-  public void spawnZombies(int total){
+  public void spawnZombies(int total,int wave){
    for (int i = 0; i < total; i++){
      Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
      print("zombie added");

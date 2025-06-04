@@ -17,6 +17,8 @@ int sunWarningTimer;
 boolean cannotAddPlant;
 int cannotAddPlantTimer;
 
+int wave = 1;
+
 void setup(){
   size(1078,720);
   
@@ -35,7 +37,7 @@ void setup(){
   over.resize(1078,720);
   
   Suns = new ArrayList<Sun>();
-  map.spawnZombies(3);
+  map.spawnZombies(3, wave);
   Zombies = map.getZombies(); 
   
 }
