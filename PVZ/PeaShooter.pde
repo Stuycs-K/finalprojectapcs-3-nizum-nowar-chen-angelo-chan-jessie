@@ -33,7 +33,7 @@ public class PeaShooter extends Plant implements Displayables{
       image(image, (float)170+ 80*(this.getCoordinate().x-1), (float)150+ 100*(this.getCoordinate().y-1));
        //circle(coordinate.x,coordinate.y,100);
        //print("im displaying");
-       
+       rect((float)170+ 80*(this.getCoordinate().x-1) - 40, (float)150+ 100*(this.getCoordinate().y-1) - 50, 80, 100);
     }
 
 
