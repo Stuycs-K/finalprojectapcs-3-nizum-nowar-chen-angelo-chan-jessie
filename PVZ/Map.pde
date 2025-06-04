@@ -77,15 +77,6 @@ public class Map{
   
   public void displayLawnMowers(){
     for (int i = 0; i < lawnMowers.size(); i++){
-<<<<<<< HEAD
-      
-=======
-     
-      int rowWipedOut = -1;
-      for (int j = 0; j < Zombies.size(); j++){
-        Zombie z = Zombies.get(j);
-        //println("i: " + i);
->>>>>>> Angelo
         LawnMower L = lawnMowers.get(i);
         if (L.getMoveForward()){
           L.move();
