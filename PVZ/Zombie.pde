@@ -6,9 +6,9 @@ public class Zombie implements Displayables{
   private boolean atStart = false;
   private boolean collidePlant = false;
   private PVector coordinate;
+  private int spawnTime;
 
-
-    public Zombie(PVector coord){
+  public Zombie(PVector coord, int time){
       img = loadImage("Zombie.png");
       img.resize(80,125);
 
@@ -17,7 +17,7 @@ public class Zombie implements Displayables{
         c = color (50,78,90);
         HP = 25;
         damage = 5;
-
+        spawnTime = time;
     }
 
     public int getHP(){
@@ -34,7 +34,7 @@ public class Zombie implements Displayables{
 
     void move(){
       
-      coordinate.x -= 2;
+      coordinate.x -= 1;
       if(coordinate.x < 200){
         atStart = true;
       }
@@ -63,6 +63,10 @@ public class Zombie implements Displayables{
    
    public int getY(){
      return (int) coordinate.y;
+   }
+   
+   public int getSpawnTime(){
+     return spawnTime;
    }
 
 }
