@@ -33,7 +33,7 @@ public class Map{
 
   public void spawnZombies(int total,int wave){
    for (int i = 0; i < total + wave; i++){
-     int spawnTime = (int)Math.pow(wave,1.6) * 1000 + frameCount + 100 * (int)(Math.random() * 10 + 1);
+     int spawnTime = wave * 500 + frameCount + 100 * (int)(Math.random() * 10 + 1);
      Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5)),spawnTime));
      print(wave + " " + spawnTime + " ");
 

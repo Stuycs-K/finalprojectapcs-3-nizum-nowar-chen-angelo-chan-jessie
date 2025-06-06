@@ -84,7 +84,7 @@ void draw(){
      text(frameCount, 300, 70);
 
      //spawn natural Suns
-     if(frameCount % 100 == 0){
+     if(frameCount % 300 == 0){
        if (Zombies.size() > 0){
          sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
          Suns.add(sun);
