@@ -32,7 +32,11 @@ public class Map{
 
 
   public void spawnZombies(int total,int wave){
-   for (int i = 0; i < total + wave; i++){
+    int toSpawn = total + wave;
+    if (wave == 1){
+      toSpawn = 2;
+    }
+   for (int i = 0; i < toSpawn; i++){
      int spawnTime = wave * 500 + frameCount + 100 * (int)(Math.random() * 10 + 1);
      
      print(wave + " " + spawnTime + " ");
