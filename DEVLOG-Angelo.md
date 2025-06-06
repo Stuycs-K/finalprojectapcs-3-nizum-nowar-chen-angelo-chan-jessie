@@ -59,4 +59,10 @@ This document must be updated daily every time you finish a work session.
   Got peashooters to only shoot when there is a zombie in its row and the zombie is on the lawn. 
 
 ### 2025 6-4 Added BucketHead
-  Created buckethead class, attempting to randomly spawn then in. Bucket heads lose their bucket before losing HP.  
+  Created buckethead class, attempting to randomly spawn then in. Bucket heads lose their bucket before losing HP. 
+
+    (at home)
+    Updated seeds so that reclicking the option to display them made it so you can unselect. No longer forced to click
+
+### 2025-6-6 updated map grid
+    Fixed the bug with the grid due to uneven sizing of the lawn. 
