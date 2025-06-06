@@ -33,14 +33,14 @@ public class Zombie implements Displayables{
     }
 
     void move(){
-      
+
       coordinate.x -= 1;
       if(coordinate.x < 200){
         atStart = true;
       }
 
     }
-    
+
     boolean gameOver(){
       return atStart;
     }
@@ -60,11 +60,11 @@ public class Zombie implements Displayables{
   public int getX(){
      return (int) coordinate.x;
    }
-   
+
    public int getY(){
      return (int) coordinate.y;
    }
-   
+
    public int getSpawnTime(){
      return spawnTime;
    }

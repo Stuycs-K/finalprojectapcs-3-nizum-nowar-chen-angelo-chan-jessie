@@ -57,3 +57,6 @@ This document must be updated daily every time you finish a work session.
 
   (at home)
   Got peashooters to only shoot when there is a zombie in its row and the zombie is on the lawn. 
+
+### 2025 6-4 Added BucketHead
+  Created buckethead class, attempting to randomly spawn then in. Bucket heads lose their bucket before losing HP.  
