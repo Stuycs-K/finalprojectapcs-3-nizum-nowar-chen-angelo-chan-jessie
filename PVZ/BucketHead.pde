@@ -1,8 +1,8 @@
 public class BucketHead extends Zombie{
   private int bucketHP;
   PImage bucket; 
-  public BucketHead(PVector coord){
-    super(coord, 10);
+  public BucketHead(PVector coord, int spawnTime){
+    super(coord, spawnTime);
     //bucket = loadImage();
     bucketHP = 20;
   }
@@ -19,7 +19,7 @@ public class BucketHead extends Zombie{
     super.display();
     //image(bucket, this.getCoordinate().x-25, this.getCoordinate().y-60);
     if(bucketHP > 0){
-      circle(this.getCoordinate().x-25, this.getCoordinate().y-60, 50);
+      circle(this.getCoordinate().x, this.getCoordinate().y-60, 50);
     }
   
   }

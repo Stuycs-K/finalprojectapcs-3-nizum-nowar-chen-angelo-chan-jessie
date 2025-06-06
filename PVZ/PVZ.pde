@@ -230,8 +230,9 @@ void mouseClicked(){
 }
 
 void keyPressed(){
-  if (key == '2'){
-    frameCount = 2000;
+  String numbers = "123456789";
+  if (numbers.indexOf(key) != -1){
+    frameCount = Integer.parseInt(String.valueOf(key)) * 1000;
   }
-  print(key);
+  //print(key);
 }
