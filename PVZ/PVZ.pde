@@ -53,12 +53,13 @@ void draw(){
 
    textSize(24);
 
-      //tesetese
+      //sunBank display
      fill(225);
      rect(0,0,50,30);
      fill(0);
      text(sunBank,20,20);
      
+     //buy menu
      if (addPeaShooter){
        fill(242, 100, 100);
        stroke(242, 100, 100);
@@ -78,8 +79,11 @@ void draw(){
        image(img1, 150, 0);
      }
      
+     //mouse Position
      text(mouseX + " " + mouseY, 300, 50);
+     text(frameCount, 300, 70);
      
+     //spawn natural Suns
      if(frameCount % 100 == 0){
        if (Zombies.size() > 0){
          sun = new Sun(new PVector((int)(Math.random()* 500) + 300, 0), false);
@@ -87,6 +91,7 @@ void draw(){
        }
      }
      
+     //spawn Sunflower Suns
      for (Plant p : Plants){
        //int coolDown = 300;
        //boolean alternate = true;
@@ -100,14 +105,9 @@ void draw(){
           //}
        }
      }
-     
-      int stop = (int)Math.random()*500 + 200;
-      
-      if (Zombies.size() == 0){
-        wave++;
-        map.spawnZombies(3,wave);
-      }
        
+     //stop natural Sun movement
+     int stop = (int)Math.random()*500 + 200;
      
       map.display();
       for (int i = 0; i < Suns.size(); i++){
@@ -122,22 +122,25 @@ void draw(){
          }
        
       }
+      
+      //spawn in new waves
+      if (Zombies.size() == 0){
+        wave++;
+        map.spawnZombies(3,wave);
+      }
      
       map.displayZombies();
       map.displayLawnMowers();
-     
-      //for (Plant p : Plants){
-      //  if (p.HP <= 0){
-      //    Plants.remove(p);
-      //  }
-      //}
-         for(Zombie z: Zombs){
-     if(z.gameOver()){
-       background(over);
-       noLoop();
+      
+      //end game
+     for(Zombie z: Zombs){
+       if(z.gameOver()){
+         background(over);
+         noLoop();
+       }
      }
-   }
    
+   //buy menu
    if(sunWarning){
      fill(255);
      text("NOT ENOUGH SUN", 400, 340);
@@ -183,7 +186,7 @@ void mouseClicked(){
      }
     }
     if (addPeaShooter & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
-      int x =  ((mouseX - 200) / 80) + 11;
+      int x =  ((mouseX - 200) / 80) + 1;
       int y = ((mouseY - 150) / 100) + 1;
       //rect(x, y, 80, 100);
       if (!map.isPlant(x,y)){
@@ -222,4 +225,11 @@ void mouseClicked(){
     }
      
  
+}
+
+void keyPressed(){
+  if (key == '2'){
+    frameCount = 2000;
+  }
+  print(key);
 }

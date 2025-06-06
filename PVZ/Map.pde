@@ -2,7 +2,6 @@
 public class Map{
   Plant [][] lawn;
   ArrayList<Zombie>Zombies = new ArrayList<Zombie>();
-  ArrayList<Integer>spawnTimes = new ArrayList<>();
   Pea pea;
   ArrayList<LawnMower>lawnMowers = new ArrayList<LawnMower>();
   
@@ -33,10 +32,11 @@ public class Map{
 
   
   public void spawnZombies(int total,int wave){
-   for (int i = 0; i < total; i++){
-     Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5))));
-     print(wave + " " + spawnTimes.toString());
-     spawnTimes.add((int) Math.pow(wave,2) * 1000 + 100 * (int)(Math.random() * 10 + 1));
+   for (int i = 0; i < total + wave; i++){
+     int spawnTime = frameCount + 100 * (int)(Math.random() * 10 + 1)
+     Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5)),spawnTime));
+     print(wave + " " + Zombies.get(i);
+     
    }
   
   }
@@ -59,7 +59,7 @@ public class Map{
         }
       }
       
-     if (frameCount > spawnTimes.get(i) && !Zombies.get(i).collidePlant){
+     if (frameCount > Zombies.get(i).getSpawnTime() && !Zombies.get(i).collidePlant){
       Zombies.get(i).move();
       
      }
