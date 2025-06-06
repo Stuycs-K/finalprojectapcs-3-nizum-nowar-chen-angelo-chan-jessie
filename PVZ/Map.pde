@@ -34,9 +34,14 @@ public class Map{
   public void spawnZombies(int total,int wave){
    for (int i = 0; i < total + wave; i++){
      int spawnTime = wave * 500 + frameCount + 100 * (int)(Math.random() * 10 + 1);
-     Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5)),spawnTime));
+     
      print(wave + " " + spawnTime + " ");
-
+     if (i > total){
+       Zombies.add(new BucketHead(new PVector(1000,180+100*(int)(Math.random()*5)),spawnTime));
+     }
+     else{
+       Zombies.add(new Zombie(new PVector(1000,180+100*(int)(Math.random()*5)),spawnTime));
+     }
    }
 
   }
