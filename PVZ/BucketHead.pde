@@ -2,7 +2,7 @@ public class BucketHead extends Zombie{
   private int bucketHP;
   PImage bucket; 
   public BucketHead(PVector coord){
-    super(coord);
+    super(coord, 10);
     //bucket = loadImage();
     bucketHP = 20;
   }
