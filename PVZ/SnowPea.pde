@@ -4,7 +4,7 @@ public class SnowPea extends PeaShooter{
   public SnowPea(PVector coordinate, int damages, Map map){
     super(coordinate, damages,map);
     snowpeas = loadImage("Snowpea.png");
-    image.resize(75,75);
+    snowpeas.resize(75,75);
   }
   
   void freezeZombie(Zombie z){
@@ -46,7 +46,6 @@ public class SnowPea extends PeaShooter{
           if (hasCollided(pea, zomb)){
             zomb.loseHP(getDamage());
             freezeZombie(zomb);
-            print("contact");
             this.getPeas().remove(i);
             i--;
             if(zomb.getHP() <= 0){

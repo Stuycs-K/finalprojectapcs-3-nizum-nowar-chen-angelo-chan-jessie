@@ -85,7 +85,6 @@ public class PeaShooter extends Plant implements Displayables{
           Zombie zomb = zombies.get(j);
           if (hasCollided(pea, zomb)){
             zomb.loseHP(getDamage());
-            print("contact");
             peas.remove(i);//////////
             i--;
             if(zomb.getHP() <= 0){

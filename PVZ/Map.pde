@@ -58,7 +58,7 @@ Y's:
      else if (y > 140){
        return 1; 
      }
-      return 0;
+      return 1;
   }
   public int xIntoCol(int x){
      if(x > 810){
@@ -90,7 +90,7 @@ Y's:
      }
      
      
-     return 0;
+     return 1;
   }
 
 

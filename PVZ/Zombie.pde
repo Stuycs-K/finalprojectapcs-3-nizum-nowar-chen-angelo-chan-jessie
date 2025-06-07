@@ -7,12 +7,12 @@ public class Zombie implements Displayables{
   private PVector coordinate;
   private int spawnTime;
   private boolean snowed = false; 
-
+  private int frames;
   public Zombie(PVector coord, int time){
       img = loadImage("Zombie.png");
       img.resize(80,125);
         coordinate = coord;
-        HP = 25;
+        HP = 100;
         damage = 5;
         spawnTime = time;
     }
@@ -24,6 +24,10 @@ public class Zombie implements Displayables{
     void display(){
        if(snowed){
         tint(0, 0, 225, 255);
+        if(frameCount - frames >= 40){ // for demo purposes, change later
+          snowed = false;
+        }
+        
       }
       image(img, coordinate.x-25, coordinate.y-60);
  
@@ -75,10 +79,8 @@ public class Zombie implements Displayables{
    
    void getFrozen(){
      snowed = true; 
-     int thisCount = frameCount; 
-     if(frameCount - thisCount >= 400){
-       snowed = false; 
+     frames = frameCount; 
      }
-   }
+   
 
 }
