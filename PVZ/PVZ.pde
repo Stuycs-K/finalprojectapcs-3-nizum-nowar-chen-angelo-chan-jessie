@@ -89,7 +89,7 @@ void draw(){
        if (addSnowPea){
        fill(242, 100, 100);
        stroke(242, 100, 100);
-       rect(150, 0, 100, 100);
+       rect(250, 0, 100, 100);
      }else{
        img1 = loadImage("Snowpea.png");
        img1.resize(100,100);
@@ -231,7 +231,9 @@ void mouseClicked(){
         sunWarningTimer = 120;
       }
       else{
-        addSunFlower = !addSunFlower;
+         addSunFlower = !addSunFlower;
+                     
+      
       }
     }
    if (addSunFlower && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
@@ -253,7 +255,9 @@ void mouseClicked(){
         sunWarningTimer = 120;
      }
      else{
-      addPeaShooter = !addPeaShooter;
+            addPeaShooter = !addPeaShooter;
+
+     
      }
    }
        if (addSnowPea && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
@@ -278,7 +282,9 @@ void mouseClicked(){
         sunWarningTimer = 120;
       }
       else{
-        addSnowPea = !addSnowPea;
+           addSnowPea = !addSnowPea;
+   
+        
       }
     }
     if(removePlant && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
