@@ -10,7 +10,7 @@ public class SunFlower extends Plant{
     super(mapPos,30,10,50, map);
     image = loadImage("Sunflower.png");
     image.resize(75, 75);
-    coolDown = 500 + (int) (Math.random() * 500 - 200);
+    coolDown = 400 + (int) (Math.random() * 600);
   }
   void special(){}
   
