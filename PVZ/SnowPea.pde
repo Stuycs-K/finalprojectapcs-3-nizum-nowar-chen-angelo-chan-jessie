@@ -18,7 +18,7 @@ public class SnowPea extends PeaShooter{
       ArrayList<Zombie>zombies = map.getZombies();
        boolean zombieInRow = false;
       for(Zombie z: zombies){
-        if(Math.abs(z.getCoordinate().y - rowIntoY((int)this.getCoordinate().y)) <= 50 && z.getCoordinate().x < 890){
+        if(Math.abs(z.getCoordinate().y - map.rowIntoY((int)this.getCoordinate().y)) <= 50 && z.getCoordinate().x < 890){
           zombieInRow = true;
         }
       }

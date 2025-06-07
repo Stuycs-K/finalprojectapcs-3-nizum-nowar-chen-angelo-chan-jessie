@@ -10,11 +10,11 @@ PImage bg;
 int sunBank = 1000;
 PImage over;
 PImage img1;
-PImage img2;
-PImage img3; 
+PImage shovel;
 boolean addPeaShooter = false;
 boolean addSunFlower = false;
 boolean addSnowPea = false; 
+boolean removePlant = false;
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -30,13 +30,15 @@ void setup(){
   pea = new Pea(new PVector(420,310));
   map = new Map(pea);
 
-
+  shovel = loadImage("Shovel.png");
+  shovel.resize(100,100);
+ 
   Plants = new ArrayList<Plant>();
   Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
   Plants.add(new SunFlower(new PVector(1, 2), map));
   Plants.add(new SunFlower(new PVector(3, 4), map));
 
-
+  
   bg = loadImage("PVZBackground.jpg");
   over = loadImage("gameOver.jpg");
   over.resize(1078,720);
@@ -53,6 +55,7 @@ void setup(){
 void draw(){
    background(bg);
    ArrayList<Zombie> Zombs = map.getZombies();
+   image(shovel, 970, 600);
 
    textSize(24);
 
@@ -172,6 +175,13 @@ void draw(){
        cannotAddPlant = false;
      }
    }
+   
+   if(removePlant){
+   for(Plant p: Plants){
+        fill(255,0,0);
+        circle(map.colIntoX((int)p.getCoordinate().x), map.rowIntoY((int)p.getCoordinate().y), 20);
+      }
+   }
   textSize(25);
   fill(255,255,0);
   text("100", 90, 100);
@@ -220,7 +230,7 @@ void mouseClicked(){
         addSunFlower = !addSunFlower;
       }
     }
-   if (addSunFlower & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+   if (addSunFlower && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
       int x =  ((mouseX - 200) / 80) + 1;
       int y = ((mouseY - 150) / 100) + 1;
       if (!map.isPlant(x,y)){
@@ -242,7 +252,7 @@ void mouseClicked(){
       addPeaShooter = !addPeaShooter;
      }
    }
-       if (addSnowPea & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+       if (addSnowPea && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
       //rect(x, y, 80, 100);
       int x = map.xIntoCol(mouseX);
       int y = map.yIntoRow(mouseY);
@@ -266,6 +276,26 @@ void mouseClicked(){
       else{
         addSnowPea = !addSnowPea;
       }
+    }
+    if(removePlant && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+      int x = map.xIntoCol(mouseX);
+      int y = map.yIntoRow(mouseY);
+      if (map.isPlant(x,y)){
+        Plant p = map.getLawn()[y][x];
+       map.getLawn()[y][x] = null;
+       Plants.remove(p);
+      }
+      else{
+        textSize(25);
+        text( "pick a real plant!", 500, 500);
+        removePlant = false; 
+      }
+      removePlant = false;
+    }
+    if (!removePlant && mouseX > 970 && mouseX <= 1070 && mouseY > 600 && mouseY <= 700){
+      removePlant = !removePlant; 
+      print(removePlant);
+  
     }
 
     

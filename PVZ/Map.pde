@@ -42,6 +42,13 @@ Y's:
 
 */
 
+  public int rowIntoY(int x){
+    return (100*(x - 1))+180;
+  }
+  public int colIntoX(int x){
+    return ((80*(x - 1)))+200;
+  }
+
    public int yIntoRow(int y){
      if(y > 535){
        return 5;
@@ -219,6 +226,10 @@ Y's:
 
   public boolean hitLawnMower(Zombie z, LawnMower L){
     return Math.abs((z.getCoordinate()).x - (L.getCoordinate()).x) <= 80 && Math.abs((z.getCoordinate()).y - (L.getCoordinate()).y) <= 80;
+  }
+  
+  public Plant[][] getLawn(){
+    return lawn;
   }
 
 }

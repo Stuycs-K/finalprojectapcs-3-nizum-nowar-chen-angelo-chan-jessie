@@ -50,15 +50,13 @@ public class PeaShooter extends Plant implements Displayables{
     return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 50 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 50;
   }
 
-  public int rowIntoY(int x){
-    return (100*(x - 1))+180;
-  }
+
   
   void shoot(){
       ArrayList<Zombie>zombies = map.getZombies();
        boolean zombieInRow = false;
       for(Zombie z: zombies){
-        if(Math.abs(z.getCoordinate().y - rowIntoY((int)this.getCoordinate().y)) <= 50 && z.getCoordinate().x < 890){
+        if(Math.abs(z.getCoordinate().y - map.rowIntoY((int)this.getCoordinate().y)) <= 50 && z.getCoordinate().x < 890){
           zombieInRow = true;
         }
       }
