@@ -11,8 +11,10 @@ int sunBank = 1000;
 PImage over;
 PImage img1;
 PImage img2;
+PImage img3; 
 boolean addPeaShooter = false;
 boolean addSunFlower = false;
+boolean addSnowPea = false; 
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -79,10 +81,20 @@ void draw(){
        img1 = loadImage("SunFlowerimg.png");
        image(img1, 150, 0);
      }
+       if (addSnowPea){
+       fill(242, 100, 100);
+       stroke(242, 100, 100);
+       rect(150, 0, 100, 100);
+     }else{
+       img1 = loadImage("Snowpea.png");
+       img1.resize(100,100);
+       image(img1, 250, 0);
+ 
+     }
 
      //mouse Position
-     text(mouseX + " " + mouseY, 300, 50);
-     text(frameCount, 300, 70);
+     text(mouseX + " " + mouseY, 500, 50);
+     text(frameCount, 500, 70);
 
      //spawn natural Suns
      if(frameCount % 300 == 0){
@@ -131,6 +143,7 @@ void draw(){
       }
 
       map.displayZombies();
+      noTint();
       map.displayLawnMowers();
 
       //end game
@@ -181,17 +194,7 @@ void mouseClicked(){
 
     }
 
-   if (!addSunFlower && mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 ){
-     if (sunBank < 100){
-       sunWarning = true;
-        sunWarningTimer = 120;
-     }
-     else{
-      addPeaShooter = !addPeaShooter;
-     }
-   }
-
-    
+   
     if (addPeaShooter & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
       //rect(x, y, 80, 100);
       int x = map.xIntoCol(mouseX);
@@ -230,6 +233,42 @@ void mouseClicked(){
         cannotAddPlantTimer = 120;
       }
     }
+    if (!addSunFlower && mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 ){
+     if (sunBank < 100){
+       sunWarning = true;
+        sunWarningTimer = 120;
+     }
+     else{
+      addPeaShooter = !addPeaShooter;
+     }
+   }
+       if (addSnowPea & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+      //rect(x, y, 80, 100);
+      int x = map.xIntoCol(mouseX);
+      int y = map.yIntoRow(mouseY);
+      if (!map.isPlant(x,y)){
+        Plants.add(new SnowPea(new PVector(x, y), 20, map));
+        addSnowPea = false;
+        sunBank -= 150;
+      }
+      else{
+        cannotAddPlant = true;
+        cannotAddPlantTimer = 120;
+      }
+    }
+
+
+    if (!addSnowPea && mouseX > 250 && mouseX <= 350 && mouseY > 0 && mouseY <= 100){
+      if (sunBank < 50){
+        sunWarning = true;
+        sunWarningTimer = 120;
+      }
+      else{
+        addSnowPea = !addSnowPea;
+      }
+    }
+
+    
 
 
 

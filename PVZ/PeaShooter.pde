@@ -27,6 +27,10 @@ public class PeaShooter extends Plant implements Displayables{
   
   
   }
+  ArrayList<Pea> getPeas(){
+    
+    return peas;
+  }
   
     void display(){
 
