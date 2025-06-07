@@ -7,6 +7,7 @@ public class Zombie implements Displayables{
   private boolean collidePlant = false;
   private PVector coordinate;
   private int spawnTime;
+  private boolean snowed = false; 
 
   public Zombie(PVector coord, int time){
       img = loadImage("Zombie.png");
@@ -25,8 +26,6 @@ public class Zombie implements Displayables{
     }
 
     void display(){
-       fill(c);
-       stroke(c);
       image(img, coordinate.x-25, coordinate.y-60);
        //circle(coordinate.x,coordinate.y,100);
        //print("im displaying");

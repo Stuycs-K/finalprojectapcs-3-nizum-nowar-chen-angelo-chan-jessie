@@ -50,7 +50,7 @@ public class PeaShooter extends Plant implements Displayables{
     return (100*(x - 1))+180;
   }
   
-  void shoot(Pea p){
+  void shoot(){
       ArrayList<Zombie>zombies = map.getZombies();
        boolean zombieInRow = false;
       for(Zombie z: zombies){

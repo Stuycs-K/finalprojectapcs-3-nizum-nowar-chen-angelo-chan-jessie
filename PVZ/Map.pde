@@ -197,7 +197,7 @@ Y's:
         if (lawn[i][j] != null){
           lawn[i][j].display();
           if (lawn[i][j] instanceof PeaShooter){
-            ((PeaShooter)lawn[i][j]).shoot(pea);
+            ((PeaShooter)lawn[i][j]).shoot();
           }
         }
       }

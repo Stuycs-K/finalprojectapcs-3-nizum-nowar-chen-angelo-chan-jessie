@@ -7,7 +7,7 @@ ArrayList<Zombie> Zombies;
 Pea pea;
 Sun sun;
 PImage bg;
-int sunBank = 0;
+int sunBank = 1000;
 PImage over;
 PImage img1;
 PImage img2;
