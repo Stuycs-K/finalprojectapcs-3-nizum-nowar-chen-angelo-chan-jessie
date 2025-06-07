@@ -45,6 +45,7 @@ void setup(){
 
   map.placeLawnMowers();
 
+
 }
 
 void draw(){
@@ -158,6 +159,10 @@ void draw(){
        cannotAddPlant = false;
      }
    }
+  textSize(25);
+  fill(255,255,0);
+  text("100", 90, 100);
+  text("50", 180, 100);
 
 }
 
@@ -225,6 +230,7 @@ void mouseClicked(){
         cannotAddPlantTimer = 120;
       }
     }
+
 
 
 }

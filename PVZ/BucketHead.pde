@@ -4,7 +4,7 @@ public class BucketHead extends Zombie{
   public BucketHead(PVector coord, int spawnTime){
     super(coord, spawnTime);
     //bucket = loadImage();
-    bucketHP = 20;
+    bucketHP = 60;
   }
   
   public void loseHP(int x){
