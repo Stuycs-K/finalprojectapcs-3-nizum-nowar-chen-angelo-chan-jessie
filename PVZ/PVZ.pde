@@ -14,7 +14,9 @@ PImage shovel;
 boolean addPeaShooter = false;
 boolean addSunFlower = false;
 boolean addSnowPea = false; 
-boolean removePlant = false;
+public static boolean removePlant = false;
+boolean plantWarning;
+int plantWarningTimer;
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -87,7 +89,7 @@ void draw(){
        if (addSnowPea){
        fill(242, 100, 100);
        stroke(242, 100, 100);
-       rect(150, 0, 100, 100);
+       rect(250, 0, 100, 100);
      }else{
        img1 = loadImage("Snowpea.png");
        img1.resize(100,100);
@@ -138,6 +140,7 @@ void draw(){
          }
 
       }
+      noTint();
 
       //spawn in new waves
       if (Zombies.size() == 0){
@@ -175,12 +178,13 @@ void draw(){
        cannotAddPlant = false;
      }
    }
-   
-   if(removePlant){
-   for(Plant p: Plants){
-        fill(255,0,0);
-        circle(map.colIntoX((int)p.getCoordinate().x), map.rowIntoY((int)p.getCoordinate().y), 20);
-      }
+   if(plantWarning){
+     fill(255);
+     text("PICK A PLANT TO REMOVE", 400, 340);
+     plantWarningTimer--;
+     if (plantWarningTimer <= 0){
+       plantWarning = false;
+     }
    }
   textSize(25);
   fill(255,255,0);
@@ -227,7 +231,9 @@ void mouseClicked(){
         sunWarningTimer = 120;
       }
       else{
-        addSunFlower = !addSunFlower;
+         addSunFlower = !addSunFlower;
+                     
+      
       }
     }
    if (addSunFlower && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
@@ -249,7 +255,9 @@ void mouseClicked(){
         sunWarningTimer = 120;
      }
      else{
-      addPeaShooter = !addPeaShooter;
+            addPeaShooter = !addPeaShooter;
+
+     
      }
    }
        if (addSnowPea && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
@@ -269,12 +277,14 @@ void mouseClicked(){
 
 
     if (!addSnowPea && mouseX > 250 && mouseX <= 350 && mouseY > 0 && mouseY <= 100){
-      if (sunBank < 50){
+      if (sunBank < 150){
         sunWarning = true;
         sunWarningTimer = 120;
       }
       else{
-        addSnowPea = !addSnowPea;
+           addSnowPea = !addSnowPea;
+   
+        
       }
     }
     if(removePlant && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
@@ -287,16 +297,16 @@ void mouseClicked(){
       }
       else{
         textSize(25);
-        text( "pick a real plant!", 500, 500);
+        plantWarning = true;
+        plantWarningTimer = 120;
         removePlant = false; 
       }
       removePlant = false;
     }
-    if (!removePlant && mouseX > 970 && mouseX <= 1070 && mouseY > 600 && mouseY <= 700){
-      removePlant = !removePlant; 
-      print(removePlant);
-  
+    if (mouseX > 970 && mouseX <= 1070 && mouseY > 600 && mouseY <= 700){
+      removePlant = !removePlant;; 
     }
+
 
     
 
