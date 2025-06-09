@@ -158,13 +158,7 @@ void draw(){
       noTint();
       map.displayLawnMowers();
 
-      //end game
-     for(Zombie z: Zombs){
-       if(z.gameOver()){
-         background(over);
-         noLoop();
-       }
-     }
+     
 
    //buy menu
    if(sunWarning){
@@ -196,11 +190,18 @@ void draw(){
   fill(255,255,0);
   text("100", 90, 100);
   text("50", 180, 100);
-
+  text("150", 270, 100);
+  
+   //end game
+     for(Zombie z: Zombs){
+       if(z.gameOver()){
+         background(over);
+         noLoop();
+       }
+     }
 }
 
 
-//did not save before!!
 
 void mouseClicked(){
   for (int i = 0; i < Suns.size(); i++){
