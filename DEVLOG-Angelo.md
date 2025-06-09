@@ -72,3 +72,5 @@ This document must be updated daily every time you finish a work session.
 
 ### 2025-6-8 Debugging
   Fixed the selection for snow pea and the displaying bug for zombie when hit by a pea
+
+"I believe this document accurately reflects the contributions of my teamate." - Nowar

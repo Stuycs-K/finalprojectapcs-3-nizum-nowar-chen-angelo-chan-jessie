@@ -41,3 +41,9 @@ This document must be updated daily every time you finish a work session.
 ### 2025-06-03
 - Class Period (40 min): created a new button to buy SunFlowers- checks sunBank for enough sun; added images of plants to purchase-buttons
 - Home (120 min): updated purchase buttons so plants can't be added to occupied spots on the lawn, LawnMower class created, displayLawnMowers adds 5 lawnmowers to the end of the screen, lawnmower kills zombie that reaches the end of the lawn and then disappears itself, still need to work on wiping out entire row of zombies + possible animation
+
+### 2025-06-04
+- Class Period (40 min): aesthetics and design
+
+### 2025-06-08
+- Home (20 min): README written with project description and intended usage

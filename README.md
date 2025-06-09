@@ -9,6 +9,11 @@ Zombies are invading your house. Add plants to your lawn to fend off the zombies
 
 # Intended usage:
 
+<<<<<<< HEAD
+The game starts with an empty lawn and the first wave of zombies waiting on the right side of the lawn. Once the suns start falling from the sky, click on them with your mouse to raise your currency. Your sun bank is displayed on the upper left corner of the screen, showing you your sun currency. Besides the sun bank are three buttons to purchase PeaShooters, SunFlowers, or Snow PeaShooters. The price of each plant is displayed on the button. To purchase a plant, simply click on the button and then click an unoccupied spot on the lawn go place the plant. However, if you have insufficient sun or if there is already a plant there on the lawn, you will not be able to place the plant. On the top right corner is the wave level you are at. If any zombie breaches the house, it is game over. If you defeat all waves of the zombies, you have won the game.
+
+For demonstration purposes, a couple cheat codes have been added to the game. 
+=======
 The game starts with an empty lawn and a wave of zombies waiting outside. Once the suns start falling from the sky, click on them with your mouse to raise your currency. Your sun bank is displayed on the upper left corner of the screen. Besides the sun bank are three buttons to purchase Pea Shooters, SunCats, or Snow Peas. SunCats help generate more suns, Pea Shooters shoot out projectiles to damage zombies, and Snow PeaShooters reduce zombie speed by 50%. The price of each plant is displayed on the button. To purchase a plant, simply click on the button and then click an unoccupied spot on the lawn to place the plant. However, if you have insufficient sun or if there is already a plant there on the lawn, you will not be able to place the plant. If you would like to remove the plant, click the shovel to activate remove mode. On the top right corner is the wave level you are at. As you progress through the waves, the number of zombies and BucketHeads will increase in number. BucketHeads have increased health, and at a certain threshold, their hat falls off. If any zombie breaches the house, it is game over. There is no limit to the amount of waves in our game; you can play forever! It also means you can't win, because life is unfair. 
 
 # Cheat codes:
@@ -20,3 +25,4 @@ Press "J" to jump ahead by adding 1000 to the frameCount. Zombie spawnTimes are 
 Press "S" to give yourself 1000 more suns.
 
 Press any number from 1-9 to jump to that corresponding wave. 
+>>>>>>> 04860f93fc1663b17b4b2de4395bca1d439e97db
