@@ -17,7 +17,7 @@ boolean addSnowPea = false;
 public static boolean removePlant = false;
 boolean plantWarning;
 int plantWarningTimer;
-boolean showFrameCount;
+boolean showFrameCount = false;
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -30,7 +30,7 @@ int wave = 1;
 void setup(){
   size(1078,720);
 
-  pea = new Pea(new PVector(420,310));
+  pea = new Pea(new PVector(420,310), false);
   map = new Map(pea);
 
   shovel = loadImage("Shovel.png");
@@ -102,8 +102,10 @@ void draw(){
      }
 
      //mouse Position
-     text(mouseX + " " + mouseY, 500, 50);
-     text(frameCount, 500, 70);
+     if (showFrameCount){
+       text(mouseX + " " + mouseY, 500, 50);
+       text(frameCount, 500, 70);
+     }
 
      //spawn natural Suns
      if(frameCount % 300 == 0){
@@ -229,39 +231,41 @@ void mouseClicked(){
     }
 
 
-    if (!addPeaShooter && mouseX > 150 && mouseX <= 250 && mouseY > 0 && mouseY <= 100){
+    if (mouseX > 150 && mouseX <= 250 && mouseY > 0 && mouseY <= 100 && !addSnowPea && !addPeaShooter){
+     
       if (sunBank < 50){
         sunWarning = true;
         sunWarningTimer = 120;
       }
       else{
-         addSunFlower = !addSunFlower;
+        addSunFlower = !addSunFlower;
                      
       
       }
     }
-   if (addSunFlower && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
-      int x =  ((mouseX - 200) / 80) + 1;
-      int y = ((mouseY - 150) / 100) + 1;
-      if (!map.isPlant(x,y)){
-        Plants.add(new SunFlower(new PVector(x, y), map));
-        addSunFlower = false;
-        sunBank -= 50;
-      }
-      else{
-        cannotAddPlant = true;
-        cannotAddPlantTimer = 120;
+   if (mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+        int x = map.xIntoCol(mouseX);
+      int y = map.yIntoRow(mouseY);
+      if(addSunFlower){
+        if (!map.isPlant(x,y)){
+          Plants.add(new SunFlower(new PVector(x, y), map));
+          addSunFlower = false;
+          sunBank -= 50;
+        }
+        else{
+          cannotAddPlant = true;
+          cannotAddPlantTimer = 120;
+        }
       }
     }
-    if (!addSunFlower && mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 ){
+    if (mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 && !addSunFlower && !addSnowPea ){
+     
      if (sunBank < 100){
        sunWarning = true;
         sunWarningTimer = 120;
      }
      else{
-            addPeaShooter = !addPeaShooter;
-
-     
+      addPeaShooter = !addPeaShooter;
      }
    }
        if (addSnowPea && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
@@ -280,7 +284,7 @@ void mouseClicked(){
     }
 
 
-    if (!addSnowPea && mouseX > 250 && mouseX <= 350 && mouseY > 0 && mouseY <= 100){
+    if (mouseX > 250 && mouseX <= 350 && mouseY > 0 && mouseY <= 100 && !addSunFlower && !addPeaShooter){
       if (sunBank < 150){
         sunWarning = true;
         sunWarningTimer = 120;
@@ -321,10 +325,17 @@ void mouseClicked(){
 void keyPressed(){
   String numbers = "123456789";
   if (numbers.indexOf(key) != -1){
-    frameCount = Integer.parseInt(String.valueOf(key)) * 1000;
+    wave = Integer.parseInt(String.valueOf(key));
+    Zombies.clear();
   }
   //print(key);
   if (key == 's' || key == 'S'){
     sunBank = 1000;
+  }
+  if (key == 'f' || key == 'F'){
+    showFrameCount = !showFrameCount;
+  }
+  if (key == 'j' || key == 'J'){
+    frameCount += 1000;
   }
 }

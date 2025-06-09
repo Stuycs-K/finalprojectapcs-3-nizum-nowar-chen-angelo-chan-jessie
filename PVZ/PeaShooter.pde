@@ -4,8 +4,8 @@ public class PeaShooter extends Plant implements Displayables{
   PImage image;
   
   
-  public PeaShooter(PVector coordinate, int HPs, int rechargeTimes, int costs, int damages, Map map){
-    super(coordinate, HPs, rechargeTimes, costs, map);
+  public PeaShooter(PVector coordinate, int HPs, int costs, int damages, Map map){
+    super(coordinate, HPs, costs, map);
     damage = damages; 
     peas = new ArrayList<Pea>();
     image = loadImage("Peashooter.png");
@@ -16,7 +16,7 @@ public class PeaShooter extends Plant implements Displayables{
     //HP: 20
     //Recharge: 10
     //Costs: 100
-    super(coordinate, 20, 10, 100, map);
+    super(coordinate, 20, 100, map);
     damage = damages; 
     image = loadImage("Peashooter.png");
     image.resize(75, 75);
@@ -47,7 +47,7 @@ public class PeaShooter extends Plant implements Displayables{
   
   
   public boolean hasCollided(Pea a, Zombie b){
-    return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 50 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 50;
+    return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 10 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 10;
   }
 
 
@@ -63,7 +63,7 @@ public class PeaShooter extends Plant implements Displayables{
         if (zombieInRow && frameCount % 100 == 0){
           float x = 200 + 80 * (getCoordinate().x - 1);
           float y = 180 + 100 * (getCoordinate().y - 1);
-          peas.add(new Pea(new PVector(x + 30, y)));
+          peas.add(new Pea(new PVector(x + 30, y), false));
         }
         
       for (int i = peas.size() - 1; i >= 0; i--){

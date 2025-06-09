@@ -28,7 +28,13 @@ public class Zombie implements Displayables{
           snowed = false;
         }
         
-      }
+        }
+         else{
+          noTint();
+        }
+        
+      
+     
       image(img, coordinate.x-25, coordinate.y-60);
  
        //circle(coordinate.x,coordinate.y,100);
