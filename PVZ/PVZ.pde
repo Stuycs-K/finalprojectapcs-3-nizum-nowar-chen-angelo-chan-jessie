@@ -17,6 +17,7 @@ boolean addSnowPea = false;
 public static boolean removePlant = false;
 boolean plantWarning;
 int plantWarningTimer;
+boolean showFrameCount;
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -66,6 +67,9 @@ void draw(){
      rect(0,0,50,30);
      fill(0);
      text(sunBank,8,20);
+     
+     //wave display
+     text("Wave: " + wave,1000,30);
 
      //buy menu
      if (addPeaShooter){
