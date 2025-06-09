@@ -30,7 +30,7 @@ int wave = 1;
 void setup(){
   size(1078,720);
 
-  pea = new Pea(new PVector(420,310));
+  pea = new Pea(new PVector(420,310), false);
   map = new Map(pea);
 
   shovel = loadImage("Shovel.png");

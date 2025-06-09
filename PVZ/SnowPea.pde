@@ -25,7 +25,7 @@ public class SnowPea extends PeaShooter{
         if (zombieInRow && frameCount % 100 == 0){
           float x = 200 + 80 * (getCoordinate().x - 1);
           float y = 180 + 100 * (getCoordinate().y - 1);
-          this.getPeas().add(new Pea(new PVector(x + 30, y)));
+          this.getPeas().add(new Pea(new PVector(x + 30, y), true));
         }
         
       for (int i = this.getPeas().size() - 1; i >= 0; i--){
@@ -43,9 +43,11 @@ public class SnowPea extends PeaShooter{
         
         for (int j = zombies.size() - 1; j >= 0; j--){
           Zombie zomb = zombies.get(j);
-          if (hasCollided(pea, zomb)){
+          if (this.hasCollided(pea, zomb)){
             zomb.loseHP(getDamage());
-            freezeZombie(zomb);
+            if(pea.frozenPea()){
+              zomb.getFrozen();
+            }
             this.getPeas().remove(i);
             i--;
             if(zomb.getHP() <= 0){
