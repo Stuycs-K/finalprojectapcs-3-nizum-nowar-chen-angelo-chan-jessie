@@ -111,7 +111,7 @@ Y's:
    for (int i = 0; i < toSpawn; i++){
      int spawnTime = wave * 500 + frameCount + 100 * (int)(Math.random() * 10 + 1);
      
-     print(wave + " " + spawnTime + " ");
+     //print(wave + " " + spawnTime + " ");
      if (i > total){
        Zombies.add(new BucketHead(new PVector(1000,180+100*(int)(Math.random()*5)),spawnTime));
      }

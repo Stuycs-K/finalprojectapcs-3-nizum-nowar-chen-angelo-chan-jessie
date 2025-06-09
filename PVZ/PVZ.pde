@@ -1,13 +1,13 @@
 Map map;
 
-
+//save me changes!!!
 ArrayList<Plant>Plants;
 ArrayList<Sun> Suns;
 ArrayList<Zombie> Zombies;
 Pea pea;
 Sun sun;
 PImage bg;
-int sunBank = 1000;
+int sunBank = 0;
 PImage over;
 PImage img1;
 PImage shovel;
@@ -17,6 +17,7 @@ boolean addSnowPea = false;
 public static boolean removePlant = false;
 boolean plantWarning;
 int plantWarningTimer;
+boolean showFrameCount = false;
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -59,13 +60,16 @@ void draw(){
    ArrayList<Zombie> Zombs = map.getZombies();
    image(shovel, 970, 600);
 
-   textSize(24);
+   textSize(20);
 
       //sunBank display
      fill(225);
      rect(0,0,50,30);
      fill(0);
-     text(sunBank,20,20);
+     text(sunBank,8,20);
+     
+     //wave display
+     text("Wave: " + wave,1000,30);
 
      //buy menu
      if (addPeaShooter){
@@ -98,8 +102,10 @@ void draw(){
      }
 
      //mouse Position
-     text(mouseX + " " + mouseY, 500, 50);
-     text(frameCount, 500, 70);
+     if (showFrameCount){
+       text(mouseX + " " + mouseY, 500, 50);
+       text(frameCount, 500, 70);
+     }
 
      //spawn natural Suns
      if(frameCount % 300 == 0){
@@ -320,4 +326,10 @@ void keyPressed(){
     frameCount = Integer.parseInt(String.valueOf(key)) * 1000;
   }
   //print(key);
+  if (key == 's' || key == 'S'){
+    sunBank = 1000;
+  }
+  if (key == 'f' || key == 'F'){
+    showFrameCount = !showFrameCount;
+  }
 }
