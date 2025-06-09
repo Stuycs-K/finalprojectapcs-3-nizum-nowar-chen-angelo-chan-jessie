@@ -7,7 +7,7 @@ public class SunFlower extends Plant{
     //HP: 30
     //Recharge: 10
     //Costs: 50
-    super(mapPos,30,10,50, map);
+    super(mapPos,30,50, map);
     image = loadImage("Sunflower.png");
     image.resize(90, 90);
     coolDown = 400 + (int) (Math.random() * 600);

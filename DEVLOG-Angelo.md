@@ -68,4 +68,7 @@ This document must be updated daily every time you finish a work session.
   Fixed the bug with the grid due to uneven sizing of the lawn.
 
 ### 2025-6-7 added snowpea and shovel
-  Added new plant, snowpea, which slows zombies down when placed. Also added a shovel that iwll remove plants from the yard. Zombies glow blue when frozen and plants glow red when the shovel is clicked. 
+  Added new plant, snowpea, which slows zombies down when placed. Also added a shovel that iwll remove plants from the yard. Zombies glow blue when frozen and plants glow red when the shovel is clicked.
+
+### 2025-6-8 Debugging
+  Fixed the selection for snow pea and the displaying bug for zombie when hit by a pea
