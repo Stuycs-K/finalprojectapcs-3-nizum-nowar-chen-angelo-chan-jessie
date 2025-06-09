@@ -41,6 +41,6 @@ public abstract class Plant implements Displayables{
 
    public void loseHP(int x){
      HP-= x;
-     print("HP is " + HP);
+     //print("HP is " + HP);
    }
 }
