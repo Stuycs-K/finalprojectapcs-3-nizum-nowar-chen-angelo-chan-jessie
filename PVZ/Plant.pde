@@ -10,7 +10,7 @@ public abstract class Plant implements Displayables{
     HP = HPs;
     coordinate = mapPos;
     rechargeTime = rechargeTimes;
-    cost = costs; 
+    cost = costs;
     map.isThere(this, (int)coordinate.x, (int)coordinate.y);
   }
 
@@ -23,21 +23,22 @@ public abstract class Plant implements Displayables{
   public int getCost(){
     return cost;
   }
-  
+
   public PVector getCoordinate(){
     return coordinate;
   }
-  
+
   void addSun(ArrayList<PVZ.Sun> Suns){
     //dummy function so that addSun doesnt act up in PVZ
   }
-  
+
   void display(){
-       fill(c);
-       stroke(c);
-       circle(200+ 80*(coordinate.x-1),180+ 100*(coordinate.y-1),75);
+    if(PVZ.removePlant){
+      tint(255,0,0,255);
     }
-    
+       
+    }
+
    public void loseHP(int x){
      HP-= x;
      print("HP is " + HP);

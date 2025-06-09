@@ -27,12 +27,17 @@ public class PeaShooter extends Plant implements Displayables{
   
   
   }
+  ArrayList<Pea> getPeas(){
+    
+    return peas;
+  }
   
     void display(){
-
+      super.display();
       image(image, (float)170+ 80*(this.getCoordinate().x-1), (float)150+ 100*(this.getCoordinate().y-1));
        //circle(coordinate.x,coordinate.y,100);
        //print("im displaying");
+       //rect((float)170+ 80*(this.getCoordinate().x-1) - 40, (float)150+ 100*(this.getCoordinate().y-1) - 50, 80, 100);
     }
 
 
@@ -45,15 +50,13 @@ public class PeaShooter extends Plant implements Displayables{
     return Math.abs((a.getCoordinate()).x - (b.getCoordinate()).x) <= 50 && Math.abs((a.getCoordinate()).y - (b.getCoordinate()).y) <= 50;
   }
 
-  public int rowIntoY(int x){
-    return (100*(x - 1))+180;
-  }
+
   
-  void shoot(Pea p){
+  void shoot(){
       ArrayList<Zombie>zombies = map.getZombies();
        boolean zombieInRow = false;
       for(Zombie z: zombies){
-        if(Math.abs(z.getCoordinate().y - rowIntoY((int)this.getCoordinate().y)) <= 50 && z.getCoordinate().x < 890){
+        if(Math.abs(z.getCoordinate().y - map.rowIntoY((int)this.getCoordinate().y)) <= 50 && z.getCoordinate().x < 890){
           zombieInRow = true;
         }
       }
@@ -80,7 +83,6 @@ public class PeaShooter extends Plant implements Displayables{
           Zombie zomb = zombies.get(j);
           if (hasCollided(pea, zomb)){
             zomb.loseHP(getDamage());
-            print("contact");
             peas.remove(i);//////////
             i--;
             if(zomb.getHP() <= 0){

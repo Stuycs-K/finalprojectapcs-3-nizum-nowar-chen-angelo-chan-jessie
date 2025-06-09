@@ -34,3 +34,9 @@ Fixed merge conflicts. Made functions to tell where Zombies are relative to 2DAr
 
 ### 2025-06-02
 Add Sunflowers to board and display them as images. Got sunflowers to spawn suns. Then adjusted them to spawn them at different times rather all at once. 
+
+
+### 2025-06-03, 06-04, 06-05
+Tweaking spawnTimes to let zombies come in waves using Math.random() and frameCount. Then made waves spawn when all the zombies died. Then realized Zombies didn't actually start moving at their assigned spawnTime, they started moving as soon as their ancestors died. #crashout. Realized that my loop was removing zombies so the index I used to loop through spawnTimes was #notchanging!!!! Scrapped spawnTimes array. Made spawnTime an instance of Zombie. 
+
+Also went through PVZ code to add comments for readability.

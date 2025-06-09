@@ -1,23 +1,20 @@
 public class Zombie implements Displayables{
   private int HP;
   private int damage;
-  private color c;
   PImage img;
   private boolean atStart = false;
   private boolean collidePlant = false;
   private PVector coordinate;
-
-
-    public Zombie(PVector coord){
+  private int spawnTime;
+  private boolean snowed = false; 
+  private int frames;
+  public Zombie(PVector coord, int time){
       img = loadImage("Zombie.png");
       img.resize(80,125);
-
         coordinate = coord;
-
-        c = color (50,78,90);
-        HP = 25;
+        HP = 100;
         damage = 5;
-
+        spawnTime = time;
     }
 
     public int getHP(){
@@ -25,22 +22,33 @@ public class Zombie implements Displayables{
     }
 
     void display(){
-       fill(c);
-       stroke(c);
+       if(snowed){
+        tint(0, 0, 225, 255);
+        if(frameCount - frames >= 40){ // for demo purposes, change later
+          snowed = false;
+        }
+        
+      }
       image(img, coordinate.x-25, coordinate.y-60);
+ 
        //circle(coordinate.x,coordinate.y,100);
        //print("im displaying");
     }
 
     void move(){
-      
-      coordinate.x -= 2;
+      if(snowed){
+        coordinate.x-= 0.5;
+      }
+      else{
+         coordinate.x -= 1;
+      }
+     
       if(coordinate.x < 200){
         atStart = true;
       }
 
     }
-    
+
     boolean gameOver(){
       return atStart;
     }
@@ -60,9 +68,19 @@ public class Zombie implements Displayables{
   public int getX(){
      return (int) coordinate.x;
    }
-   
+
    public int getY(){
      return (int) coordinate.y;
    }
+
+   public int getSpawnTime(){
+     return spawnTime;
+   }
+   
+   void getFrozen(){
+     snowed = true; 
+     frames = frameCount; 
+     }
+   
 
 }
