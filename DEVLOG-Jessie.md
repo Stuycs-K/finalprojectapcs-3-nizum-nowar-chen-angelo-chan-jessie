@@ -48,3 +48,4 @@ Adjust difficulty of waves. Added Pea image.
 Added cheat codes for skipping ahead. Changed sunflower image. Made sunBank text more visible. Remove print messages. Rest of commits in main were made on Zoom call with others.
 
 "I believe this document accurately reflects the contributions of my teamate." - Nowar
+"I believe this document accurately reflects the contributions of my teamate." - Angelo
