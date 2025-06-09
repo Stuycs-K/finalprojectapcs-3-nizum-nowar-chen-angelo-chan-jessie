@@ -17,7 +17,7 @@ boolean addSnowPea = false;
 public static boolean removePlant = false;
 boolean plantWarning;
 int plantWarningTimer;
-boolean showFrameCount;
+boolean showFrameCount = false;
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -102,8 +102,10 @@ void draw(){
      }
 
      //mouse Position
-     text(mouseX + " " + mouseY, 500, 50);
-     text(frameCount, 500, 70);
+     if (showFrameCount){
+       text(mouseX + " " + mouseY, 500, 50);
+       text(frameCount, 500, 70);
+     }
 
      //spawn natural Suns
      if(frameCount % 300 == 0){
@@ -326,5 +328,8 @@ void keyPressed(){
   //print(key);
   if (key == 's' || key == 'S'){
     sunBank = 1000;
+  }
+  if (key == 'f' || key == 'F'){
+    showFrameCount = !showFrameCount;
   }
 }
