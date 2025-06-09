@@ -1,6 +1,6 @@
 Map map;
 
-
+//save me changes!!!
 ArrayList<Plant>Plants;
 ArrayList<Sun> Suns;
 ArrayList<Zombie> Zombies;
@@ -59,13 +59,13 @@ void draw(){
    ArrayList<Zombie> Zombs = map.getZombies();
    image(shovel, 970, 600);
 
-   textSize(24);
+   textSize(20);
 
       //sunBank display
      fill(225);
      rect(0,0,50,30);
      fill(0);
-     text(sunBank,20,20);
+     text(sunBank,8,20);
 
      //buy menu
      if (addPeaShooter){
