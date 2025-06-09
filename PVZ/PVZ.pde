@@ -325,7 +325,8 @@ void mouseClicked(){
 void keyPressed(){
   String numbers = "123456789";
   if (numbers.indexOf(key) != -1){
-    frameCount = Integer.parseInt(String.valueOf(key)) * 1000;
+    wave = Integer.parseInt(String.valueOf(key));
+    Zombies.clear();
   }
   //print(key);
   if (key == 's' || key == 'S'){
@@ -333,5 +334,8 @@ void keyPressed(){
   }
   if (key == 'f' || key == 'F'){
     showFrameCount = !showFrameCount;
+  }
+  if (key == 'j' || key == 'J'){
+    frameCount += 1000;
   }
 }
