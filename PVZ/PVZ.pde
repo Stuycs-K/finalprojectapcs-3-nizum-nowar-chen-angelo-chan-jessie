@@ -37,9 +37,9 @@ void setup(){
   shovel.resize(100,100);
  
   Plants = new ArrayList<Plant>();
-  Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
-  Plants.add(new SunFlower(new PVector(1, 2), map));
-  Plants.add(new SunFlower(new PVector(3, 4), map));
+  //Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
+  //Plants.add(new SunFlower(new PVector(1, 2), map));
+  //Plants.add(new SunFlower(new PVector(3, 4), map));
 
   
   bg = loadImage("PVZBackground.jpg");
@@ -330,7 +330,7 @@ void keyPressed(){
   }
   //print(key);
   if (key == 's' || key == 'S'){
-    sunBank = 1000;
+    sunBank += 1000;
   }
   if (key == 'f' || key == 'F'){
     showFrameCount = !showFrameCount;
