@@ -7,7 +7,7 @@ ArrayList<Zombie> Zombies;
 Pea pea;
 Sun sun;
 PImage bg;
-int sunBank = 1000;
+int sunBank = 0;
 PImage over;
 PImage img1;
 PImage shovel;
@@ -320,4 +320,7 @@ void keyPressed(){
     frameCount = Integer.parseInt(String.valueOf(key)) * 1000;
   }
   //print(key);
+  if (key == 's' || key == 'S'){
+    sunBank = 1000;
+  }
 }
