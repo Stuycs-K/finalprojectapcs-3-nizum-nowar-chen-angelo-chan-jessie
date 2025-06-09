@@ -72,6 +72,7 @@ public class PeaShooter extends Plant implements Displayables{
         }
         Pea pea = peas.get(i);
         pea.moveX();
+        noTint();
         pea.display();
         
         if(pea.getCoordinate().x > width){

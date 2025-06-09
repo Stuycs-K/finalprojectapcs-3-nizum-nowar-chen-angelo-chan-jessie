@@ -56,6 +56,7 @@ void setup(){
 }
 
 void draw(){
+   noTint();
    background(bg);
    ArrayList<Zombie> Zombs = map.getZombies();
    image(shovel, 970, 600);
@@ -134,6 +135,7 @@ void draw(){
      int stop = (int)Math.random()*500 + 200;
 
       map.display();
+      noTint();
       for (int i = 0; i < Suns.size(); i++){
          stop = (int)Math.random()*500 + 200;
 
@@ -146,7 +148,7 @@ void draw(){
          }
 
       }
-      noTint();
+      
 
       //spawn in new waves
       if (Zombies.size() == 0){

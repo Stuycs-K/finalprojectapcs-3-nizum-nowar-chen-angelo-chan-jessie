@@ -128,7 +128,7 @@ Y's:
       if(Zombies.get(i).getHP() > 0){
             Zombies.get(i).display();
 
-      if (Zombies.get(i).getX() < 800){
+      if (Zombies.get(i).getX() < 900){
         if (lawn[yIntoRow(Zombies.get(i).getY())][xIntoCol(Zombies.get(i).getX())] != null){
           Zombies.get(i).collidePlant = true;
           if(frameCount % 20 == 0){
