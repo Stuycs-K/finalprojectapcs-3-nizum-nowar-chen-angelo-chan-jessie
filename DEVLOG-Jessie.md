@@ -40,3 +40,10 @@ Add Sunflowers to board and display them as images. Got sunflowers to spawn suns
 Tweaking spawnTimes to let zombies come in waves using Math.random() and frameCount. Then made waves spawn when all the zombies died. Then realized Zombies didn't actually start moving at their assigned spawnTime, they started moving as soon as their ancestors died. #crashout. Realized that my loop was removing zombies so the index I used to loop through spawnTimes was #notchanging!!!! Scrapped spawnTimes array. Made spawnTime an instance of Zombie. 
 
 Also went through PVZ code to add comments for readability.
+
+### 2025-06-06
+Adjust difficulty of waves. Added Pea image.
+
+### 2025-06-07 & 06-08
+Added cheat codes for skipping ahead. Changed sunflower image. Made sunBank text more visible. Remove print messages. Rest of commits in main were made on Zoom call with others.
+
