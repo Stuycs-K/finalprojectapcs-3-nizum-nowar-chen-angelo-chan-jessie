@@ -2,8 +2,6 @@
 
 # Plants vs. Zombies (ft. SunCat)
 
-## Demonstration Video
-![](PVZ-APCS final project.mp4) 
 
 ## Project Description
 
