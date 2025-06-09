@@ -231,39 +231,41 @@ void mouseClicked(){
     }
 
 
-    if (!addPeaShooter && mouseX > 150 && mouseX <= 250 && mouseY > 0 && mouseY <= 100){
+    if (mouseX > 150 && mouseX <= 250 && mouseY > 0 && mouseY <= 100 && !addSnowPea && !addPeaShooter){
+     
       if (sunBank < 50){
         sunWarning = true;
         sunWarningTimer = 120;
       }
       else{
-         addSunFlower = !addSunFlower;
+        addSunFlower = !addSunFlower;
                      
       
       }
     }
-   if (addSunFlower && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
-      int x =  ((mouseX - 200) / 80) + 1;
-      int y = ((mouseY - 150) / 100) + 1;
-      if (!map.isPlant(x,y)){
-        Plants.add(new SunFlower(new PVector(x, y), map));
-        addSunFlower = false;
-        sunBank -= 50;
-      }
-      else{
-        cannotAddPlant = true;
-        cannotAddPlantTimer = 120;
+   if (mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+        int x = map.xIntoCol(mouseX);
+      int y = map.yIntoRow(mouseY);
+      if(addSunFlower){
+        if (!map.isPlant(x,y)){
+          Plants.add(new SunFlower(new PVector(x, y), map));
+          addSunFlower = false;
+          sunBank -= 50;
+        }
+        else{
+          cannotAddPlant = true;
+          cannotAddPlantTimer = 120;
+        }
       }
     }
-    if (!addSunFlower && mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 ){
+    if (mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 && !addSunFlower && !addSnowPea ){
+     
      if (sunBank < 100){
        sunWarning = true;
         sunWarningTimer = 120;
      }
      else{
-            addPeaShooter = !addPeaShooter;
-
-     
+      addPeaShooter = !addPeaShooter;
      }
    }
        if (addSnowPea && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
@@ -282,7 +284,7 @@ void mouseClicked(){
     }
 
 
-    if (!addSnowPea && mouseX > 250 && mouseX <= 350 && mouseY > 0 && mouseY <= 100){
+    if (mouseX > 250 && mouseX <= 350 && mouseY > 0 && mouseY <= 100 && !addSunFlower && !addPeaShooter){
       if (sunBank < 150){
         sunWarning = true;
         sunWarningTimer = 120;
