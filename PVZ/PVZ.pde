@@ -7,12 +7,16 @@ ArrayList<Zombie> Zombies;
 Pea pea;
 Sun sun;
 PImage bg;
-int sunBank = 0;
+int sunBank = 1000;
 PImage over;
 PImage img1;
-PImage img2;
+PImage shovel;
 boolean addPeaShooter = false;
 boolean addSunFlower = false;
+boolean addSnowPea = false; 
+public static boolean removePlant = false;
+boolean plantWarning;
+int plantWarningTimer;
 
 boolean sunWarning;
 int sunWarningTimer;
@@ -28,13 +32,15 @@ void setup(){
   pea = new Pea(new PVector(420,310));
   map = new Map(pea);
 
-
+  shovel = loadImage("Shovel.png");
+  shovel.resize(100,100);
+ 
   Plants = new ArrayList<Plant>();
   Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
   Plants.add(new SunFlower(new PVector(1, 2), map));
   Plants.add(new SunFlower(new PVector(3, 4), map));
 
-
+  
   bg = loadImage("PVZBackground.jpg");
   over = loadImage("gameOver.jpg");
   over.resize(1078,720);
@@ -45,11 +51,13 @@ void setup(){
 
   map.placeLawnMowers();
 
+
 }
 
 void draw(){
    background(bg);
    ArrayList<Zombie> Zombs = map.getZombies();
+   image(shovel, 970, 600);
 
    textSize(24);
 
@@ -78,10 +86,20 @@ void draw(){
        img1 = loadImage("SunFlowerimg.png");
        image(img1, 150, 0);
      }
+       if (addSnowPea){
+       fill(242, 100, 100);
+       stroke(242, 100, 100);
+       rect(250, 0, 100, 100);
+     }else{
+       img1 = loadImage("Snowpea.png");
+       img1.resize(100,100);
+       image(img1, 250, 0);
+ 
+     }
 
      //mouse Position
-     text(mouseX + " " + mouseY, 300, 50);
-     text(frameCount, 300, 70);
+     text(mouseX + " " + mouseY, 500, 50);
+     text(frameCount, 500, 70);
 
      //spawn natural Suns
      if(frameCount % 300 == 0){
@@ -122,6 +140,7 @@ void draw(){
          }
 
       }
+      noTint();
 
       //spawn in new waves
       if (Zombies.size() == 0){
@@ -130,6 +149,7 @@ void draw(){
       }
 
       map.displayZombies();
+      noTint();
       map.displayLawnMowers();
 
       //end game
@@ -158,6 +178,18 @@ void draw(){
        cannotAddPlant = false;
      }
    }
+   if(plantWarning){
+     fill(255);
+     text("PICK A PLANT TO REMOVE", 400, 340);
+     plantWarningTimer--;
+     if (plantWarningTimer <= 0){
+       plantWarning = false;
+     }
+   }
+  textSize(25);
+  fill(255,255,0);
+  text("100", 90, 100);
+  text("50", 180, 100);
 
 }
 
@@ -176,21 +208,11 @@ void mouseClicked(){
 
     }
 
-   if (!addSunFlower && mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 ){
-     if (sunBank < 100){
-       sunWarning = true;
-        sunWarningTimer = 120;
-     }
-     else{
-      addPeaShooter = !addPeaShooter;
-     }
-   }
-
-    
+   
     if (addPeaShooter & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
-      int x =  ((mouseX - 200) / 80) + 1;
-      int y = ((mouseY - 150) / 100) + 1;
       //rect(x, y, 80, 100);
+      int x = map.xIntoCol(mouseX);
+      int y = map.yIntoRow(mouseY);
       if (!map.isPlant(x,y)){
         Plants.add(new PeaShooter(new PVector(x, y), 20, map));
         addPeaShooter = false;
@@ -209,10 +231,12 @@ void mouseClicked(){
         sunWarningTimer = 120;
       }
       else{
-        addSunFlower = !addSunFlower;
+         addSunFlower = !addSunFlower;
+                     
+      
       }
     }
-   if (addSunFlower & mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+   if (addSunFlower && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
       int x =  ((mouseX - 200) / 80) + 1;
       int y = ((mouseY - 150) / 100) + 1;
       if (!map.isPlant(x,y)){
@@ -225,6 +249,67 @@ void mouseClicked(){
         cannotAddPlantTimer = 120;
       }
     }
+    if (!addSunFlower && mouseX >= 50 && mouseX <= 150 && mouseY >= 0 && mouseY <= 100 ){
+     if (sunBank < 100){
+       sunWarning = true;
+        sunWarningTimer = 120;
+     }
+     else{
+            addPeaShooter = !addPeaShooter;
+
+     
+     }
+   }
+       if (addSnowPea && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+      //rect(x, y, 80, 100);
+      int x = map.xIntoCol(mouseX);
+      int y = map.yIntoRow(mouseY);
+      if (!map.isPlant(x,y)){
+        Plants.add(new SnowPea(new PVector(x, y), 20, map));
+        addSnowPea = false;
+        sunBank -= 150;
+      }
+      else{
+        cannotAddPlant = true;
+        cannotAddPlantTimer = 120;
+      }
+    }
+
+
+    if (!addSnowPea && mouseX > 250 && mouseX <= 350 && mouseY > 0 && mouseY <= 100){
+      if (sunBank < 150){
+        sunWarning = true;
+        sunWarningTimer = 120;
+      }
+      else{
+           addSnowPea = !addSnowPea;
+   
+        
+      }
+    }
+    if(removePlant && mouseX >= 167 && mouseX <= 885 && mouseY >= 137 && mouseY <= 633){
+      int x = map.xIntoCol(mouseX);
+      int y = map.yIntoRow(mouseY);
+      if (map.isPlant(x,y)){
+        Plant p = map.getLawn()[y][x];
+       map.getLawn()[y][x] = null;
+       Plants.remove(p);
+      }
+      else{
+        textSize(25);
+        plantWarning = true;
+        plantWarningTimer = 120;
+        removePlant = false; 
+      }
+      removePlant = false;
+    }
+    if (mouseX > 970 && mouseX <= 1070 && mouseY > 600 && mouseY <= 700){
+      removePlant = !removePlant;; 
+    }
+
+
+    
+
 
 
 }

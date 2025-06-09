@@ -9,7 +9,7 @@ public class SunFlower extends Plant{
     //Costs: 50
     super(mapPos,30,10,50, map);
     image = loadImage("Sunflower.png");
-    image.resize(75, 75);
+    image.resize(90, 90);
     coolDown = 400 + (int) (Math.random() * 600);
   }
   void special(){}
@@ -28,8 +28,8 @@ public class SunFlower extends Plant{
   }
   
   void display(){
-
-      image(image, (float)170+ 80*(this.getCoordinate().x-1), (float)150+ 100*(this.getCoordinate().y-1));
+      super.display();
+      image(image, (float)150+ 80*(this.getCoordinate().x-1), (float)130+ 100*(this.getCoordinate().y-1));
        //circle(coordinate.x,coordinate.y,100);
        //print("im displaying");
     }

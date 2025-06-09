@@ -56,7 +56,16 @@ This document must be updated daily every time you finish a work session.
   Peas now disappear on contact. Fixed zombies not dying. Tried to make it so the peashooters only shoot when there is a zombie.
 
   (at home)
-  Got peashooters to only shoot when there is a zombie in its row and the zombie is on the lawn. 
+  Got peashooters to only shoot when there is a zombie in its row and the zombie is on the lawn.
 
 ### 2025 6-4 Added BucketHead
-  Created buckethead class, attempting to randomly spawn then in. Bucket heads lose their bucket before losing HP.  
+  Created buckethead class, attempting to randomly spawn then in. Bucket heads lose their bucket before losing HP.
+
+  (at home)
+  Updated seeds so that reclicking the option to display them made it so you can unselect. No longer forced to click
+
+### 2025-6-6 updated map grid
+  Fixed the bug with the grid due to uneven sizing of the lawn.
+
+### 2025-6-7 added snowpea and shovel
+  Added new plant, snowpea, which slows zombies down when placed. Also added a shovel that iwll remove plants from the yard. Zombies glow blue when frozen and plants glow red when the shovel is clicked. 

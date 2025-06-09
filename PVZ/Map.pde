@@ -21,14 +21,86 @@ public class Map{
   public boolean isPlant(int x, int y){
     return lawn[y][x] != null;
   }
+/*
+X's:
+1: 160 -> 245  = 85
+2: 246 -> 320  = 74 
+3: 321 -> 410 = 89 
+4: 410 -> 490: 80
+5: 491 -> 565: 74
+6: 566 -> 652
+7: 653 -> 725
+8: 725 -> 810
+9: 810 -> 905
 
+Y's:
+1: 141 240
+2: 240 335
+3: 335 445
+4: 445 535
+5: 535 635
+
+*/
+
+  public int rowIntoY(int x){
+    return (100*(x - 1))+180;
+  }
+  public int colIntoX(int x){
+    return ((80*(x - 1)))+200;
+  }
+
+   public int yIntoRow(int y){
+     if(y > 535){
+       return 5;
+     }
+     else if(y > 445){
+       return 4;
+     }
+     else if ( y > 335){
+       return 3; 
+     }
+     else if(y > 240){
+       return 2;
+     }
+     else if (y > 140){
+       return 1; 
+     }
+      return 1;
+  }
   public int xIntoCol(int x){
-     return (x - 200) / 80 + 1;
+     if(x > 810){
+       return 9;
+     }
+     else if (x > 725){
+       return 8;
+     }
+     else if(x > 653){
+       return 7;
+     }
+     else if( x > 566){
+       return 6;
+     }
+     else if (x > 491){
+       return 5;
+     }
+     else if (x > 410){
+       return 4;
+     }
+     else if(x > 321){
+       return 3;
+     }
+     else if (x > 245){
+       return 2;
+     }
+     else if(x > 160){
+       return 1; 
+     }
+     
+     
+     return 1;
   }
 
-   public int yIntoRow(int x){
-     return (x - 180) / 100 + 1;
-  }
+
 
 
   public void spawnZombies(int total,int wave){
@@ -132,7 +204,7 @@ public class Map{
         if (lawn[i][j] != null){
           lawn[i][j].display();
           if (lawn[i][j] instanceof PeaShooter){
-            ((PeaShooter)lawn[i][j]).shoot(pea);
+            ((PeaShooter)lawn[i][j]).shoot();
           }
         }
       }
@@ -154,6 +226,10 @@ public class Map{
 
   public boolean hitLawnMower(Zombie z, LawnMower L){
     return Math.abs((z.getCoordinate()).x - (L.getCoordinate()).x) <= 80 && Math.abs((z.getCoordinate()).y - (L.getCoordinate()).y) <= 80;
+  }
+  
+  public Plant[][] getLawn(){
+    return lawn;
   }
 
 }
