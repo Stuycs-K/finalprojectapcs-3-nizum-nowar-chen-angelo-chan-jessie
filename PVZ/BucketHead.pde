@@ -20,7 +20,6 @@ public class BucketHead extends Zombie{
 
    
     if(bucketHP > 0){
-      circle(this.getCoordinate().x, this.getCoordinate().y, 20);
       image(bucket, this.getCoordinate().x-25, this.getCoordinate().y-60);
     }
     else{

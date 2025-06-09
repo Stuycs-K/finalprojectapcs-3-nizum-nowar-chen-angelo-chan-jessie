@@ -12,6 +12,9 @@ public class SnowPea extends PeaShooter{
   }
   
   void display(){
+    if(PVZ.removePlant){
+      tint(255,0,0,255);
+    }
     image(snowpeas, (float)170+ 80*(this.getCoordinate().x-1), (float)150+ 100*(this.getCoordinate().y-1));
   }
   void shoot(){

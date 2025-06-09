@@ -37,9 +37,9 @@ void setup(){
   shovel.resize(100,100);
  
   Plants = new ArrayList<Plant>();
-  //Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
-  //Plants.add(new SunFlower(new PVector(1, 2), map));
-  //Plants.add(new SunFlower(new PVector(3, 4), map));
+  Plants.add(new PeaShooter(new PVector(2, 3), 20, map));
+  Plants.add(new SunFlower(new PVector(1, 2), map));
+  Plants.add(new SunFlower(new PVector(3, 4), map));
 
   
   bg = loadImage("PVZBackground.jpg");
@@ -56,7 +56,6 @@ void setup(){
 }
 
 void draw(){
-   noTint();
    background(bg);
    ArrayList<Zombie> Zombs = map.getZombies();
    image(shovel, 970, 600);
@@ -135,7 +134,6 @@ void draw(){
      int stop = (int)Math.random()*500 + 200;
 
       map.display();
-      noTint();
       for (int i = 0; i < Suns.size(); i++){
          stop = (int)Math.random()*500 + 200;
 
@@ -148,7 +146,7 @@ void draw(){
          }
 
       }
-      
+      noTint();
 
       //spawn in new waves
       if (Zombies.size() == 0){
@@ -160,7 +158,13 @@ void draw(){
       noTint();
       map.displayLawnMowers();
 
-     
+      //end game
+     for(Zombie z: Zombs){
+       if(z.gameOver()){
+         background(over);
+         noLoop();
+       }
+     }
 
    //buy menu
    if(sunWarning){
@@ -192,18 +196,11 @@ void draw(){
   fill(255,255,0);
   text("100", 90, 100);
   text("50", 180, 100);
-  text("150", 270, 100);
-  
-   //end game
-     for(Zombie z: Zombs){
-       if(z.gameOver()){
-         background(over);
-         noLoop();
-       }
-     }
+
 }
 
 
+//did not save before!!
 
 void mouseClicked(){
   for (int i = 0; i < Suns.size(); i++){
@@ -310,12 +307,11 @@ void mouseClicked(){
         textSize(25);
         plantWarning = true;
         plantWarningTimer = 120;
-        removePlant = false; 
       }
       removePlant = false;
     }
     if (mouseX > 970 && mouseX <= 1070 && mouseY > 600 && mouseY <= 700){
-      removePlant = !removePlant;; 
+      removePlant = !removePlant;
     }
 
 
@@ -328,17 +324,13 @@ void mouseClicked(){
 void keyPressed(){
   String numbers = "123456789";
   if (numbers.indexOf(key) != -1){
-    wave = Integer.parseInt(String.valueOf(key));
-    Zombies.clear();
+    frameCount = Integer.parseInt(String.valueOf(key)) * 1000;
   }
   //print(key);
   if (key == 's' || key == 'S'){
-    sunBank += 1000;
+    sunBank = 1000;
   }
   if (key == 'f' || key == 'F'){
     showFrameCount = !showFrameCount;
-  }
-  if (key == 'j' || key == 'J'){
-    frameCount += 1000;
   }
 }
